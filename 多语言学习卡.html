@@ -1392,7 +1392,7 @@
                 reader.readAsArrayBuffer(file);
             }
 
-            // ---------- 自动加载（修改为优先加载 common.json） ----------
+            // ---------- 自动加载（优先 common.json） ----------
             function autoLoadDataFile() {
                 const fileName = 'common.json';
                 fetch(fileName)
@@ -1424,13 +1424,15 @@
                                 updateStats();
                                 showToast(`📦 自动加载 data 文件 (${vocabulary.length} 个词条，${sentences.length} 个句子)`,
                                     'success');
+                                // 加载完成后，尝试从 URL 读取搜索词
+                                applySearchFromUrl();
                                 return;
                             }
                         }
                         throw new Error('数据格式无效');
                     })
                     .catch(() => {
-                        // 若 common.json 不存在，尝试旧文件名 vocabulary-data.json
+                        // 若 common.json 不存在，尝试旧文件名
                         const fallbackFile = 'vocabulary-data.json';
                         fetch(fallbackFile)
                             .then(res => {
@@ -1459,6 +1461,7 @@
                                         updateStats();
                                         showToast(`📦 自动加载 ${fallbackFile} (${vocabulary.length} 个词条，${sentences.length} 个句子)`,
                                             'success');
+                                        applySearchFromUrl();
                                         return;
                                     }
                                 }
@@ -1491,6 +1494,21 @@
                     });
             }
 
+            // ---------- 新增：从 URL 读取搜索词并触发搜索 ----------
+            function applySearchFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const searchQuery = urlParams.get('search');
+                if (searchQuery && searchInput) {
+                    searchInput.value = searchQuery.trim();
+                    // 等待数据渲染完成后触发搜索
+                    setTimeout(() => {
+                        // 触发 input 事件
+                        const event = new Event('input', { bubbles: true });
+                        searchInput.dispatchEvent(event);
+                    }, 100);
+                }
+            }
+
             // ---------- 导出数据 ----------
             function exportData() {
                 if (!allDataLoaded || vocabulary.length === 0) {
@@ -1516,7 +1534,7 @@
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = 'common.json'; // 导出为 common.json
+                a.download = 'common.json';
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
@@ -2183,6 +2201,14 @@
             pageSizeSelect.value = '1';
             pageSize = 1;
             autoLoadDataFile();
+
+            // 即使自动加载完成前，也尝试从 URL 读取（但可能元素未就绪），但 applySearchFromUrl 在加载完成后会再次调用
+            // 初次调用以防快速加载
+            setTimeout(() => {
+                if (document.getElementById('searchInput')) {
+                    applySearchFromUrl();
+                }
+            }, 500);
 
         })();
     </script>
