@@ -1,0 +1,4258 @@
+[
+  {
+    "char": "あ",
+    "pinyins": "a",
+    "words": "",
+    "examples": "",
+    "note": "平假名；元音"
+  },
+  {
+    "char": "い",
+    "pinyins": "i",
+    "words": "",
+    "examples": "",
+    "note": "平假名；元音"
+  },
+  {
+    "char": "う",
+    "pinyins": "u",
+    "words": "",
+    "examples": "",
+    "note": "平假名；元音"
+  },
+  {
+    "char": "え",
+    "pinyins": "e",
+    "words": "",
+    "examples": "",
+    "note": "平假名；元音"
+  },
+  {
+    "char": "お",
+    "pinyins": "o",
+    "words": "",
+    "examples": "",
+    "note": "平假名；元音"
+  },
+  {
+    "char": "か",
+    "pinyins": "ka",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "き",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "く",
+    "pinyins": "ku",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "け",
+    "pinyins": "ke",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "こ",
+    "pinyins": "ko",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "さ",
+    "pinyins": "sa",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "し",
+    "pinyins": "shi",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "す",
+    "pinyins": "su",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "せ",
+    "pinyins": "se",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "そ",
+    "pinyins": "so",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "た",
+    "pinyins": "ta",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ち",
+    "pinyins": "chi",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "つ",
+    "pinyins": "tsu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "て",
+    "pinyins": "te",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "と",
+    "pinyins": "to",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "な",
+    "pinyins": "na",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "に",
+    "pinyins": "ni",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ぬ",
+    "pinyins": "nu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ね",
+    "pinyins": "ne",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "の",
+    "pinyins": "no",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "は",
+    "pinyins": "ha，wa",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ひ",
+    "pinyins": "hi",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ふ",
+    "pinyins": "fu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "へ",
+    "pinyins": "he，e",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ほ",
+    "pinyins": "ho",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ま",
+    "pinyins": "ma",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "み",
+    "pinyins": "mi",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "む",
+    "pinyins": "mu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "め",
+    "pinyins": "me",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "も",
+    "pinyins": "mo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "や",
+    "pinyins": "ya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ゆ",
+    "pinyins": "yu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "よ",
+    "pinyins": "yo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ら",
+    "pinyins": "ra",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "り",
+    "pinyins": "ri",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "る",
+    "pinyins": "ru",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "れ",
+    "pinyins": "re",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "ろ",
+    "pinyins": "ro",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "わ",
+    "pinyins": "wa",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "を",
+    "pinyins": "o，wo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；清辅音"
+  },
+  {
+    "char": "が",
+    "pinyins": "ga",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぎ",
+    "pinyins": "gi",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぐ",
+    "pinyins": "gu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "げ",
+    "pinyins": "ge",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ご",
+    "pinyins": "go",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ざ",
+    "pinyins": "za",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "じ",
+    "pinyins": "ji",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ず",
+    "pinyins": "zu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぜ",
+    "pinyins": "ze",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぞ",
+    "pinyins": "zo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "だ",
+    "pinyins": "da",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぢ",
+    "pinyins": "ji",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "づ",
+    "pinyins": "zu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "で",
+    "pinyins": "de",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ど",
+    "pinyins": "do",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ば",
+    "pinyins": "ba",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "び",
+    "pinyins": "bi",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぶ",
+    "pinyins": "bu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "べ",
+    "pinyins": "be",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぼ",
+    "pinyins": "bo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；浊辅音"
+  },
+  {
+    "char": "ぱ",
+    "pinyins": "pa",
+    "words": "",
+    "examples": "",
+    "note": "平假名；半浊音"
+  },
+  {
+    "char": "ぴ",
+    "pinyins": "pi",
+    "words": "",
+    "examples": "",
+    "note": "平假名；半浊音"
+  },
+  {
+    "char": "ぷ",
+    "pinyins": "pu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；半浊音"
+  },
+  {
+    "char": "ぺ",
+    "pinyins": "pe",
+    "words": "",
+    "examples": "",
+    "note": "平假名；半浊音"
+  },
+  {
+    "char": "ぽ",
+    "pinyins": "po",
+    "words": "",
+    "examples": "",
+    "note": "平假名；半浊音"
+  },
+  {
+    "char": "きゃ",
+    "pinyins": "kya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "きゅ",
+    "pinyins": "kyu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "きょ",
+    "pinyins": "kyo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "しゃ",
+    "pinyins": "sha",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "しゅ",
+    "pinyins": "shu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "しょ",
+    "pinyins": "sho",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ちゃ",
+    "pinyins": "cha",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ちゅ",
+    "pinyins": "chu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ちょ",
+    "pinyins": "cho",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "にゃ",
+    "pinyins": "nya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "にゅ",
+    "pinyins": "nyu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "にょ",
+    "pinyins": "nyo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ひゃ",
+    "pinyins": "hya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ひゅ",
+    "pinyins": "hyu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ひょ",
+    "pinyins": "hyo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "みゃ",
+    "pinyins": "mya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "みゅ",
+    "pinyins": "myu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "みょ",
+    "pinyins": "myo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "りゃ",
+    "pinyins": "rya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "りゅ",
+    "pinyins": "ryu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "りょ",
+    "pinyins": "ryo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぎゃ",
+    "pinyins": "gya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぎゅ",
+    "pinyins": "gyu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぎょ",
+    "pinyins": "gyo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "じゃ",
+    "pinyins": "ja",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "じゅ",
+    "pinyins": "ju",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "じょ",
+    "pinyins": "jo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぢゃ",
+    "pinyins": "dya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぢゅ",
+    "pinyins": "dyu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぢょ",
+    "pinyins": "dyo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "びゃ",
+    "pinyins": "bya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "びゅ",
+    "pinyins": "byu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "びょ",
+    "pinyins": "byo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぴゃ",
+    "pinyins": "pya",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぴゅ",
+    "pinyins": "pyu",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ぴょ",
+    "pinyins": "pyo",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拗音"
+  },
+  {
+    "char": "ん",
+    "pinyins": "n",
+    "words": "",
+    "examples": "",
+    "note": "平假名；拨音"
+  },
+  {
+    "char": "ア",
+    "pinyins": "a",
+    "words": "",
+    "examples": "",
+    "note": "片假名；元音"
+  },
+  {
+    "char": "イ",
+    "pinyins": "i",
+    "words": "",
+    "examples": "",
+    "note": "片假名；元音"
+  },
+  {
+    "char": "ウ",
+    "pinyins": "u",
+    "words": "",
+    "examples": "",
+    "note": "片假名；元音"
+  },
+  {
+    "char": "エ",
+    "pinyins": "e",
+    "words": "",
+    "examples": "",
+    "note": "片假名；元音"
+  },
+  {
+    "char": "オ",
+    "pinyins": "o",
+    "words": "",
+    "examples": "",
+    "note": "片假名；元音"
+  },
+  {
+    "char": "カ",
+    "pinyins": "ka",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "キ",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ク",
+    "pinyins": "ku",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ケ",
+    "pinyins": "ke",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "コ",
+    "pinyins": "ko",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "サ",
+    "pinyins": "sa",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "シ",
+    "pinyins": "shi",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ス",
+    "pinyins": "su",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "セ",
+    "pinyins": "se",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ソ",
+    "pinyins": "so",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "タ",
+    "pinyins": "ta",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "チ",
+    "pinyins": "chi",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ツ",
+    "pinyins": "tsu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "テ",
+    "pinyins": "te",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ト",
+    "pinyins": "to",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ナ",
+    "pinyins": "na",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ニ",
+    "pinyins": "ni",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ヌ",
+    "pinyins": "nu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ネ",
+    "pinyins": "ne",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ノ",
+    "pinyins": "no",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ハ",
+    "pinyins": "ha，wa",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ヒ",
+    "pinyins": "hi",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "フ",
+    "pinyins": "fu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ヘ",
+    "pinyins": "he，e",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ホ",
+    "pinyins": "ho",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "マ",
+    "pinyins": "ma",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ミ",
+    "pinyins": "mi",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ム",
+    "pinyins": "mu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "メ",
+    "pinyins": "me",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "モ",
+    "pinyins": "mo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ヤ",
+    "pinyins": "ya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ユ",
+    "pinyins": "yu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ヨ",
+    "pinyins": "yo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ラ",
+    "pinyins": "ra",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "リ",
+    "pinyins": "ri",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ル",
+    "pinyins": "ru",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "レ",
+    "pinyins": "re",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ロ",
+    "pinyins": "ro",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ワ",
+    "pinyins": "wa",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ヲ",
+    "pinyins": "o，wo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；清辅音"
+  },
+  {
+    "char": "ガ",
+    "pinyins": "ga",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ギ",
+    "pinyins": "gi",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "グ",
+    "pinyins": "gu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ゲ",
+    "pinyins": "ge",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ゴ",
+    "pinyins": "go",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ザ",
+    "pinyins": "za",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ジ",
+    "pinyins": "ji",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ズ",
+    "pinyins": "zu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ゼ",
+    "pinyins": "ze",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ゾ",
+    "pinyins": "zo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ダ",
+    "pinyins": "da",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ヂ",
+    "pinyins": "ji",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ヅ",
+    "pinyins": "zu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "デ",
+    "pinyins": "de",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ド",
+    "pinyins": "do",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "バ",
+    "pinyins": "ba",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ビ",
+    "pinyins": "bi",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ブ",
+    "pinyins": "bu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ベ",
+    "pinyins": "be",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "ボ",
+    "pinyins": "bo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；浊辅音"
+  },
+  {
+    "char": "パ",
+    "pinyins": "pa",
+    "words": "",
+    "examples": "",
+    "note": "片假名；半浊音"
+  },
+  {
+    "char": "ピ",
+    "pinyins": "pi",
+    "words": "",
+    "examples": "",
+    "note": "片假名；半浊音"
+  },
+  {
+    "char": "プ",
+    "pinyins": "pu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；半浊音"
+  },
+  {
+    "char": "ペ",
+    "pinyins": "pe",
+    "words": "",
+    "examples": "",
+    "note": "片假名；半浊音"
+  },
+  {
+    "char": "ポ",
+    "pinyins": "po",
+    "words": "",
+    "examples": "",
+    "note": "片假名；半浊音"
+  },
+  {
+    "char": "キャ",
+    "pinyins": "kya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "キュ",
+    "pinyins": "kyu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "キョ",
+    "pinyins": "kyo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "シャ",
+    "pinyins": "sha",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "シュ",
+    "pinyins": "shu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ショ",
+    "pinyins": "sho",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "チャ",
+    "pinyins": "cha",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "チュ",
+    "pinyins": "chu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "チョ",
+    "pinyins": "cho",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ニャ",
+    "pinyins": "nya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ニュ",
+    "pinyins": "nyu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ニョ",
+    "pinyins": "nyo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ヒャ",
+    "pinyins": "hya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ヒュ",
+    "pinyins": "hyu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ヒョ",
+    "pinyins": "hyo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ミャ",
+    "pinyins": "mya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ミュ",
+    "pinyins": "myu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ミョ",
+    "pinyins": "myo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "リャ",
+    "pinyins": "rya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "リュ",
+    "pinyins": "ryu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "リョ",
+    "pinyins": "ryo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ギャ",
+    "pinyins": "gya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ギュ",
+    "pinyins": "gyu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ギョ",
+    "pinyins": "gyo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ジャ",
+    "pinyins": "ja",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ジュ",
+    "pinyins": "ju",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ジョ",
+    "pinyins": "jo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ヂャ",
+    "pinyins": "dya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ヂュ",
+    "pinyins": "dyu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ヂョ",
+    "pinyins": "dyo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ビャ",
+    "pinyins": "bya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ビュ",
+    "pinyins": "byu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ビョ",
+    "pinyins": "byo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ピャ",
+    "pinyins": "pya",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ピュ",
+    "pinyins": "pyu",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ピョ",
+    "pinyins": "pyo",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拗音"
+  },
+  {
+    "char": "ン",
+    "pinyins": "n",
+    "words": "",
+    "examples": "",
+    "note": "片假名；拨音"
+  },
+  {
+    "char": "いっ",
+    "pinyins": "ik，is，it，ip",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "っ",
+    "pinyins": "k，s，t，p",
+    "words": "って；っぽい",
+    "examples": "",
+    "note": "出现在词头，接续是か行、さ行、た行、ぱ行‌的假名"
+  },
+  {
+    "char": "出",
+    "pinyins": "da，de，ide",
+    "words": "",
+    "examples": "",
+    "note": "だ,で,しゅっ,いで"
+  },
+  {
+    "char": "手",
+    "pinyins": "te，syu，de，ma",
+    "words": "",
+    "examples": "",
+    "note": "て,しゅ,で,ま"
+  },
+  {
+    "char": "一",
+    "pinyins": "ichi，ik，is，it，ip",
+    "words": "",
+    "examples": "",
+    "note": "いち,いっ"
+  },
+  {
+    "char": "大",
+    "pinyins": "tai，dai，oo",
+    "words": "",
+    "examples": "",
+    "note": "たい,だい,おお"
+  },
+  {
+    "char": "気",
+    "pinyins": "ki，ke，ge",
+    "words": "",
+    "examples": "",
+    "note": "け,げ,き"
+  },
+  {
+    "char": "見",
+    "pinyins": "mi，ken",
+    "words": "",
+    "examples": "",
+    "note": "み,けん"
+  },
+  {
+    "char": "日",
+    "pinyins": "hi，ka，tte，ta",
+    "words": "",
+    "examples": "",
+    "note": "ひ,か,って,た"
+  },
+  {
+    "char": "物",
+    "pinyins": "mono",
+    "words": "",
+    "examples": "",
+    "note": "もの"
+  },
+  {
+    "char": "上",
+    "pinyins": "ue，a，aga，jyou",
+    "words": "",
+    "examples": "",
+    "note": "うえ,あ,あが,じょう"
+  },
+  {
+    "char": "人",
+    "pinyins": "nin，jin，to，na，na",
+    "words": "",
+    "examples": "",
+    "note": "にん,じん,とな,な"
+  },
+  {
+    "char": "行",
+    "pinyins": "i，kou",
+    "words": "",
+    "examples": "",
+    "note": "い,こう"
+  },
+  {
+    "char": "合",
+    "pinyins": "a，a，i",
+    "words": "",
+    "examples": "",
+    "note": "あ,あい"
+  },
+  {
+    "char": "生",
+    "pinyins": "i，ik，is，it，ip，ai",
+    "words": "",
+    "examples": "",
+    "note": "い,いっ,あい"
+  },
+  {
+    "char": "不",
+    "pinyins": "fu",
+    "words": "",
+    "examples": "",
+    "note": "ふ"
+  },
+  {
+    "char": "付",
+    "pinyins": "tsu，zu",
+    "words": "",
+    "examples": "",
+    "note": "つ,づ"
+  },
+  {
+    "char": "入",
+    "pinyins": "i，hai",
+    "words": "",
+    "examples": "",
+    "note": "い,はい"
+  },
+  {
+    "char": "目",
+    "pinyins": "moku，me",
+    "words": "",
+    "examples": "",
+    "note": "もく,め"
+  },
+  {
+    "char": "下",
+    "pinyins": "ka，moto，o",
+    "words": "",
+    "examples": "",
+    "note": "か,もと,お"
+  },
+  {
+    "char": "無",
+    "pinyins": "na，mu，bu",
+    "words": "",
+    "examples": "",
+    "note": "な,む,ぶ"
+  },
+  {
+    "char": "切",
+    "pinyins": "ki，gi，sai",
+    "words": "",
+    "examples": "",
+    "note": "き,ぎ,さい"
+  },
+  {
+    "char": "分",
+    "pinyins": "bun，fun，wa",
+    "words": "",
+    "examples": "",
+    "note": "ぶん,ふん,わ"
+  },
+  {
+    "char": "立",
+    "pinyins": "ta，da，ristu，tatsu",
+    "words": "",
+    "examples": "",
+    "note": "た,だ,り,たつ"
+  },
+  {
+    "char": "年",
+    "pinyins": "nen，to，shi",
+    "words": "",
+    "examples": "",
+    "note": "ねん,とし"
+  },
+  {
+    "char": "方",
+    "pinyins": "ga，ta，ka，ta，hou",
+    "words": "",
+    "examples": "",
+    "note": "がた,かた,ほう"
+  },
+  {
+    "char": "取",
+    "pinyins": "tori，dori，toru，doru",
+    "words": "",
+    "examples": "",
+    "note": "とり,どり,とる,どる"
+  },
+  {
+    "char": "学",
+    "pinyins": "gaku，gak",
+    "words": "",
+    "examples": "",
+    "note": "がく,がっ"
+  },
+  {
+    "char": "会",
+    "pinyins": "a，kai，e",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "心",
+    "pinyins": "shin，kokoro，gokoro",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "中",
+    "pinyins": "cyuu，naka，jyuu",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "間",
+    "pinyins": "aida，ma，dakara",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "地",
+    "pinyins": "ji，chi",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "通",
+    "pinyins": "tsuu，doo，kayo",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "的",
+    "pinyins": "teki",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "事",
+    "pinyins": "ji，koto",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "実",
+    "pinyins": "jitsu，kka",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "定",
+    "pinyins": "tei，jyou",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "何",
+    "pinyins": "i，ka，ga",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "引",
+    "pinyins": "in，bi",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "用",
+    "pinyins": "you",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "当",
+    "pinyins": "a",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "言",
+    "pinyins": "gen，goto，koto，i",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "本",
+    "pinyins": "hon，pon",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "力",
+    "pinyins": "ryoku",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "書",
+    "pinyins": "ka，kaki，ga，gaki",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "先",
+    "pinyins": "saki，sakki，sen",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "込",
+    "pinyins": "go，ko",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "場",
+    "pinyins": "ba，jyou",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "子",
+    "pinyins": "ko，shi，ji，su",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "発",
+    "pinyins": "hatsu，patsu",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "成",
+    "pinyins": "sei，na",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "回",
+    "pinyins": "mawa，kai",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "直",
+    "pinyins": "nao，cyoku",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "口",
+    "pinyins": "kuchi，guchi",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "作",
+    "pinyins": "saku，chiku，zuku",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "来",
+    "pinyins": "ki，kita，rai",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "着",
+    "pinyins": "tsu，gi，cyaku，ki，kise",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "金",
+    "pinyins": "gane，kane，kana，kin",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "前",
+    "pinyins": "mae，zen",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "意",
+    "pinyins": "i",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "理",
+    "pinyins": "ri",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "自",
+    "pinyins": "ko，ji，unu，ono",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "外",
+    "pinyins": "gai，soto，hoka",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "道",
+    "pinyins": "dou，michi",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "体",
+    "pinyins": "tai，karada",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "高",
+    "pinyins": "kou，daka，taka",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "名",
+    "pinyins": "na，mei",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "動",
+    "pinyins": "dou，ugo",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "時",
+    "pinyins": "ji，tsu，toki，doki",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "面",
+    "pinyins": "men，omo",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "足",
+    "pinyins": "ashi",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "水",
+    "pinyins": "sui，zui，mizu",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "所",
+    "pinyins": "tokoro，dokoro，iwa，syo，jyo",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "空",
+    "pinyins": "sora，zora，a，oro，kara，kuu",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "明",
+    "pinyins": "aka，asa，ashi，aki，a",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "暢",
+    "pinyins": "chyou",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "郭",
+    "pinyins": "kaku，kuruwa",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "倫",
+    "pinyins": "rin",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "累",
+    "pinyins": "rui",
+    "words": "",
+    "examples": "",
+    "note": ""
+  },
+  {
+    "char": "丑",
+    "pinyins": "syuu",
+    "words": "",
+    "examples": "",
+    "note": "しゅう"
+  },
+  {
+    "char": "业",
+    "pinyins": "gyou",
+    "words": "",
+    "examples": "",
+    "note": "ぎょう"
+  },
+  {
+    "char": "个",
+    "pinyins": "kako",
+    "words": "",
+    "examples": "",
+    "note": "か,こ"
+  },
+  {
+    "char": "为",
+    "pinyins": "tame",
+    "words": "",
+    "examples": "",
+    "note": "ため"
+  },
+  {
+    "char": "义",
+    "pinyins": "gi",
+    "words": "",
+    "examples": "",
+    "note": "ぎ"
+  },
+  {
+    "char": "习",
+    "pinyins": "narai",
+    "words": "",
+    "examples": "",
+    "note": "ならい"
+  },
+  {
+    "char": "书",
+    "pinyins": "syo",
+    "words": "",
+    "examples": "",
+    "note": "しょ"
+  },
+  {
+    "char": "亜",
+    "pinyins": "a",
+    "words": "",
+    "examples": "",
+    "note": "あ"
+  },
+  {
+    "char": "产",
+    "pinyins": "san",
+    "words": "",
+    "examples": "",
+    "note": "さん"
+  },
+  {
+    "char": "亩",
+    "pinyins": "une",
+    "words": "",
+    "examples": "",
+    "note": "うね"
+  },
+  {
+    "char": "亲",
+    "pinyins": "oya",
+    "words": "",
+    "examples": "",
+    "note": "おや"
+  },
+  {
+    "char": "亿",
+    "pinyins": "oku",
+    "words": "",
+    "examples": "",
+    "note": "おく"
+  },
+  {
+    "char": "仁",
+    "pinyins": "jin",
+    "words": "",
+    "examples": "",
+    "note": "じん"
+  },
+  {
+    "char": "仪",
+    "pinyins": "gi",
+    "words": "",
+    "examples": "",
+    "note": "ぎ"
+  },
+  {
+    "char": "众",
+    "pinyins": "syuu",
+    "words": "",
+    "examples": "",
+    "note": "しゅう"
+  },
+  {
+    "char": "伞",
+    "pinyins": "kasa",
+    "words": "",
+    "examples": "",
+    "note": "かさ"
+  },
+  {
+    "char": "伟",
+    "pinyins": "isamu",
+    "words": "",
+    "examples": "",
+    "note": "いさむ"
+  },
+  {
+    "char": "伤",
+    "pinyins": "kizu",
+    "words": "",
+    "examples": "",
+    "note": "きず"
+  },
+  {
+    "char": "伪",
+    "pinyins": "gi",
+    "words": "",
+    "examples": "",
+    "note": "ぎ"
+  },
+  {
+    "char": "佐",
+    "pinyins": "sa",
+    "words": "",
+    "examples": "",
+    "note": "さ"
+  },
+  {
+    "char": "佳",
+    "pinyins": "yoroshi",
+    "words": "",
+    "examples": "",
+    "note": "よろし"
+  },
+  {
+    "char": "侯",
+    "pinyins": "kou",
+    "words": "",
+    "examples": "",
+    "note": "こう"
+  },
+  {
+    "char": "俊",
+    "pinyins": "syun",
+    "words": "",
+    "examples": "",
+    "note": "しゅん"
+  },
+  {
+    "char": "债",
+    "pinyins": "sai",
+    "words": "",
+    "examples": "",
+    "note": "さい"
+  },
+  {
+    "char": "倾",
+    "pinyins": "nadare",
+    "words": "",
+    "examples": "",
+    "note": "なだれ"
+  },
+  {
+    "char": "偿",
+    "pinyins": "syou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "儒",
+    "pinyins": "ju",
+    "words": "",
+    "examples": "",
+    "note": "じゅ"
+  },
+  {
+    "char": "兴",
+    "pinyins": "kyou",
+    "words": "",
+    "examples": "",
+    "note": "きょう"
+  },
+  {
+    "char": "册",
+    "pinyins": "satsu",
+    "words": "",
+    "examples": "",
+    "note": "さつ"
+  },
+  {
+    "char": "军",
+    "pinyins": "gun",
+    "words": "",
+    "examples": "",
+    "note": "ぐん"
+  },
+  {
+    "char": "冲",
+    "pinyins": "oki，syou",
+    "words": "",
+    "examples": "",
+    "note": "おき,しょう"
+  },
+  {
+    "char": "决",
+    "pinyins": "ketsu",
+    "words": "",
+    "examples": "",
+    "note": "けつ"
+  },
+  {
+    "char": "况",
+    "pinyins": "kyou",
+    "words": "",
+    "examples": "",
+    "note": "きょう"
+  },
+  {
+    "char": "准",
+    "pinyins": "jyun",
+    "words": "",
+    "examples": "",
+    "note": "じゅん"
+  },
+  {
+    "char": "减",
+    "pinyins": "gen",
+    "words": "",
+    "examples": "",
+    "note": "げん"
+  },
+  {
+    "char": "刃",
+    "pinyins": "ha",
+    "words": "",
+    "examples": "",
+    "note": "は"
+  },
+  {
+    "char": "刚",
+    "pinyins": "gou",
+    "words": "",
+    "examples": "",
+    "note": "ごう"
+  },
+  {
+    "char": "剧",
+    "pinyins": "geki",
+    "words": "",
+    "examples": "",
+    "note": "げき"
+  },
+  {
+    "char": "劾",
+    "pinyins": "gai",
+    "words": "",
+    "examples": "",
+    "note": "がい"
+  },
+  {
+    "char": "势",
+    "pinyins": "zei",
+    "words": "",
+    "examples": "",
+    "note": "ぜい"
+  },
+  {
+    "char": "勲",
+    "pinyins": "isao",
+    "words": "",
+    "examples": "",
+    "note": "いさお"
+  },
+  {
+    "char": "勺",
+    "pinyins": "syaku",
+    "words": "",
+    "examples": "",
+    "note": "しゃく"
+  },
+  {
+    "char": "升",
+    "pinyins": "masu，noboru",
+    "words": "",
+    "examples": "",
+    "note": "ます,のぼる"
+  },
+  {
+    "char": "华",
+    "pinyins": "hana",
+    "words": "",
+    "examples": "",
+    "note": "はな"
+  },
+  {
+    "char": "协",
+    "pinyins": "kyou",
+    "words": "",
+    "examples": "",
+    "note": "きょう"
+  },
+  {
+    "char": "卫",
+    "pinyins": "mamoru",
+    "words": "",
+    "examples": "",
+    "note": "まもる"
+  },
+  {
+    "char": "叙",
+    "pinyins": "jyo",
+    "words": "",
+    "examples": "",
+    "note": "じょ"
+  },
+  {
+    "char": "后",
+    "pinyins": "gokisaki",
+    "words": "",
+    "examples": "",
+    "note": "ご,きさき"
+  },
+  {
+    "char": "吓",
+    "pinyins": "kaku",
+    "words": "",
+    "examples": "",
+    "note": "かく"
+  },
+  {
+    "char": "启",
+    "pinyins": "kei",
+    "words": "",
+    "examples": "",
+    "note": "けい"
+  },
+  {
+    "char": "呉",
+    "pinyins": "kure",
+    "words": "",
+    "examples": "",
+    "note": "くれ"
+  },
+  {
+    "char": "员",
+    "pinyins": "in",
+    "words": "",
+    "examples": "",
+    "note": "いん"
+  },
+  {
+    "char": "咏",
+    "pinyins": "ei",
+    "words": "",
+    "examples": "",
+    "note": "えい"
+  },
+  {
+    "char": "响",
+    "pinyins": "hibiki",
+    "words": "",
+    "examples": "",
+    "note": "ひびき"
+  },
+  {
+    "char": "唤",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "嗣",
+    "pinyins": "tsugu",
+    "words": "",
+    "examples": "",
+    "note": "つぐ"
+  },
+  {
+    "char": "囚",
+    "pinyins": "syuu",
+    "words": "",
+    "examples": "",
+    "note": "しゅう"
+  },
+  {
+    "char": "园",
+    "pinyins": "en",
+    "words": "",
+    "examples": "",
+    "note": "えん"
+  },
+  {
+    "char": "圣",
+    "pinyins": "hijiri",
+    "words": "",
+    "examples": "",
+    "note": "ひじり"
+  },
+  {
+    "char": "场",
+    "pinyins": "ba",
+    "words": "",
+    "examples": "",
+    "note": "ば"
+  },
+  {
+    "char": "坑",
+    "pinyins": "kou",
+    "words": "",
+    "examples": "",
+    "note": "こう"
+  },
+  {
+    "char": "块",
+    "pinyins": "katamari",
+    "words": "",
+    "examples": "",
+    "note": "かたまり"
+  },
+  {
+    "char": "坚",
+    "pinyins": "ken",
+    "words": "",
+    "examples": "",
+    "note": "けん"
+  },
+  {
+    "char": "垦",
+    "pinyins": "hiraku",
+    "words": "",
+    "examples": "",
+    "note": "ひらく"
+  },
+  {
+    "char": "壌",
+    "pinyins": "yuzuru",
+    "words": "",
+    "examples": "",
+    "note": "ゆずる"
+  },
+  {
+    "char": "壱",
+    "pinyins": "ichi",
+    "words": "",
+    "examples": "",
+    "note": "いち"
+  },
+  {
+    "char": "壳",
+    "pinyins": "kara",
+    "words": "",
+    "examples": "",
+    "note": "から"
+  },
+  {
+    "char": "夸",
+    "pinyins": "hoko",
+    "words": "",
+    "examples": "",
+    "note": "ほこ"
+  },
+  {
+    "char": "妆",
+    "pinyins": "syou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "姓",
+    "pinyins": "sei",
+    "words": "",
+    "examples": "",
+    "note": "せい"
+  },
+  {
+    "char": "姻",
+    "pinyins": "in",
+    "words": "",
+    "examples": "",
+    "note": "いん"
+  },
+  {
+    "char": "娠",
+    "pinyins": "shin",
+    "words": "",
+    "examples": "",
+    "note": "しん"
+  },
+  {
+    "char": "孔",
+    "pinyins": "ana",
+    "words": "",
+    "examples": "",
+    "note": "あな"
+  },
+  {
+    "char": "审",
+    "pinyins": "shin",
+    "words": "",
+    "examples": "",
+    "note": "しん"
+  },
+  {
+    "char": "宪",
+    "pinyins": "ken",
+    "words": "",
+    "examples": "",
+    "note": "けん"
+  },
+  {
+    "char": "宫",
+    "pinyins": "miya",
+    "words": "",
+    "examples": "",
+    "note": "みや"
+  },
+  {
+    "char": "宰",
+    "pinyins": "tsukasa",
+    "words": "",
+    "examples": "",
+    "note": "つかさ"
+  },
+  {
+    "char": "宵",
+    "pinyins": "yoi",
+    "words": "",
+    "examples": "",
+    "note": "よい"
+  },
+  {
+    "char": "寡",
+    "pinyins": "yamome",
+    "words": "",
+    "examples": "",
+    "note": "やもめ"
+  },
+  {
+    "char": "寻",
+    "pinyins": "hiro",
+    "words": "",
+    "examples": "",
+    "note": "ひろ"
+  },
+  {
+    "char": "尉",
+    "pinyins": "i",
+    "words": "",
+    "examples": "",
+    "note": "い"
+  },
+  {
+    "char": "尺",
+    "pinyins": "syaku",
+    "words": "",
+    "examples": "",
+    "note": "しゃく"
+  },
+  {
+    "char": "崎",
+    "pinyins": "zaki",
+    "words": "",
+    "examples": "",
+    "note": "ざき"
+  },
+  {
+    "char": "帅",
+    "pinyins": "sochi",
+    "words": "",
+    "examples": "",
+    "note": "そち"
+  },
+  {
+    "char": "师",
+    "pinyins": "shi",
+    "words": "",
+    "examples": "",
+    "note": "し"
+  },
+  {
+    "char": "庆",
+    "pinyins": "kei",
+    "words": "",
+    "examples": "",
+    "note": "けい"
+  },
+  {
+    "char": "库",
+    "pinyins": "ko",
+    "words": "",
+    "examples": "",
+    "note": "こ"
+  },
+  {
+    "char": "开",
+    "pinyins": "kai",
+    "words": "",
+    "examples": "",
+    "note": "かい"
+  },
+  {
+    "char": "异",
+    "pinyins": "i",
+    "words": "",
+    "examples": "",
+    "note": "い"
+  },
+  {
+    "char": "弃",
+    "pinyins": "su",
+    "words": "",
+    "examples": "",
+    "note": "す"
+  },
+  {
+    "char": "弓",
+    "pinyins": "yumi",
+    "words": "",
+    "examples": "",
+    "note": "ゆみ"
+  },
+  {
+    "char": "弦",
+    "pinyins": "tsuru",
+    "words": "",
+    "examples": "",
+    "note": "つる"
+  },
+  {
+    "char": "强",
+    "pinyins": "tsuyoshi",
+    "words": "",
+    "examples": "",
+    "note": "つよし"
+  },
+  {
+    "char": "征",
+    "pinyins": "tadashi",
+    "words": "",
+    "examples": "",
+    "note": "ただし"
+  },
+  {
+    "char": "忆",
+    "pinyins": "oku",
+    "words": "",
+    "examples": "",
+    "note": "おく"
+  },
+  {
+    "char": "恒",
+    "pinyins": "tsune",
+    "words": "",
+    "examples": "",
+    "note": "つね"
+  },
+  {
+    "char": "恳",
+    "pinyins": "kon",
+    "words": "",
+    "examples": "",
+    "note": "こん"
+  },
+  {
+    "char": "悦",
+    "pinyins": "etsu",
+    "words": "",
+    "examples": "",
+    "note": "えつ"
+  },
+  {
+    "char": "悬",
+    "pinyins": "kake",
+    "words": "",
+    "examples": "",
+    "note": "かけ"
+  },
+  {
+    "char": "惊",
+    "pinyins": "odoroki",
+    "words": "",
+    "examples": "",
+    "note": "おどろき"
+  },
+  {
+    "char": "惯",
+    "pinyins": "na",
+    "words": "",
+    "examples": "",
+    "note": "な"
+  },
+  {
+    "char": "愿",
+    "pinyins": "negai",
+    "words": "",
+    "examples": "",
+    "note": "ねがい"
+  },
+  {
+    "char": "慈",
+    "pinyins": "megumu",
+    "words": "",
+    "examples": "",
+    "note": "めぐむ"
+  },
+  {
+    "char": "执",
+    "pinyins": "mori",
+    "words": "",
+    "examples": "",
+    "note": "もり"
+  },
+  {
+    "char": "抄",
+    "pinyins": "shou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "护",
+    "pinyins": "yuzuru",
+    "words": "",
+    "examples": "",
+    "note": "ゆずる"
+  },
+  {
+    "char": "拟",
+    "pinyins": "gi",
+    "words": "",
+    "examples": "",
+    "note": "ぎ"
+  },
+  {
+    "char": "拷",
+    "pinyins": "gou",
+    "words": "",
+    "examples": "",
+    "note": "ごう"
+  },
+  {
+    "char": "挂",
+    "pinyins": "kakari",
+    "words": "",
+    "examples": "",
+    "note": "かかり"
+  },
+  {
+    "char": "挥",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "き"
+  },
+  {
+    "char": "换",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "斤",
+    "pinyins": "kin",
+    "words": "",
+    "examples": "",
+    "note": "きん"
+  },
+  {
+    "char": "斥",
+    "pinyins": "seki",
+    "words": "",
+    "examples": "",
+    "note": "せき"
+  },
+  {
+    "char": "时",
+    "pinyins": "toki",
+    "words": "",
+    "examples": "",
+    "note": "とき"
+  },
+  {
+    "char": "昭",
+    "pinyins": "akira",
+    "words": "",
+    "examples": "",
+    "note": "あきら"
+  },
+  {
+    "char": "暂",
+    "pinyins": "zan",
+    "words": "",
+    "examples": "",
+    "note": "ざん"
+  },
+  {
+    "char": "术",
+    "pinyins": "jutsu",
+    "words": "",
+    "examples": "",
+    "note": "じゅつ"
+  },
+  {
+    "char": "朱",
+    "pinyins": "shu",
+    "words": "",
+    "examples": "",
+    "note": "しゅ"
+  },
+  {
+    "char": "杀",
+    "pinyins": "koro",
+    "words": "",
+    "examples": "",
+    "note": "ころ"
+  },
+  {
+    "char": "杰",
+    "pinyins": "suguru",
+    "words": "",
+    "examples": "",
+    "note": "すぐる"
+  },
+  {
+    "char": "极",
+    "pinyins": "kyoku",
+    "words": "",
+    "examples": "",
+    "note": "きょく"
+  },
+  {
+    "char": "构",
+    "pinyins": "kamae",
+    "words": "",
+    "examples": "",
+    "note": "かまえ"
+  },
+  {
+    "char": "树",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "き"
+  },
+  {
+    "char": "桑",
+    "pinyins": "kuwa",
+    "words": "",
+    "examples": "",
+    "note": "くわ"
+  },
+  {
+    "char": "桥",
+    "pinyins": "hashi",
+    "words": "",
+    "examples": "",
+    "note": "はし"
+  },
+  {
+    "char": "棺",
+    "pinyins": "hitsugi",
+    "words": "",
+    "examples": "",
+    "note": "ひつぎ"
+  },
+  {
+    "char": "榨",
+    "pinyins": "shibo",
+    "words": "",
+    "examples": "",
+    "note": "しぼ"
+  },
+  {
+    "char": "款",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "殉",
+    "pinyins": "jun",
+    "words": "",
+    "examples": "",
+    "note": "じゅん"
+  },
+  {
+    "char": "汉",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "江",
+    "pinyins": "e",
+    "words": "",
+    "examples": "",
+    "note": "え"
+  },
+  {
+    "char": "沟",
+    "pinyins": "mizo",
+    "words": "",
+    "examples": "",
+    "note": "みぞ"
+  },
+  {
+    "char": "洁",
+    "pinyins": "kiyoshi",
+    "words": "",
+    "examples": "",
+    "note": "きよし"
+  },
+  {
+    "char": "浦",
+    "pinyins": "ura",
+    "words": "",
+    "examples": "",
+    "note": "うら"
+  },
+  {
+    "char": "涡",
+    "pinyins": "uzu",
+    "words": "",
+    "examples": "",
+    "note": "うず"
+  },
+  {
+    "char": "润",
+    "pinyins": "jun",
+    "words": "",
+    "examples": "",
+    "note": "じゅん"
+  },
+  {
+    "char": "渓",
+    "pinyins": "kei",
+    "words": "",
+    "examples": "",
+    "note": "けい"
+  },
+  {
+    "char": "渔",
+    "pinyins": "ryou",
+    "words": "",
+    "examples": "",
+    "note": "りょう"
+  },
+  {
+    "char": "湖",
+    "pinyins": "mizuumi",
+    "words": "",
+    "examples": "",
+    "note": "みずうみ"
+  },
+  {
+    "char": "滋",
+    "pinyins": "shigeru",
+    "words": "",
+    "examples": "",
+    "note": "しげる"
+  },
+  {
+    "char": "漆",
+    "pinyins": "urushi",
+    "words": "",
+    "examples": "",
+    "note": "うるし"
+  },
+  {
+    "char": "潟",
+    "pinyins": "kata",
+    "words": "",
+    "examples": "",
+    "note": "かた"
+  },
+  {
+    "char": "灾",
+    "pinyins": "wazawa",
+    "words": "",
+    "examples": "",
+    "note": "わざわ"
+  },
+  {
+    "char": "烟",
+    "pinyins": "kemuri",
+    "words": "",
+    "examples": "",
+    "note": "けむり"
+  },
+  {
+    "char": "爱",
+    "pinyins": "ai",
+    "words": "",
+    "examples": "",
+    "note": "あい"
+  },
+  {
+    "char": "爵",
+    "pinyins": "taka",
+    "words": "",
+    "examples": "",
+    "note": "たか"
+  },
+  {
+    "char": "狩",
+    "pinyins": "kari",
+    "words": "",
+    "examples": "",
+    "note": "かり"
+  },
+  {
+    "char": "狱",
+    "pinyins": "goku",
+    "words": "",
+    "examples": "",
+    "note": "ごく"
+  },
+  {
+    "char": "环",
+    "pinyins": "wa",
+    "words": "",
+    "examples": "",
+    "note": "わ"
+  },
+  {
+    "char": "现",
+    "pinyins": "utsutsu",
+    "words": "",
+    "examples": "",
+    "note": "うつつ"
+  },
+  {
+    "char": "玺",
+    "pinyins": "ji",
+    "words": "",
+    "examples": "",
+    "note": "じ"
+  },
+  {
+    "char": "琴",
+    "pinyins": "koto",
+    "words": "",
+    "examples": "",
+    "note": "こと"
+  },
+  {
+    "char": "疫",
+    "pinyins": "eki",
+    "words": "",
+    "examples": "",
+    "note": "えき"
+  },
+  {
+    "char": "监",
+    "pinyins": "ran",
+    "words": "",
+    "examples": "",
+    "note": "らん"
+  },
+  {
+    "char": "矫",
+    "pinyins": "kyou",
+    "words": "",
+    "examples": "",
+    "note": "きょう"
+  },
+  {
+    "char": "硝",
+    "pinyins": "shou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "确",
+    "pinyins": "akira",
+    "words": "",
+    "examples": "",
+    "note": "あきら"
+  },
+  {
+    "char": "碁",
+    "pinyins": "go",
+    "words": "",
+    "examples": "",
+    "note": "ご"
+  },
+  {
+    "char": "磁",
+    "pinyins": "ji",
+    "words": "",
+    "examples": "",
+    "note": "じ"
+  },
+  {
+    "char": "礁",
+    "pinyins": "shou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "祸",
+    "pinyins": "wazawai",
+    "words": "",
+    "examples": "",
+    "note": "わざわい"
+  },
+  {
+    "char": "种",
+    "pinyins": "tane",
+    "words": "",
+    "examples": "",
+    "note": "たね"
+  },
+  {
+    "char": "积",
+    "pinyins": "seki",
+    "words": "",
+    "examples": "",
+    "note": "せき"
+  },
+  {
+    "char": "穷",
+    "pinyins": "kyuu",
+    "words": "",
+    "examples": "",
+    "note": "きゅう"
+  },
+  {
+    "char": "竞",
+    "pinyins": "seri",
+    "words": "",
+    "examples": "",
+    "note": "せり"
+  },
+  {
+    "char": "简",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "紧",
+    "pinyins": "mishito",
+    "words": "",
+    "examples": "",
+    "note": "みしと"
+  },
+  {
+    "char": "纠",
+    "pinyins": "tadasu",
+    "words": "",
+    "examples": "",
+    "note": "ただす"
+  },
+  {
+    "char": "红",
+    "pinyins": "beni",
+    "words": "",
+    "examples": "",
+    "note": "べに"
+  },
+  {
+    "char": "级",
+    "pinyins": "kyuu",
+    "words": "",
+    "examples": "",
+    "note": "きゅう"
+  },
+  {
+    "char": "纪",
+    "pinyins": "osamu",
+    "words": "",
+    "examples": "",
+    "note": "おさむ"
+  },
+  {
+    "char": "纬",
+    "pinyins": "i",
+    "words": "",
+    "examples": "",
+    "note": "い"
+  },
+  {
+    "char": "纯",
+    "pinyins": "jun",
+    "words": "",
+    "examples": "",
+    "note": "じゅん"
+  },
+  {
+    "char": "纲",
+    "pinyins": "tsuna",
+    "words": "",
+    "examples": "",
+    "note": "つな"
+  },
+  {
+    "char": "纸",
+    "pinyins": "kami",
+    "words": "",
+    "examples": "",
+    "note": "かみ"
+  },
+  {
+    "char": "绀",
+    "pinyins": "kon",
+    "words": "",
+    "examples": "",
+    "note": "こん"
+  },
+  {
+    "char": "绅",
+    "pinyins": "shin",
+    "words": "",
+    "examples": "",
+    "note": "しん"
+  },
+  {
+    "char": "细",
+    "pinyins": "hoso",
+    "words": "",
+    "examples": "",
+    "note": "ほそ"
+  },
+  {
+    "char": "织",
+    "pinyins": "ori",
+    "words": "",
+    "examples": "",
+    "note": "おり"
+  },
+  {
+    "char": "终",
+    "pinyins": "shuu",
+    "words": "",
+    "examples": "",
+    "note": "しゅう"
+  },
+  {
+    "char": "绍",
+    "pinyins": "tasuku",
+    "words": "",
+    "examples": "",
+    "note": "たすく"
+  },
+  {
+    "char": "结",
+    "pinyins": "musubu",
+    "words": "",
+    "examples": "",
+    "note": "むすぶ"
+  },
+  {
+    "char": "给",
+    "pinyins": "kyuu",
+    "words": "",
+    "examples": "",
+    "note": "きゅう"
+  },
+  {
+    "char": "绞",
+    "pinyins": "shibori",
+    "words": "",
+    "examples": "",
+    "note": "しぼり"
+  },
+  {
+    "char": "绢",
+    "pinyins": "kinu",
+    "words": "",
+    "examples": "",
+    "note": "きぬ"
+  },
+  {
+    "char": "绩",
+    "pinyins": "tsumugi",
+    "words": "",
+    "examples": "",
+    "note": "つむぎ"
+  },
+  {
+    "char": "绪",
+    "pinyins": "cho",
+    "words": "",
+    "examples": "",
+    "note": "ちょ"
+  },
+  {
+    "char": "维",
+    "pinyins": "yui",
+    "words": "",
+    "examples": "",
+    "note": "ゆい"
+  },
+  {
+    "char": "缓",
+    "pinyins": "yuru",
+    "words": "",
+    "examples": "",
+    "note": "ゆる"
+  },
+  {
+    "char": "缩",
+    "pinyins": "chijimi",
+    "words": "",
+    "examples": "",
+    "note": "ちぢみ"
+  },
+  {
+    "char": "缲",
+    "pinyins": "kuri",
+    "words": "",
+    "examples": "",
+    "note": "くり"
+  },
+  {
+    "char": "翁",
+    "pinyins": "okina",
+    "words": "",
+    "examples": "",
+    "note": "おきな"
+  },
+  {
+    "char": "职",
+    "pinyins": "shoku",
+    "words": "",
+    "examples": "",
+    "note": "しょく"
+  },
+  {
+    "char": "肢",
+    "pinyins": "ashi",
+    "words": "",
+    "examples": "",
+    "note": "あし"
+  },
+  {
+    "char": "胁",
+    "pinyins": "obiya",
+    "words": "",
+    "examples": "",
+    "note": "おびや"
+  },
+  {
+    "char": "胜",
+    "pinyins": "katsu",
+    "words": "",
+    "examples": "",
+    "note": "かつ"
+  },
+  {
+    "char": "舍",
+    "pinyins": "sha",
+    "words": "",
+    "examples": "",
+    "note": "しゃ"
+  },
+  {
+    "char": "舟",
+    "pinyins": "fune",
+    "words": "",
+    "examples": "",
+    "note": "ふね"
+  },
+  {
+    "char": "舰",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "茎",
+    "pinyins": "kuki",
+    "words": "",
+    "examples": "",
+    "note": "くき"
+  },
+  {
+    "char": "获",
+    "pinyins": "eyutaka",
+    "words": "",
+    "examples": "",
+    "note": "え,ゆたか"
+  },
+  {
+    "char": "菌",
+    "pinyins": "kin",
+    "words": "",
+    "examples": "",
+    "note": "きん"
+  },
+  {
+    "char": "薪",
+    "pinyins": "takigi",
+    "words": "",
+    "examples": "",
+    "note": "たきぎ"
+  },
+  {
+    "char": "薫",
+    "pinyins": "kaoru",
+    "words": "",
+    "examples": "",
+    "note": "かおる"
+  },
+  {
+    "char": "虞",
+    "pinyins": "osore",
+    "words": "",
+    "examples": "",
+    "note": "おそれ"
+  },
+  {
+    "char": "蚕",
+    "pinyins": "kaiko",
+    "words": "",
+    "examples": "",
+    "note": "かいこ"
+  },
+  {
+    "char": "袭",
+    "pinyins": "osoi",
+    "words": "",
+    "examples": "",
+    "note": "おそい"
+  },
+  {
+    "char": "褐",
+    "pinyins": "katsu",
+    "words": "",
+    "examples": "",
+    "note": "かつ"
+  },
+  {
+    "char": "见",
+    "pinyins": "mi",
+    "words": "",
+    "examples": "",
+    "note": "み"
+  },
+  {
+    "char": "规",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "き"
+  },
+  {
+    "char": "视",
+    "pinyins": "shi",
+    "words": "",
+    "examples": "",
+    "note": "し"
+  },
+  {
+    "char": "计",
+    "pinyins": "kei",
+    "words": "",
+    "examples": "",
+    "note": "けい"
+  },
+  {
+    "char": "训",
+    "pinyins": "kun",
+    "words": "",
+    "examples": "",
+    "note": "くん"
+  },
+  {
+    "char": "议",
+    "pinyins": "gi",
+    "words": "",
+    "examples": "",
+    "note": "ぎ"
+  },
+  {
+    "char": "记",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "き"
+  },
+  {
+    "char": "讲",
+    "pinyins": "kou",
+    "words": "",
+    "examples": "",
+    "note": "こう"
+  },
+  {
+    "char": "许",
+    "pinyins": "moto",
+    "words": "",
+    "examples": "",
+    "note": "もと"
+  },
+  {
+    "char": "讼",
+    "pinyins": "shou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "证",
+    "pinyins": "akashi",
+    "words": "",
+    "examples": "",
+    "note": "あかし"
+  },
+  {
+    "char": "识",
+    "pinyins": "satoshi",
+    "words": "",
+    "examples": "",
+    "note": "さとし"
+  },
+  {
+    "char": "诈",
+    "pinyins": "sa",
+    "words": "",
+    "examples": "",
+    "note": "さ"
+  },
+  {
+    "char": "诊",
+    "pinyins": "mi",
+    "words": "",
+    "examples": "",
+    "note": "み"
+  },
+  {
+    "char": "词",
+    "pinyins": "shi",
+    "words": "",
+    "examples": "",
+    "note": "し"
+  },
+  {
+    "char": "诏",
+    "pinyins": "mikotonori",
+    "words": "",
+    "examples": "",
+    "note": "みことのり"
+  },
+  {
+    "char": "试",
+    "pinyins": "tameshi",
+    "words": "",
+    "examples": "",
+    "note": "ためし"
+  },
+  {
+    "char": "诗",
+    "pinyins": "shi",
+    "words": "",
+    "examples": "",
+    "note": "し"
+  },
+  {
+    "char": "诘",
+    "pinyins": "tsume",
+    "words": "",
+    "examples": "",
+    "note": "つめ"
+  },
+  {
+    "char": "诚",
+    "pinyins": "makoto",
+    "words": "",
+    "examples": "",
+    "note": "まこと"
+  },
+  {
+    "char": "该",
+    "pinyins": "gai",
+    "words": "",
+    "examples": "",
+    "note": "がい"
+  },
+  {
+    "char": "详",
+    "pinyins": "shou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "语",
+    "pinyins": "go",
+    "words": "",
+    "examples": "",
+    "note": "ご"
+  },
+  {
+    "char": "误",
+    "pinyins": "go",
+    "words": "",
+    "examples": "",
+    "note": "ご"
+  },
+  {
+    "char": "请",
+    "pinyins": "shou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "诸",
+    "pinyins": "moro",
+    "words": "",
+    "examples": "",
+    "note": "もろ"
+  },
+  {
+    "char": "课",
+    "pinyins": "ka",
+    "words": "",
+    "examples": "",
+    "note": "か"
+  },
+  {
+    "char": "谒",
+    "pinyins": "etsu",
+    "words": "",
+    "examples": "",
+    "note": "えつ"
+  },
+  {
+    "char": "谘",
+    "pinyins": "tou",
+    "words": "",
+    "examples": "",
+    "note": "とう"
+  },
+  {
+    "char": "谢",
+    "pinyins": "sha",
+    "words": "",
+    "examples": "",
+    "note": "しゃ"
+  },
+  {
+    "char": "谦",
+    "pinyins": "ken",
+    "words": "",
+    "examples": "",
+    "note": "けん"
+  },
+  {
+    "char": "谨",
+    "pinyins": "susumu",
+    "words": "",
+    "examples": "",
+    "note": "すすむ"
+  },
+  {
+    "char": "贝",
+    "pinyins": "kai",
+    "words": "",
+    "examples": "",
+    "note": "かい"
+  },
+  {
+    "char": "贡",
+    "pinyins": "mitsugu",
+    "words": "",
+    "examples": "",
+    "note": "みつぐ"
+  },
+  {
+    "char": "财",
+    "pinyins": "zai",
+    "words": "",
+    "examples": "",
+    "note": "ざい"
+  },
+  {
+    "char": "责",
+    "pinyins": "seki",
+    "words": "",
+    "examples": "",
+    "note": "せき"
+  },
+  {
+    "char": "贤",
+    "pinyins": "ken",
+    "words": "",
+    "examples": "",
+    "note": "けん"
+  },
+  {
+    "char": "货",
+    "pinyins": "ka",
+    "words": "",
+    "examples": "",
+    "note": "か"
+  },
+  {
+    "char": "质",
+    "pinyins": "shitsu",
+    "words": "",
+    "examples": "",
+    "note": "しつ"
+  },
+  {
+    "char": "购",
+    "pinyins": "kou",
+    "words": "",
+    "examples": "",
+    "note": "こう"
+  },
+  {
+    "char": "贯",
+    "pinyins": "nuki",
+    "words": "",
+    "examples": "",
+    "note": "ぬき"
+  },
+  {
+    "char": "贵",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "き"
+  },
+  {
+    "char": "贺",
+    "pinyins": "ga",
+    "words": "",
+    "examples": "",
+    "note": "が"
+  },
+  {
+    "char": "资",
+    "pinyins": "shi",
+    "words": "",
+    "examples": "",
+    "note": "し"
+  },
+  {
+    "char": "赏",
+    "pinyins": "shou",
+    "words": "",
+    "examples": "",
+    "note": "しょう"
+  },
+  {
+    "char": "赐",
+    "pinyins": "tamamono",
+    "words": "",
+    "examples": "",
+    "note": "たまもの"
+  },
+  {
+    "char": "车",
+    "pinyins": "kuruma",
+    "words": "",
+    "examples": "",
+    "note": "くるま"
+  },
+  {
+    "char": "轨",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "き"
+  },
+  {
+    "char": "轩",
+    "pinyins": "noki",
+    "words": "",
+    "examples": "",
+    "note": "のき"
+  },
+  {
+    "char": "轴",
+    "pinyins": "jiku",
+    "words": "",
+    "examples": "",
+    "note": "じく"
+  },
+  {
+    "char": "载",
+    "pinyins": "mitsuru",
+    "words": "",
+    "examples": "",
+    "note": "みつる"
+  },
+  {
+    "char": "较",
+    "pinyins": "kura",
+    "words": "",
+    "examples": "",
+    "note": "くら"
+  },
+  {
+    "char": "辉",
+    "pinyins": "teru",
+    "words": "",
+    "examples": "",
+    "note": "てる"
+  },
+  {
+    "char": "辖",
+    "pinyins": "katsu",
+    "words": "",
+    "examples": "",
+    "note": "かつ"
+  },
+  {
+    "char": "过",
+    "pinyins": "ka",
+    "words": "",
+    "examples": "",
+    "note": "か"
+  },
+  {
+    "char": "運",
+    "pinyins": "un",
+    "words": "",
+    "examples": "",
+    "note": "うん"
+  },
+  {
+    "char": "还",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "進",
+    "pinyins": "susumu",
+    "words": "",
+    "examples": "",
+    "note": "すすむ"
+  },
+  {
+    "char": "遠",
+    "pinyins": "en",
+    "words": "",
+    "examples": "",
+    "note": "えん"
+  },
+  {
+    "char": "違",
+    "pinyins": "chigai",
+    "words": "",
+    "examples": "",
+    "note": "ちがい"
+  },
+  {
+    "char": "逝",
+    "pinyins": "yu",
+    "words": "",
+    "examples": "",
+    "note": "ゆ"
+  },
+  {
+    "char": "遗",
+    "pinyins": "i",
+    "words": "",
+    "examples": "",
+    "note": "い"
+  },
+  {
+    "char": "遵",
+    "pinyins": "jun",
+    "words": "",
+    "examples": "",
+    "note": "じゅん"
+  },
+  {
+    "char": "郡",
+    "pinyins": "gun",
+    "words": "",
+    "examples": "",
+    "note": "ぐん"
+  },
+  {
+    "char": "酌",
+    "pinyins": "shaku",
+    "words": "",
+    "examples": "",
+    "note": "しゃく"
+  },
+  {
+    "char": "酵",
+    "pinyins": "kou",
+    "words": "",
+    "examples": "",
+    "note": "こう"
+  },
+  {
+    "char": "鉴",
+    "pinyins": "kagami",
+    "words": "",
+    "examples": "",
+    "note": "かがみ"
+  },
+  {
+    "char": "针",
+    "pinyins": "hari",
+    "words": "",
+    "examples": "",
+    "note": "はり"
+  },
+  {
+    "char": "钟",
+    "pinyins": "kane",
+    "words": "",
+    "examples": "",
+    "note": "かね"
+  },
+  {
+    "char": "钢",
+    "pinyins": "kou",
+    "words": "",
+    "examples": "",
+    "note": "こう"
+  },
+  {
+    "char": "铅",
+    "pinyins": "namari",
+    "words": "",
+    "examples": "",
+    "note": "なまり"
+  },
+  {
+    "char": "铳",
+    "pinyins": "juu",
+    "words": "",
+    "examples": "",
+    "note": "じゅう"
+  },
+  {
+    "char": "银",
+    "pinyins": "gin",
+    "words": "",
+    "examples": "",
+    "note": "ぎん"
+  },
+  {
+    "char": "锁",
+    "pinyins": "kusari",
+    "words": "",
+    "examples": "",
+    "note": "くさり"
+  },
+  {
+    "char": "锐",
+    "pinyins": "hayashi",
+    "words": "",
+    "examples": "",
+    "note": "はやし"
+  },
+  {
+    "char": "错",
+    "pinyins": "saku",
+    "words": "",
+    "examples": "",
+    "note": "さく"
+  },
+  {
+    "char": "锤",
+    "pinyins": "omori",
+    "words": "",
+    "examples": "",
+    "note": "おもり"
+  },
+  {
+    "char": "锭",
+    "pinyins": "jou",
+    "words": "",
+    "examples": "",
+    "note": "じょう"
+  },
+  {
+    "char": "镜",
+    "pinyins": "kagami",
+    "words": "",
+    "examples": "",
+    "note": "かがみ"
+  },
+  {
+    "char": "闲",
+    "pinyins": "hima",
+    "words": "",
+    "examples": "",
+    "note": "ひま"
+  },
+  {
+    "char": "间",
+    "pinyins": "aida",
+    "words": "",
+    "examples": "",
+    "note": "あいだ"
+  },
+  {
+    "char": "阁",
+    "pinyins": "kaku",
+    "words": "",
+    "examples": "",
+    "note": "かく"
+  },
+  {
+    "char": "阅",
+    "pinyins": "etsu",
+    "words": "",
+    "examples": "",
+    "note": "えつ"
+  },
+  {
+    "char": "阴",
+    "pinyins": "kage",
+    "words": "",
+    "examples": "",
+    "note": "かげ"
+  },
+  {
+    "char": "阵",
+    "pinyins": "jin",
+    "words": "",
+    "examples": "",
+    "note": "じん"
+  },
+  {
+    "char": "阶",
+    "pinyins": "kai",
+    "words": "",
+    "examples": "",
+    "note": "かい"
+  },
+  {
+    "char": "际",
+    "pinyins": "sai",
+    "words": "",
+    "examples": "",
+    "note": "さい"
+  },
+  {
+    "char": "雅",
+    "pinyins": "ga",
+    "words": "",
+    "examples": "",
+    "note": "が"
+  },
+  {
+    "char": "雌",
+    "pinyins": "mesu",
+    "words": "",
+    "examples": "",
+    "note": "めす"
+  },
+  {
+    "char": "韵",
+    "pinyins": "in",
+    "words": "",
+    "examples": "",
+    "note": "いん"
+  },
+  {
+    "char": "项",
+    "pinyins": "kou",
+    "words": "",
+    "examples": "",
+    "note": "こう"
+  },
+  {
+    "char": "顺",
+    "pinyins": "jun",
+    "words": "",
+    "examples": "",
+    "note": "じゅん"
+  },
+  {
+    "char": "顽",
+    "pinyins": "gan",
+    "words": "",
+    "examples": "",
+    "note": "がん"
+  },
+  {
+    "char": "顾",
+    "pinyins": "kaerimi",
+    "words": "",
+    "examples": "",
+    "note": "かえりみ"
+  },
+  {
+    "char": "颜",
+    "pinyins": "kao",
+    "words": "",
+    "examples": "",
+    "note": "かお"
+  },
+  {
+    "char": "饥",
+    "pinyins": "u",
+    "words": "",
+    "examples": "",
+    "note": "う"
+  },
+  {
+    "char": "饮",
+    "pinyins": "in",
+    "words": "",
+    "examples": "",
+    "note": "いん"
+  },
+  {
+    "char": "饰",
+    "pinyins": "kazari",
+    "words": "",
+    "examples": "",
+    "note": "かざり"
+  },
+  {
+    "char": "饲",
+    "pinyins": "ka",
+    "words": "",
+    "examples": "",
+    "note": "か"
+  },
+  {
+    "char": "饿",
+    "pinyins": "ga",
+    "words": "",
+    "examples": "",
+    "note": "が"
+  },
+  {
+    "char": "馆",
+    "pinyins": "kan",
+    "words": "",
+    "examples": "",
+    "note": "かん"
+  },
+  {
+    "char": "骑",
+    "pinyins": "ki",
+    "words": "",
+    "examples": "",
+    "note": "き"
+  },
+  {
+    "char": "髄",
+    "pinyins": "zui",
+    "words": "",
+    "examples": "",
+    "note": "ずい"
+  },
+  {
+    "char": "魚",
+    "pinyins": "sakana",
+    "words": "",
+    "examples": "",
+    "note": "さかな"
+  },
+  {
+    "char": "鲸",
+    "pinyins": "kujira",
+    "words": "",
+    "examples": "",
+    "note": "くじら"
+  },
+  {
+    "char": "肴",
+    "pinyins": "sakana",
+    "words": "",
+    "examples": "",
+    "note": "さかな"
+  }
+]

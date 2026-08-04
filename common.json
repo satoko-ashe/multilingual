@@ -1,0 +1,4897 @@
+{
+  "vocabulary": [
+    {
+      "id": 0,
+      "words": {
+        "日语": {
+          "text": "寝室",
+          "pronunciation": "shin shi tsu",
+          "note": "しんしつ"
+        },
+        "英语": {
+          "text": "bedroom",
+          "pronunciation": "[ˈbedruːm]",
+          "note": "箄窿（箄，一种竹席。窿，空也。）"
+        },
+        "普通话": {
+          "text": "卧室",
+          "pronunciation": "wò shì",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "卧室",
+          "pronunciation": "o6 sig4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "卧室",
+          "pronunciation": "ngo6 sat1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 1,
+      "words": {
+        "日语": {
+          "text": "部屋",
+          "pronunciation": "he ya",
+          "note": "へや=厦窑。\n【潮州话】厦窑 hia6 iê5，指用砖瓦搭建而成的窑洞。像塔一样高。\n厦，文读音 hê7 / ê6，白话音hia6。\n民俗活动——烧厦窑 siê1 hia6 iê5，为了庆祝中秋丰收。"
+        },
+        "英语": {
+          "text": "room",
+          "pronunciation": "[ruːm]",
+          "note": "【英】room（房间。本义指空间，挖空出来的开阔地）=【粤】窿lung1（洞。空也）。\n【闽】窦dao1。卬窦 uan3 dao1，指我家里。常误作“阮兜”。\n【粤】狗窦 gau2 dau6，本义狗洞，指狗窝。"
+        },
+        "普通话": {
+          "text": "房间",
+          "pronunciation": "fáng jiān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "间房",
+          "pronunciation": "goin1 bang5",
+          "note": "[文]房间 bang5 goin1。日常说“我间房”（我房间），如今受普通话影响年轻人多说成“我房间”。"
+        },
+        "粤语": {
+          "text": "间房",
+          "pronunciation": "gaan1 fong4",
+          "note": "[文]房间 fong4 gaan1。日常说“吾间房”（我房间）或“屋里头”，受普通话影响多说成“吾房间”。"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "words": {
+        "日语": {
+          "text": "電気スタンド",
+          "pronunciation": "den ki su tan do",
+          "note": "でんき stand（带电的台架）；\nstand =肆柦（肆，直也。柦，类似茶几的）"
+        },
+        "英语": {
+          "text": "table lamp",
+          "pronunciation": "[ˈteɪbl læmp]",
+          "note": "台簿（平板，木桌；表格，清单）+笼（灯笼，火笼；发光，照耀）\n“脚炉手炉也交出去了，你可逼着他们给你笼上”——《红楼梦》（笼，生火）"
+        },
+        "普通话": {
+          "text": "台灯",
+          "pronunciation": "tái dēng",
+          "note": "舶来词"
+        },
+        "潮州话": {
+          "text": "台灯",
+          "pronunciation": "tai5 dêng1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "台灯",
+          "pronunciation": "toi4 dang1",
+          "note": "日常多写：枱灯"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "words": {
+        "日语": {
+          "text": "電子レンジ",
+          "pronunciation": "den shi ren ji",
+          "note": "でんし range"
+        },
+        "英语": {
+          "text": "microwave oven",
+          "pronunciation": "[ˈmaɪkrəweɪv ˈʌvn]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "微波炉",
+          "pronunciation": "wēi bō lú",
+          "note": "舶来词"
+        },
+        "潮州话": {
+          "text": "微波炉",
+          "pronunciation": "mui5 bo1 lou5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "微波炉",
+          "pronunciation": "mei4 bo1 lou4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 4,
+      "words": {
+        "日语": {
+          "text": "目覚まし时计",
+          "pronunciation": "me za ma shi do kei",
+          "note": "めざましどけい"
+        },
+        "英语": {
+          "text": "alarm clock",
+          "pronunciation": "[əˈlɑːm klɒk]",
+          "note": "alarm=呵揽（警报器，集合声）；clock=刻漏（古代计时器）\n【潮】呵脑 o1 lo2（夸奖，夸赞脑子好。呵o1，叫嚷，喊着）；揽lam2，拥抱，招引，围拢。"
+        },
+        "普通话": {
+          "text": "闹钟",
+          "pronunciation": "nào zhōng",
+          "note": "舶来词"
+        },
+        "潮州话": {
+          "text": "闹钟",
+          "pronunciation": "nao6 zêng1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "闹钟",
+          "pronunciation": "naau6 zung1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 5,
+      "words": {
+        "日语": {
+          "text": "眼鏡",
+          "pronunciation": "me ga ne",
+          "note": "めがね"
+        },
+        "英语": {
+          "text": "glasses",
+          "pronunciation": "[ˈɡlɑːsɪz]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "眼镜",
+          "pronunciation": "yǎn jìng",
+          "note": "舶来词"
+        },
+        "潮州话": {
+          "text": "目镜=目鉴",
+          "pronunciation": "mag8 gian3",
+          "note": "最早的镜子叫“鉴”gian3，以铜为鉴。镜，鉴也。——《玉篇》"
+        },
+        "粤语": {
+          "text": "眼镜",
+          "pronunciation": "ngaan5 geng3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 6,
+      "words": {
+        "日语": {
+          "text": "ベッド",
+          "pronunciation": "bed do",
+          "note": "bed"
+        },
+        "英语": {
+          "text": "bed",
+          "pronunciation": "[bed]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "床",
+          "pronunciation": "chuáng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "眠床",
+          "pronunciation": "ming5 ceng5",
+          "note": "睡床跟桌子都统称“床”，古代称桌子为“胡床”，受普通话影响也开始区分桌，床，柜，台。\n【潮】写字床（写字桌），眠床（睡床），电视床（电视柜）"
+        },
+        "粤语": {
+          "text": "床",
+          "pronunciation": "cong4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 7,
+      "words": {
+        "日语": {
+          "text": "シーツ",
+          "pronunciation": "shii tsu",
+          "note": "sheet"
+        },
+        "英语": {
+          "text": "sheet",
+          "pronunciation": "[ʃiːt]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "床单",
+          "pronunciation": "chuáng dān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "被单,床铺",
+          "pronunciation": "puê6 duan1,ceng5 pou1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "被铺",
+          "pronunciation": "bei6 pou1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 8,
+      "words": {
+        "日语": {
+          "text": "マットレス",
+          "pronunciation": "mat to re su",
+          "note": "mattress"
+        },
+        "英语": {
+          "text": "mattress",
+          "pronunciation": "[ˈmætrəs]",
+          "note": "【英】mat=篾。竹篾，席子，垫子。【粤】袜 mat6，繁体字“襪”，指袜子。\n【英】mattress=篾席（竹席）。牖间南向，敷重篾席，黼纯，华玉仍几。——《书·顾命》\n【潮】席 ciêh8 =【英】chair [tʃer]：席位（椅子）；主席（领袖）。"
+        },
+        "普通话": {
+          "text": "床垫",
+          "pronunciation": "chuáng diàn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "被褥,床垫",
+          "pronunciation": "puê6 rog8, ceng5 diêng6/diang6",
+          "note": ""
+        },
+        "粤语": {
+          "text": "床褥,床荐,床垫",
+          "pronunciation": "cong4 juk6,cong4 zin3,cong4 dim3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 9,
+      "words": {
+        "日语": {
+          "text": "布団",
+          "pronunciation": "fu ton",
+          "note": "ふとん"
+        },
+        "英语": {
+          "text": "quilt",
+          "pronunciation": "[kwɪlt]",
+          "note": "䙡 kuì，纽也。衣系也。也指用绳子等打的结。通“缋”，指织布剩余的部分。\n在美国，quilt常指手工拼接的被子，用碎布拼接的拼布被（patchwork quilt）。"
+        },
+        "普通话": {
+          "text": "被子,被窝",
+          "pronunciation": "bèi zi, bèi wō",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "被,被空",
+          "pronunciation": "puê6, puê3 kang1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "被,被窦",
+          "pronunciation": "pei5, pei5 dau6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 10,
+      "words": {
+        "日语": {
+          "text": "枕",
+          "pronunciation": "ma ku ra",
+          "note": "まくら"
+        },
+        "英语": {
+          "text": "pillow",
+          "pronunciation": "[ˈpɪləʊ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "枕头",
+          "pronunciation": "zhěn tou",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "枕头",
+          "pronunciation": "zim2 tao5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "枕头",
+          "pronunciation": "zam2 tau4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 11,
+      "words": {
+        "日语": {
+          "text": "寝巻き",
+          "pronunciation": "ne ma ki",
+          "note": "ねまき"
+        },
+        "英语": {
+          "text": "pajamas",
+          "pronunciation": "[pəˈdʒɑːməz]",
+          "note": "原指宽松裤子。由波斯语\"pāy\"（腿）和\"jāma\"（衣服）组成，意为“腿部服装”。\npāy（腿）= 髀，大腿骨。“家富良马，其子好骑，堕而折其髀”——《淮南子·人间训》\n【粤】大髀 daai6 bei2，也作“大肶”，指大腿。\njāma（衣服）=裌袜。【粤】袜 mat6，繁体字“襪”，指袜子。"
+        },
+        "普通话": {
+          "text": "睡衣",
+          "pronunciation": "shuì yī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]睡衣,[文]睡衫",
+          "pronunciation": "sui6 i1, sui6 san1",
+          "note": "落去寤件衫loh8 ke3 ng8/ug8 gian6 san1（去睡觉的那件衣服）"
+        },
+        "粤语": {
+          "text": "睡衫,昏衫",
+          "pronunciation": "seoi6 saam1, fan3 saam1",
+          "note": "昏觉（瞓觉）,普遍读fan,西关区读 hun,昏昏欲睡=吴语闽南语的“困觉”“困眠”"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "words": {
+        "日语": {
+          "text": "携帯（電話）",
+          "pronunciation": "kei tai (den wa)",
+          "note": "けいたい（でんわ）"
+        },
+        "英语": {
+          "text": "mobile phone",
+          "pronunciation": "[ˈməʊbaɪl fəʊn]",
+          "note": "mobile，跟move同源，指移动。\nmove=抹，指向下移动（抹不下脸来）。mobile=抹摆。\nphone（说话声）=唪（念诵，大声说）\n《红楼梦·第二五回》：「可巧王夫人见贾环下了学，命他来抄个金刚咒唪诵。」"
+        },
+        "普通话": {
+          "text": "移动电话,手机",
+          "pronunciation": "yí dòng diàn huà, shǒu jī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "手机",
+          "pronunciation": "ciu2 gi1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "手提电话,手机",
+          "pronunciation": "sau2 tai4 din6 waa6, sau2 gei1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 13,
+      "words": {
+        "日语": {
+          "text": "縫いぐるみ",
+          "pronunciation": "nu i gu ru mi",
+          "note": "ぬいぐるみ"
+        },
+        "英语": {
+          "text": "stuffed toy",
+          "pronunciation": "[stʌft tɔɪ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "毛绒玩具",
+          "pronunciation": "máo róng wán jù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]玩具,[文]布娃娃,布翁囝",
+          "pronunciation": "nguêng2 gu6,bou3 ua1 ua1,bou3 ang1 gian2",
+          "note": "[文]毛绒玩具 mo5 rong5 nguêng2 gu6\n囝 gian2 ,本字“孑”，音戟。表示细小的，孑义(小仁小义);孑盾(兵车上用的小盾);孑孑(细行，小惠)。"
+        },
+        "粤语": {
+          "text": "毛公仔",
+          "pronunciation": "mou4 gung1 zai2",
+          "note": "仔 zai2，同“崽”，指小崽子，小不点。"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "words": {
+        "日语": {
+          "text": "人形,おもちゃ",
+          "pronunciation": "nin gyou,o mo chya",
+          "note": "にんぎょう,おもちゃ"
+        },
+        "英语": {
+          "text": "doll,toy",
+          "pronunciation": "[dɒl],[tɔɪ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "洋娃娃,玩偶,芭比娃娃",
+          "pronunciation": "yáng wá wa,wán ǒu,bā bǐ wá wa‌",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "翁囝,[文]玩具,人囝",
+          "pronunciation": "ang1 gian2,nguêng2 gu6,nang5 gian2",
+          "note": "佚逃物件 tig4 to5 muêh8 gian6（供人玩耍的东西）\n囝 gian2 ,本字“孑”，音戟。表示细小的，孑义(小仁小义);孑盾(兵车上用的小盾);孑孑(细行，小惠)。"
+        },
+        "粤语": {
+          "text": "公仔,[文]玩具",
+          "pronunciation": "gung1 zai2,wun6 geoi6",
+          "note": "仔 zai2，同“崽”，指小崽子，小不点。"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "words": {
+        "日语": {
+          "text": "猫",
+          "pronunciation": "ne ko",
+          "note": "ねこ"
+        },
+        "英语": {
+          "text": "cat",
+          "pronunciation": "[kæt]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "猫,小猫,猫咪,小奶猫",
+          "pronunciation": "māo,xiǎo māo,māo mī,xiǎo nǎi māo ‌‌",
+          "note": "[口语]咪咪 mī mi"
+        },
+        "潮州话": {
+          "text": "猫,猫奶,猫囝",
+          "pronunciation": "ngieu1,ngieu1 ni6,ngieu1 gian2",
+          "note": "[口语]阿奶 a1 ni6,指小不点儿,咪咪。有的地区也会把奶头叫咪咪,潮州话叫“奶”ni6"
+        },
+        "粤语": {
+          "text": "猫",
+          "pronunciation": "maau1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 16,
+      "words": {
+        "日语": {
+          "text": "洗面所",
+          "pronunciation": "sen men jyo",
+          "note": "せんめんじょ"
+        },
+        "英语": {
+          "text": "bathroom",
+          "pronunciation": "[ˈbɑːθruːm]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "洗手间,卫生间,厕所",
+          "pronunciation": "xǐ shǒu jiān, wèi shēng jiān,cè suǒ",
+          "note": "[书面语] 盥洗室 guàn xǐ shì"
+        },
+        "潮州话": {
+          "text": "[文]洗手间,[文]卫生间",
+          "pronunciation": "soi2 ciu2 goin1, uê6 sên1 goin1",
+          "note": "[文]厕所 cê3 so2；浴房 êg8 bang5（浴室）"
+        },
+        "粤语": {
+          "text": "[文]洗手间,[文]化妆间",
+          "pronunciation": "sai2 sau2 gaan1, faa3 zong1 gaan1",
+          "note": "[文]卫生间 wai6 saang1 gaan1"
+        }
+      }
+    },
+    {
+      "id": 17,
+      "words": {
+        "日语": {
+          "text": "トイレ,便所",
+          "pronunciation": "to i re,ben jyo",
+          "note": "toilet,べんじょ"
+        },
+        "英语": {
+          "text": "washroom,toilet",
+          "pronunciation": "[ˈwɒʃruːm],[ˈtɔɪlət]",
+          "note": "washroom侧重同居公用厕所，带盥洗室，toilet侧重商场公共厕所，尤其带马桶"
+        },
+        "普通话": {
+          "text": "公用厕所,公共厕所",
+          "pronunciation": "gōng yòng cè suǒ,gōng gòng cè suǒ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]厕所,[白]东司,[白]屎壑",
+          "pronunciation": "cê3 so2,dang1 si1,sai2 hag8",
+          "note": "屎沟 sai2 gao1，主要指生活用水的下水道。也指旧时旱厕的露天排污道。"
+        },
+        "粤语": {
+          "text": "厕所,屎坑",
+          "pronunciation": "ci3 so2,si2 haang1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 18,
+      "words": {
+        "日语": {
+          "text": "風呂場,浴室",
+          "pronunciation": "fu ro ba,yo ku shi tsu",
+          "note": "ふろば（日式浴缸泡澡）,よくしつ(汉译词）"
+        },
+        "英语": {
+          "text": "bathroom,shower room",
+          "pronunciation": "[ˈbɑːθruːm],[ˈʃaʊə ruːm]",
+          "note": "bathroom侧重泡澡；shower room侧重冲凉，淋浴"
+        },
+        "普通话": {
+          "text": "浴室,淋浴间",
+          "pronunciation": "yù shì,lín yù jiān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]浴室,[白]浴房",
+          "pronunciation": "êg8 sig4,êg8 bang5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "浴室,冲凉房",
+          "pronunciation": "juk6 sat1,cung1 loeng4 fong2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 19,
+      "words": {
+        "日语": {
+          "text": "風呂に入る",
+          "pronunciation": "fu ro ni ha i ru",
+          "note": "ふろにはいる"
+        },
+        "英语": {
+          "text": "have a bath",
+          "pronunciation": "[hæv ə bɑːθ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "洗澡",
+          "pronunciation": "xǐ zǎo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "洗浴",
+          "pronunciation": "soi2 êg8",
+          "note": "顿白白洗蜀身 teng3 bêh8 bêh8 soi2 zêg8 sing1 （脱光光洗全身）\n我如今硬顿开玉锁金枷，我可便牢拴定心猿意马。——元·郑廷玉《忍字记》第二折 \n(顿开，指解开，脱开)"
+        },
+        "粤语": {
+          "text": "洗身",
+          "pronunciation": "sai2 san1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 20,
+      "words": {
+        "日语": {
+          "text": "入浴をする",
+          "pronunciation": "nyuu yo ku o su ru",
+          "note": "にゅうよくをする"
+        },
+        "英语": {
+          "text": "take a shower",
+          "pronunciation": "[teɪk ə ʃaʊə]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "淋浴",
+          "pronunciation": "lín yù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "潨浴",
+          "pronunciation": "zang5 êg8",
+          "note": "潨潨奔溜闻,浩浩惊波转。 ——唐·李白《玉真公主别馆苦雨赠卫尉张卿》"
+        },
+        "粤语": {
+          "text": "冲凉",
+          "pronunciation": "cung1 loeng4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 21,
+      "words": {
+        "日语": {
+          "text": "洗顔",
+          "pronunciation": "sen gan",
+          "note": "せんがん"
+        },
+        "英语": {
+          "text": "wash face",
+          "pronunciation": "[wɒʃ feɪs]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "洗脸",
+          "pronunciation": "xǐ liǎn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "洗面",
+          "pronunciation": "soi2 ming7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "洗面",
+          "pronunciation": "sai2 min6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 22,
+      "words": {
+        "日语": {
+          "text": "歯磨き粉",
+          "pronunciation": "ha mi ga ki ko",
+          "note": "はみがきこ"
+        },
+        "英语": {
+          "text": "toothpaste",
+          "pronunciation": "[ˈtuːθpeɪst]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "牙膏",
+          "pronunciation": "yá gāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "牙膏",
+          "pronunciation": "ghê5 go1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "牙膏",
+          "pronunciation": "ngaa4 gou1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 23,
+      "words": {
+        "日语": {
+          "text": "歯ブラシ",
+          "pronunciation": "ha bu ra shi",
+          "note": "は brush"
+        },
+        "英语": {
+          "text": "toothbrush",
+          "pronunciation": "[ˈtuːθbrʌʃ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "牙刷",
+          "pronunciation": "yá shuā",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "齿扏",
+          "pronunciation": "ki2 ciu3",
+          "note": "扏，缓持也。一曰不固也。一说：扰字之讹。\n《诗经・小雅・正月》：执我仇仇，亦不我力。\n扏，手持着轻微晃动。这样握手表示亲昵。\n（原句指新王表面上跟自己握手时和和气气，却也不大力支持自己）"
+        },
+        "粤语": {
+          "text": "牙擦",
+          "pronunciation": "ngaa4 caat3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 24,
+      "words": {
+        "日语": {
+          "text": "電動歯ブラシ",
+          "pronunciation": "den dou ha bu ra shi",
+          "note": "でんどうは brush"
+        },
+        "英语": {
+          "text": "electric toothbrush",
+          "pronunciation": "[ɪˈlektrɪk ˈtuːθbrʌʃ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "电动牙刷",
+          "pronunciation": "diàn dòng yá shuā",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "电动齿扏",
+          "pronunciation": "diang6 dong6 ki2 ciu3",
+          "note": "扏，缓持也。一曰不固也。一说：扰字之讹。\n《诗经・小雅・正月》：执我仇仇，亦不我力。\n扏，手持着轻微晃动。这样握手表示亲昵。\n（原句指新王表面上跟自己握手时和和气气，却也不大力支持自己）"
+        },
+        "粤语": {
+          "text": "电动牙擦",
+          "pronunciation": "din6 dung6 ngaa4 caat3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 25,
+      "words": {
+        "日语": {
+          "text": "歯ブラシ立て",
+          "pronunciation": "ha bu ra shi ta te",
+          "note": "は brush たて"
+        },
+        "英语": {
+          "text": "toothbrush holder",
+          "pronunciation": "[ˈtuːθbrʌʃ ˈhoʊldər]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "牙刷架",
+          "pronunciation": "yá shuā jià",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "齿扏架",
+          "pronunciation": "ki2 ciu3 gê3",
+          "note": "[全称] 齿扏收纳架 ki2 ciu3 siu1 nab8 gê3; 挂齿扏其架 gua3 ki2 ciu3 gai5 gê3"
+        },
+        "粤语": {
+          "text": "牙擦架",
+          "pronunciation": "ngaa4 caat3 gaa3",
+          "note": "[全称] 牙擦收纳架 ngaa4 caat3 sau1 naap6 gaa3"
+        }
+      }
+    },
+    {
+      "id": 26,
+      "words": {
+        "日语": {
+          "text": "タオルかけ",
+          "pronunciation": "ta o ru ka ke",
+          "note": "towel かけ"
+        },
+        "英语": {
+          "text": "towel rack",
+          "pronunciation": "[ˈtaʊəl ræk]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "毛巾架",
+          "pronunciation": "máo jīn jià",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]毛巾架,面布挂架",
+          "pronunciation": "mo5 geng1 gê3, ming7 bou3 gua3 gê3",
+          "note": "挂面布其架 gua3 ming7 bou3 gai5 gê3"
+        },
+        "粤语": {
+          "text": "毛巾架,面巾挂钩",
+          "pronunciation": "mou4 gan1 gaa3, min6 gan1 gwaa3 ngau1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 27,
+      "words": {
+        "日语": {
+          "text": "タオル",
+          "pronunciation": "ta o ru",
+          "note": "towel"
+        },
+        "英语": {
+          "text": "towel",
+          "pronunciation": "[ˈtaʊəl]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "毛巾",
+          "pronunciation": "máo jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]毛巾,[白]面布",
+          "pronunciation": "mo5 geng1, ming7 bou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "[文]毛巾,[白]面布",
+          "pronunciation": "mou4 gan1, min6 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 28,
+      "words": {
+        "日语": {
+          "text": "ティッシュ",
+          "pronunciation": "tissyu",
+          "note": "tissue"
+        },
+        "英语": {
+          "text": "tissue",
+          "pronunciation": "[ˈtɪʃuː]",
+          "note": "用来擦嘴、脸的纸巾。"
+        },
+        "普通话": {
+          "text": "纸巾,面巾纸",
+          "pronunciation": "zhǐ jīn,miàn jīn zhǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]纸巾,面巾纸,[白]草纸",
+          "pronunciation": "zua2 geng1,ming7 geng1 zua2,cao2 zua2",
+          "note": "草纸 cao2 zua2：质地比较粗糙的一种纸，很厚实，旧时用于擦屁股的，也作水果包装纸，95后小时候比较常见，00后应该没见过。\n打草稿用的纸张是叫“草稿（纸）”co2 go2 (zua2)，不一样的。"
+        },
+        "粤语": {
+          "text": "纸巾",
+          "pronunciation": "zi2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 29,
+      "words": {
+        "日语": {
+          "text": "ペーパータオル,ティッシュ",
+          "pronunciation": "peipa taoru,tissyu",
+          "note": "paper towel,tissue"
+        },
+        "英语": {
+          "text": "facial tissue",
+          "pronunciation": "[ˈfeɪʃl ˈtɪʃuː]",
+          "note": "用来擦嘴、脸的纸巾。"
+        },
+        "普通话": {
+          "text": "擦面纸,纸巾",
+          "pronunciation": "cā miàn zhǐ,zhǐ jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]面巾纸,[白]草纸",
+          "pronunciation": "ming7 geng1 zua2,cao2 zua2",
+          "note": "草纸 cao2 zua2：质地比较粗糙的一种纸，很厚实，旧时用于擦屁股的，也作水果包装纸，95后小时候比较常见，00后应该没见过。\n打草稿用的纸张是叫“草稿（纸）”co2 go2 (zua2)，不一样的。"
+        },
+        "粤语": {
+          "text": "面巾纸,洗面手巾",
+          "pronunciation": "min6 gan1 zi2,sai2 min6 sau2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 30,
+      "words": {
+        "日语": {
+          "text": "ナプキン",
+          "pronunciation": "na pu kin",
+          "note": "napkin"
+        },
+        "英语": {
+          "text": "napkin",
+          "pronunciation": "[ˈnæpkɪn]",
+          "note": "吃完饭用来擦嘴的纸巾。通常饭店会提供。"
+        },
+        "普通话": {
+          "text": "餐巾纸,纸巾",
+          "pronunciation": "cān jīn zhǐ,zhǐ jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]面巾纸,[白]草纸",
+          "pronunciation": "ming7 geng1 zua2,cao2 zua2",
+          "note": "草纸 cao2 zua2：质地比较粗糙的一种纸，很厚实，旧时用于擦屁股的，也作水果包装纸，95后小时候比较常见，00后应该没见过。\n打草稿用的纸张是叫“草稿（纸）”co2 go2 (zua2)，不一样的。"
+        },
+        "粤语": {
+          "text": "面巾纸,纸巾",
+          "pronunciation": "min6 gan1 zi2,zi2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 31,
+      "words": {
+        "日语": {
+          "text": "ティッシュペーパー,ティッシュ",
+          "pronunciation": "tissyu peipa,tissyu",
+          "note": "tissue paper,tissue"
+        },
+        "英语": {
+          "text": "hand tissue",
+          "pronunciation": "[hænd ˈtɪʃuː]",
+          "note": "用来擦手的纸巾。"
+        },
+        "普通话": {
+          "text": "手纸,擦手布,纸巾",
+          "pronunciation": "shǒu zhǐ,cā shǒu bù,zhǐ jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[文]手巾纸,拭手布,[白]草纸",
+          "pronunciation": "ciu2 geng1 zua2,cig4 ciu2 bou3,cao2 zua2",
+          "note": "草纸 cao2 zua2：质地比较粗糙的一种纸，很厚实，旧时用于擦屁股的，也作水果包装纸，95后小时候比较常见，00后应该没见过。\n打草稿用的纸张是叫“草稿（纸）”co2 go2 (zua2)，不一样的。"
+        },
+        "粤语": {
+          "text": "手巾,纸巾",
+          "pronunciation": "sau2 gan1,zi2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 32,
+      "words": {
+        "日语": {
+          "text": "トイレットペーパー,ティッシュ",
+          "pronunciation": "toi retto peipa,tissyu",
+          "note": "toilet paper,tissue"
+        },
+        "英语": {
+          "text": "toilet paper",
+          "pronunciation": "[ˈtɔɪlət ˈpeɪpər]",
+          "note": "如厕后用来擦屁股的纸巾。"
+        },
+        "普通话": {
+          "text": "卫生纸,纸巾",
+          "pronunciation": "wèi shēng zhǐ,zhǐ jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "[白]草纸,[文]面巾纸",
+          "pronunciation": "cao2 zua2,ming7 geng1 zua2",
+          "note": "草纸 cao2 zua2：质地比较粗糙的一种纸，很厚实，旧时用于擦屁股的，也作水果包装纸，95后小时候比较常见，00后应该没见过。\n打草稿用的纸张是叫“草稿（纸）”co2 go2 (zua2)，不一样的。"
+        },
+        "粤语": {
+          "text": "纸巾",
+          "pronunciation": "zi2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 33,
+      "words": {
+        "日语": {
+          "text": "ウエットティッシュ",
+          "pronunciation": "uetto tissyu",
+          "note": "wet tissue"
+        },
+        "英语": {
+          "text": "wet tissue",
+          "pronunciation": "[wet ˈtɪʃuː]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "湿纸巾",
+          "pronunciation": "shī zhǐ jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "漉面巾纸",
+          "pronunciation": "log8 ming7 geng1 zua2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "湿纸巾",
+          "pronunciation": "sap1 zi2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 34,
+      "words": {
+        "日语": {
+          "text": "生理用ナプキン",
+          "pronunciation": "sei ri you napu kin",
+          "note": "せいりようナプキン"
+        },
+        "英语": {
+          "text": "sanitary towel, sanitary napkin",
+          "pronunciation": "[ˈsænətri ˈtaʊəl], [ˈsænətri ˈnæpkɪn]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "卫生巾,姨妈巾",
+          "pronunciation": "wèi shēng jīn, yí mā jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "卫生巾,[旧]月事带",
+          "pronunciation": "uê6 sên1 geng1, ghuêh8 se7 dua3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "M巾,（大）姨妈巾",
+          "pronunciation": "M-gan1,（daai6）ji4 maa1 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 35,
+      "words": {
+        "日语": {
+          "text": "キッチンペーパー",
+          "pronunciation": "kit chin pei pa",
+          "note": "kitchen paper"
+        },
+        "英语": {
+          "text": "kitchen roll",
+          "pronunciation": "‌[ˈkɪtʃɪn roʊl]‌",
+          "note": ""
+        },
+        "普通话": {
+          "text": "厨用卷纸,厨房卷纸",
+          "pronunciation": "chú yòng juǎn zhǐ,chú fáng juǎn zhǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "厨房抅纸",
+          "pronunciation": "dou6 bang5 gaoh4 zua2",
+          "note": "抅，卷也。同拘。勾,本作句。句，曲也。——《说文》。同钩。"
+        },
+        "粤语": {
+          "text": "厨房卷纸",
+          "pronunciation": "ceoi4 fong2 gyun2 zi2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 36,
+      "words": {
+        "日语": {
+          "text": "竃の雑巾",
+          "pronunciation": "ka ma do no zou kin",
+          "note": "かまどのぞうきん"
+        },
+        "英语": {
+          "text": "stove cloth",
+          "pronunciation": "‌[stoʊv ‌klɔːθ/klɑːθ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "灶台抹布",
+          "pronunciation": "zào tái mā bù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "灶布",
+          "pronunciation": "zao3 bou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "抹枱布",
+          "pronunciation": "maat3 toi2 bou3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 37,
+      "words": {
+        "日语": {
+          "text": "雑巾",
+          "pronunciation": "zou kin",
+          "note": "ぞうきん"
+        },
+        "英语": {
+          "text": "rag",
+          "pronunciation": "[ræɡ]‌",
+          "note": ""
+        },
+        "普通话": {
+          "text": "桌面抹布",
+          "pronunciation": "zhuō miàn mā bù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "挐床布",
+          "pronunciation": "re5 ceng5 bou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "抹枱布",
+          "pronunciation": "maat3 toi2 bou3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 38,
+      "words": {
+        "日语": {
+          "text": "モップ,棒雑巾",
+          "pronunciation": "mop pu,bou zou kin",
+          "note": "mop,ぼうぞうきん"
+        },
+        "英语": {
+          "text": "mop",
+          "pronunciation": "[mɒp/mɑːp]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "拖布,拖把",
+          "pronunciation": "tuō bù,tuō bǎ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "挐涂布,布拖",
+          "pronunciation": "re5 tou5 bou3,bou3 tua1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "墩布,地拖",
+          "pronunciation": "dan1 bou3,dei6 to1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 39,
+      "words": {
+        "日语": {
+          "text": "布巾",
+          "pronunciation": "fu kin",
+          "note": "ふきん"
+        },
+        "英语": {
+          "text": "dish towel,dishcloth",
+          "pronunciation": "[dɪʃ ˈtaʊəl],[ˈdɪʃklɔːθ]",
+          "note": "擦碗布,洗碗布"
+        },
+        "普通话": {
+          "text": "洗碗布",
+          "pronunciation": "xǐ wǎn bù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "灶布,洗碗布",
+          "pronunciation": "zao3 bou3,soi2 uan2 bou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "碗布",
+          "pronunciation": "wun2 bou3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 40,
+      "words": {
+        "日语": {
+          "text": "镜",
+          "pronunciation": "ka ga mi",
+          "note": "かがみ"
+        },
+        "英语": {
+          "text": "mirror",
+          "pronunciation": "[ˈmɪrər]",
+          "note": "mir（惊奇/看）+ ror（人/物）"
+        },
+        "普通话": {
+          "text": "镜子",
+          "pronunciation": "jìng zi",
+          "note": "最早盛水照影叫“鉴”（以铜为鉴），后称“镜”。镜，跟敬同音，因避宋太祖祖父赵敬的名讳改叫“照子”。"
+        },
+        "潮州话": {
+          "text": "鉴",
+          "pronunciation": "gian3",
+          "note": "鉴,古人最早用静止的水照影，盛水的器皿叫“鉴”，后来用青铜磨制后仍沿用此名，如“以铜为鉴”。‌‌‌"
+        },
+        "粤语": {
+          "text": "镜",
+          "pronunciation": "geng3",
+          "note": "镜，鉴也。——《玉篇》【释名】镜，景也。言有光景也。【说文】取景之器也。"
+        }
+      }
+    },
+    {
+      "id": 41,
+      "words": {
+        "日语": {
+          "text": "水",
+          "pronunciation": "mi zu",
+          "note": "みず,《诗经·陈风·衡门》：「 泌 之洋洋,可以乐饥。」 汉·毛亨·传：「 泌 ,泉水。」"
+        },
+        "英语": {
+          "text": "water",
+          "pronunciation": "[ˈwɔːtər]",
+          "note": "【日】川（かわ）ka wa =河洼。【英】water 洼者=水。\n洼，清水也。从水，窐声。 —— 《说文》"
+        },
+        "普通话": {
+          "text": "水",
+          "pronunciation": "shuǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "水",
+          "pronunciation": "zui2",
+          "note": "水，准也。准，平也。天下莫平于水。——《释名》"
+        },
+        "粤语": {
+          "text": "水",
+          "pronunciation": "seoi2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 42,
+      "words": {
+        "日语": {
+          "text": "蛇口",
+          "pronunciation": "ja gu chi",
+          "note": "じゃぐち"
+        },
+        "英语": {
+          "text": "tap",
+          "pronunciation": "[tæp]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "水龙头",
+          "pronunciation": "shuǐ lóng tóu",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "水龙头",
+          "pronunciation": "zui2 lêng5 tao5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "水喉（掣）",
+          "pronunciation": "seoi2 hau4（zai3）",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 43,
+      "words": {
+        "日语": {
+          "text": "剃刀",
+          "pronunciation": "ka mi so ri",
+          "note": "かみそり。剃る（そる）：剃或刮。"
+        },
+        "英语": {
+          "text": "razor",
+          "pronunciation": "[ˈreɪzər]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "剃须刀",
+          "pronunciation": "tì xū dāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "剴须刀",
+          "pronunciation": "koi1 ciu1 do1",
+          "note": "剴：【玉篇】切也，动也。【唐书·魏征传】二百余奏，无不剀切当帝心者。\n【广雅】剴，磨也。同“刉”。刉畟 koih4 cêg4，即碾谷子。（畟，稷的本字。粟也，五谷之长。）\n又 剴，通剀，砍杀也。【潮】斗剴/剀 dao3 koin7/kain7,指互相用身体部位撞击。\n潮安区说“斗剋”dao3 koh8，互相打斗，互殴。"
+        },
+        "粤语": {
+          "text": "胡须刨",
+          "pronunciation": "wu4 sou1 paau2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 44,
+      "words": {
+        "日语": {
+          "text": "电気剃刀",
+          "pronunciation": "den ki ka mi so ri",
+          "note": "でんきかみそり。 剃る（そる）：剃或刮。"
+        },
+        "英语": {
+          "text": "shaver",
+          "pronunciation": "[ˈʃeɪvər]",
+          "note": "削 xuē"
+        },
+        "普通话": {
+          "text": "电动剃须刀,电剃刀",
+          "pronunciation": "diàn dòng tì xū dāo,diàn tì dāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "电动剴须刀,电剴刀",
+          "pronunciation": "diang6 dong6 koi1 ciu1 do1,diang6 koi1 do1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "电须刨",
+          "pronunciation": "din6 sou1 paau2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 45,
+      "words": {
+        "日语": {
+          "text": "石鹼",
+          "pronunciation": "sek ken",
+          "note": "せっけん"
+        },
+        "英语": {
+          "text": "soap",
+          "pronunciation": "[səʊp]",
+          "note": "soap，指油脂。\n臊，指猪的油脂。用猪的胰脏制成，可以去垢，北方也叫“胰子”，即肥皂。\n《周礼·天官·庖人》：“夏行腒鱐膳膏臊”【注】“臊，豕膏也”"
+        },
+        "普通话": {
+          "text": "香皂,肥皂",
+          "pronunciation": "xiāng zào,féi zào",
+          "note": "旧称 洋碱。肥皂通过油脂与氢氧化钠/氢氧化钾等‌强碱‌发生“皂化反应”制成，碱是核心原料 。"
+        },
+        "潮州话": {
+          "text": "饼药",
+          "pronunciation": "bian2 iêh8",
+          "note": "这里的“药”并非指中药，而是碱性物"
+        },
+        "粤语": {
+          "text": "香枧,番枧",
+          "pronunciation": "hoeng1 gaan2, faan1 gaan2",
+          "note": "枧，肥皂。实际是“碱”，碱性物。"
+        }
+      }
+    },
+    {
+      "id": 46,
+      "words": {
+        "日语": {
+          "text": "石鹼置き",
+          "pronunciation": "sek ken oki",
+          "note": "せっけんおき"
+        },
+        "英语": {
+          "text": "soap box",
+          "pronunciation": "[soʊp bɑːks]",
+          "note": "soap，指油脂。=臊，豕膏也。\nbox = 钵（盛放东西的陶制的器具）。\nbox另有击打含义，拳击肉搏。搏，击也——《广雅》"
+        },
+        "普通话": {
+          "text": "皂盒",
+          "pronunciation": "zào hé",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "饼药盒",
+          "pronunciation": "bian2 iêh8 ab8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "枧盒",
+          "pronunciation": "gaan2 hap6",
+          "note": "枧，肥皂。实际是“碱”，碱性物。"
+        }
+      }
+    },
+    {
+      "id": 47,
+      "words": {
+        "日语": {
+          "text": "スリッパ",
+          "pronunciation": "su rip pa",
+          "note": "slipper"
+        },
+        "英语": {
+          "text": "slipper",
+          "pronunciation": "[ˈslɪpər]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "室内拖鞋",
+          "pronunciation": "shì nèi tuō xié",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "室内鞋,塑胶鞋,屦鞋,鞋屦,鞋拖",
+          "pronunciation": "sig4 lai6 oi5,sog4 ga1 oi5, lieuh4 oi5,oi5 lieuh4 ,oi5 tua1",
+          "note": "屦， 履也。——《说文》。段注:“今时所谓履者，自汉以前皆名屦。”——《说文》"
+        },
+        "粤语": {
+          "text": "家居鞋,胶拖,拖鞋",
+          "pronunciation": "gaa1 geoi1 haai2,gaau1 to1, to1 haai2",
+          "note": "胶拖：塑料拖鞋"
+        }
+      }
+    },
+    {
+      "id": 48,
+      "words": {
+        "日语": {
+          "text": "下駄",
+          "pronunciation": "ge ta",
+          "note": "げた"
+        },
+        "英语": {
+          "text": "clogs",
+          "pronunciation": "[klɑːɡz]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "木屐",
+          "pronunciation": "mù jī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "屐,夹趾鞋",
+          "pronunciation": "giah8,giab8 zoin2 oi5",
+          "note": "脚着谢公屐，身登青云梯。——李白 《梦游天姥吟留别》"
+        },
+        "粤语": {
+          "text": "屧,人字拖",
+          "pronunciation": "sit3,jan4 zi6 to1",
+          "note": "《广韵·入声·帖韵》：「 屧 ，屐也。」 \n人字拖，又称“夹趾拖鞋”，是木屐的现代版，材料换成塑料等发泡材质。"
+        }
+      }
+    },
+    {
+      "id": 49,
+      "words": {
+        "日语": {
+          "text": "便器",
+          "pronunciation": "ben ki",
+          "note": "べんき"
+        },
+        "英语": {
+          "text": "close stool",
+          "pronunciation": "[ˈkloʊsˌstuːl]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "马桶,痰盂",
+          "pronunciation": "mǎ tǒng, tán yú",
+          "note": "那炕前又是夜壶，又是马子，又是痰盂，他并不厌烦。——《二十年目睹之怪现状》第一〇三回"
+        },
+        "潮州话": {
+          "text": "[白] 屎桶,地缸,[文] 马桶",
+          "pronunciation": "sai2 tang2, di7 gang1,bhê2 tang2",
+          "note": "地缸：旧时的尿壶,痰盂。现在特指3岁‌内的儿童用的便盆。"
+        },
+        "粤语": {
+          "text": "屎塔",
+          "pronunciation": "si2 taap3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 50,
+      "words": {
+        "日语": {
+          "text": "便座カバー",
+          "pronunciation": "ben za ka baa",
+          "note": "べんざ cover。若特指加在日式蹲便上改作坐用的装置，也可称「腰掛便座（こしかけべんざ）」。‌‌"
+        },
+        "英语": {
+          "text": "toilet lid",
+          "pronunciation": "[ˈtɔɪlət lɪd]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "马桶盖",
+          "pronunciation": "mǎ tǒng gài",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "屎桶盖,马桶盖",
+          "pronunciation": "sai2 tang2 koin3,bhê2 tang2 koin3",
+          "note": "【潮】笔盖 big4 kab4\n【潮】盖（蓋）kab4=【英】cover=【日】カバー"
+        },
+        "粤语": {
+          "text": "屎塔盖",
+          "pronunciation": "si2 taap3 goi3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 51,
+      "words": {
+        "日语": {
+          "text": "トイレブラシ",
+          "pronunciation": "toire burashi",
+          "note": "toilet brush"
+        },
+        "英语": {
+          "text": "toilet brush",
+          "pronunciation": "[ˈtɔɪlət brʌʃ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "马桶刷",
+          "pronunciation": "mǎ tǒng shuā",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "地缸筅",
+          "pronunciation": "di7 gang1 coin2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "鲍鱼擦",
+          "pronunciation": "baau1 jyu4 caat2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 52,
+      "words": {
+        "日语": {
+          "text": "インテリジェントトイレ",
+          "pronunciation": "interijento toire",
+          "note": "intelligence toilet"
+        },
+        "英语": {
+          "text": "intelligence toilet",
+          "pronunciation": "[ɪnˈtelɪdʒəns ˈtɔɪlət]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "智能马桶",
+          "pronunciation": "zhì néng mǎ tǒng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "智能马桶",
+          "pronunciation": "di3 lêng5 bhê2 tang2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "智能马桶",
+          "pronunciation": "zi3 nang4 maa5 tung2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 53,
+      "words": {
+        "日语": {
+          "text": "うがい",
+          "pronunciation": "u ga i",
+          "note": ""
+        },
+        "英语": {
+          "text": "rinse the mouth",
+          "pronunciation": "[rɪns ðə maʊθ]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "漱口",
+          "pronunciation": "shù kǒu",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "荡嘴",
+          "pronunciation": "deng6 cui3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "泷口",
+          "pronunciation": "long2 hau2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 54,
+      "words": {
+        "日语": {
+          "text": "漱ぐ",
+          "pronunciation": "su su gu",
+          "note": "すすぐ"
+        },
+        "英语": {
+          "text": "gargle",
+          "pronunciation": "[ˈɡɑːrɡl]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "漱（动词）",
+          "pronunciation": "shù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "漱（动词）",
+          "pronunciation": "ciu3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "漱（动词）",
+          "pronunciation": "sau3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 55,
+      "words": {
+        "日语": {
+          "text": "おしっこ",
+          "pronunciation": "o shik ko",
+          "note": ""
+        },
+        "英语": {
+          "text": "pee",
+          "pronunciation": "[piː]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "拉尿",
+          "pronunciation": "lā niào",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "拉尿",
+          "pronunciation": "bang3 riê7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "拉尿",
+          "pronunciation": "o1 niu6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 56,
+      "words": {
+        "日语": {
+          "text": "小便",
+          "pronunciation": "syou ben",
+          "note": "しょうべん"
+        },
+        "英语": {
+          "text": "urinate",
+          "pronunciation": "[ˈjʊrɪneɪt]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "小便",
+          "pronunciation": "xiǎo biàn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "小便",
+          "pronunciation": "bang3 soi3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "小便",
+          "pronunciation": "fong3 seoi2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 57,
+      "words": {
+        "日语": {
+          "text": "うんこ",
+          "pronunciation": "un ko",
+          "note": ""
+        },
+        "英语": {
+          "text": "shit",
+          "pronunciation": "[ʃɪt]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "拉屎",
+          "pronunciation": "lā shǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "拉屎",
+          "pronunciation": "bang3 sai2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "拉屎",
+          "pronunciation": "o1 si2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 58,
+      "words": {
+        "日语": {
+          "text": "大便",
+          "pronunciation": "daiben",
+          "note": "だいべん"
+        },
+        "英语": {
+          "text": "excrement",
+          "pronunciation": "[ˈekskrɪmənt]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "大便",
+          "pronunciation": "dà biàn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "大便",
+          "pronunciation": "bang3 dua7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "大便",
+          "pronunciation": "hoi1 daai6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 59,
+      "words": {
+        "日语": {
+          "text": "自分",
+          "pronunciation": "jibun",
+          "note": "じぶん"
+        },
+        "英语": {
+          "text": "oneself",
+          "pronunciation": "[wʌnˈself]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "自己",
+          "pronunciation": "zì jǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "自己",
+          "pronunciation": "ga1 gi7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "自己",
+          "pronunciation": "zi6 gei2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 60,
+      "words": {
+        "日语": {
+          "text": "身内",
+          "pronunciation": "miuchi",
+          "note": "みうち"
+        },
+        "英语": {
+          "text": "one of us",
+          "pronunciation": "[wʌn əv ʌs]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "自己人",
+          "pronunciation": "zì jǐ rén",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "自己人",
+          "pronunciation": "ga1 gi7 nang5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "自己人",
+          "pronunciation": "zi6 gei2 jau2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 61,
+      "words": {
+        "日语": {
+          "text": "着替える",
+          "pronunciation": "kigaeru",
+          "note": "きがえる"
+        },
+        "英语": {
+          "text": "change one's clothes",
+          "pronunciation": "[tʃeɪndʒ wʌnz kləʊz]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "换衣服",
+          "pronunciation": "huàn yī fu",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "换衣服",
+          "pronunciation": "uan7 san1 kou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "换衣服",
+          "pronunciation": "wun6 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 62,
+      "words": {
+        "日语": {
+          "text": "服を脱ぐ",
+          "pronunciation": "fuku o nugu",
+          "note": "ふくをぬぐ"
+        },
+        "英语": {
+          "text": "take clothes off",
+          "pronunciation": "[teɪk kləʊðz ɔːf]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "脱衣服",
+          "pronunciation": "tuō yī fu",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "脱衣服",
+          "pronunciation": "teng3 san1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "脱衣服",
+          "pronunciation": "ceoi4 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 63,
+      "words": {
+        "日语": {
+          "text": "服",
+          "pronunciation": "fuku",
+          "note": "ふく"
+        },
+        "英语": {
+          "text": "clothes",
+          "pronunciation": "[kloʊz]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "衣服",
+          "pronunciation": "yī fu",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "衣服",
+          "pronunciation": "san1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "衣服",
+          "pronunciation": "saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 64,
+      "words": {
+        "日语": {
+          "text": "ハンガー",
+          "pronunciation": "hangaa",
+          "note": "hanger"
+        },
+        "英语": {
+          "text": "coat hanger",
+          "pronunciation": "[ˈkoʊt hæŋər]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "衣架",
+          "pronunciation": "yī jià",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "衣架",
+          "pronunciation": "san1 gê5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "衣架",
+          "pronunciation": "long6 saam1 gaa2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 65,
+      "words": {
+        "日语": {
+          "text": "洋服ダンス",
+          "pronunciation": "youfuku dansu",
+          "note": "ようふくダンス"
+        },
+        "英语": {
+          "text": "wardrobe",
+          "pronunciation": "[ˈwɔːrdroʊb]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "衣柜",
+          "pronunciation": "yī guì",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "衣柜",
+          "pronunciation": "san1 du5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "衣柜",
+          "pronunciation": "ji1 gwai6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 66,
+      "words": {
+        "日语": {
+          "text": "下着",
+          "pronunciation": "shitagi",
+          "note": "したぎ"
+        },
+        "英语": {
+          "text": "underwear",
+          "pronunciation": "[ˈʌndərwer]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "内衣",
+          "pronunciation": "nèi yī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "内衣",
+          "pronunciation": "lai6 san1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "内衣",
+          "pronunciation": "dai2 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 67,
+      "words": {
+        "日语": {
+          "text": "パンツ",
+          "pronunciation": "pantsu",
+          "note": ""
+        },
+        "英语": {
+          "text": "panties",
+          "pronunciation": "[ˈpæntiz]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "女式内裤",
+          "pronunciation": "nǚ shì nèi kù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "女式内裤",
+          "pronunciation": "kou3 guêh8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "女式内裤",
+          "pronunciation": "dai2 fu3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 68,
+      "words": {
+        "日语": {
+          "text": "トランクス",
+          "pronunciation": "torankusu",
+          "note": "trunks"
+        },
+        "英语": {
+          "text": "men's briefs",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "男士三角内裤",
+          "pronunciation": "nán shì sān jiǎo nèi kù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "男士三角内裤",
+          "pronunciation": "san1 gag4 kou3 guêh8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "男士三角内裤",
+          "pronunciation": "saam1 gok3 dai2 fu3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 69,
+      "words": {
+        "日语": {
+          "text": "ブラウス",
+          "pronunciation": "burausu",
+          "note": ""
+        },
+        "英语": {
+          "text": "blouse",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "女式衬衫",
+          "pronunciation": "nǚ shì chèn shān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "女式衬衫",
+          "pronunciation": "neng2 kuang2 cêng3 san1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "女式衬衫",
+          "pronunciation": "neoi5 fun2 seot1 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 70,
+      "words": {
+        "日语": {
+          "text": "袖",
+          "pronunciation": "sode",
+          "note": "そで"
+        },
+        "英语": {
+          "text": "sleeve",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "袖子",
+          "pronunciation": "xiù zi",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "袖子",
+          "pronunciation": "ciu2 ung2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "袖子",
+          "pronunciation": "saam1 zau6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 71,
+      "words": {
+        "日语": {
+          "text": "ファスナー",
+          "pronunciation": "fasunaa",
+          "note": ""
+        },
+        "英语": {
+          "text": "fastener",
+          "pronunciation": "[ˈfæsnər]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "拉链",
+          "pronunciation": "lā liàn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "拉链",
+          "pronunciation": "la1 liang7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "拉链",
+          "pronunciation": "laai1 lin2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 72,
+      "words": {
+        "日语": {
+          "text": "ボタン",
+          "pronunciation": "botan",
+          "note": ""
+        },
+        "英语": {
+          "text": "button",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "纽扣",
+          "pronunciation": "niǔ kòu",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "纽扣",
+          "pronunciation": "niu2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "纽扣",
+          "pronunciation": "nau2 kau3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 73,
+      "words": {
+        "日语": {
+          "text": "財布",
+          "pronunciation": "saifu",
+          "note": "さいふ"
+        },
+        "英语": {
+          "text": "wallet, purse",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "钱包,钱袋",
+          "pronunciation": "qián bāo, qián dài",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "钱包,钱袋",
+          "pronunciation": "zin5 bao1, zin5 do7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "钱包,钱袋",
+          "pronunciation": "ho4 baau1, ngan2 baau1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 74,
+      "words": {
+        "日语": {
+          "text": "ハンドバッグ",
+          "pronunciation": "hando baggu",
+          "note": ""
+        },
+        "英语": {
+          "text": "handbag",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "手提包",
+          "pronunciation": "shǒu tí bāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "手提包",
+          "pronunciation": "ciu2 do7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "手提包",
+          "pronunciation": "sau2 doi2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 75,
+      "words": {
+        "日语": {
+          "text": "スカート",
+          "pronunciation": "sukaa to",
+          "note": ""
+        },
+        "英语": {
+          "text": "skirt",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "裙子",
+          "pronunciation": "qún zi",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "裙子",
+          "pronunciation": "gung5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "裙子",
+          "pronunciation": "kwan4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 76,
+      "words": {
+        "日语": {
+          "text": "ハンカチ",
+          "pronunciation": "hankachi",
+          "note": ""
+        },
+        "英语": {
+          "text": "handkerchief",
+          "pronunciation": "[ˈhæŋkətʃɪf]",
+          "note": ""
+        },
+        "普通话": {
+          "text": "手帕,手布",
+          "pronunciation": "shǒu pà, shǒu bù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "手帕,手布",
+          "pronunciation": "ciu2 pê3, ciu2 bou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "手帕,手布",
+          "pronunciation": "faa1 sau2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 77,
+      "words": {
+        "日语": {
+          "text": "ハイヒール",
+          "pronunciation": "hai hiiru",
+          "note": ""
+        },
+        "英语": {
+          "text": "high-heeled shoes",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "高跟鞋",
+          "pronunciation": "gāo gēn xié",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "高跟鞋",
+          "pronunciation": "gao1 dên1 oi5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "高跟鞋",
+          "pronunciation": "gou1 zaang1 haai4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 78,
+      "words": {
+        "日语": {
+          "text": "ストッキング",
+          "pronunciation": "sutokkingu",
+          "note": ""
+        },
+        "英语": {
+          "text": "stocking",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "长筒袜",
+          "pronunciation": "cháng tǒng wà",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "长筒袜",
+          "pronunciation": "deng5 ghuêh8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "长筒袜",
+          "pronunciation": "coeng4 tung2 mat6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 79,
+      "words": {
+        "日语": {
+          "text": "持つ",
+          "pronunciation": "motsu",
+          "note": "もつ"
+        },
+        "英语": {
+          "text": "take away, pick up",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "拿,提",
+          "pronunciation": "ná, tí",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "拿,提",
+          "pronunciation": "kiêh8, kia5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "拿,提",
+          "pronunciation": "lo2, zaa1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 80,
+      "words": {
+        "日语": {
+          "text": "する",
+          "pronunciation": "suru",
+          "note": ""
+        },
+        "英语": {
+          "text": "do",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "做,干",
+          "pronunciation": "zuò, gàn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "做,干",
+          "pronunciation": "muêh8, zo3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "做,干",
+          "pronunciation": "zou6, gaau2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 81,
+      "words": {
+        "日语": {
+          "text": "着る",
+          "pronunciation": "kiru",
+          "note": "きる"
+        },
+        "英语": {
+          "text": "wear",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "穿（上衣）",
+          "pronunciation": "chuān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "穿（上衣）",
+          "pronunciation": "cêng7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "穿（上衣）",
+          "pronunciation": "zoek3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 82,
+      "words": {
+        "日语": {
+          "text": "履く",
+          "pronunciation": "haku",
+          "note": "はく"
+        },
+        "英语": {
+          "text": "put on",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "穿鞋袜",
+          "pronunciation": "chuān wà xié",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "穿鞋袜",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "粤语": {
+          "text": "穿鞋袜",
+          "pronunciation": "/",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 83,
+      "words": {
+        "日语": {
+          "text": "クローゼット",
+          "pronunciation": "kuroozetto",
+          "note": ""
+        },
+        "英语": {
+          "text": "closet",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "壁橱",
+          "pronunciation": "bì chú",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "壁橱",
+          "pronunciation": "biah4 du5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "壁橱",
+          "pronunciation": "jap6 coeng4 gwai6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 84,
+      "words": {
+        "日语": {
+          "text": "棚",
+          "pronunciation": "tana",
+          "note": "たな"
+        },
+        "英语": {
+          "text": "shelf",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "架子,搁板",
+          "pronunciation": "jià zi, gē bǎn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "架子,搁板",
+          "pronunciation": "gê3, guin7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "架子,搁板",
+          "pronunciation": "gaa3, gwai6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 85,
+      "words": {
+        "日语": {
+          "text": "足場",
+          "pronunciation": "ashiba",
+          "note": "あしば"
+        },
+        "英语": {
+          "text": "scaffold",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "脚手架",
+          "pronunciation": "jiǎo shǒu jià",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "脚手架",
+          "pronunciation": "ka1 ciu2 gê3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "脚手架",
+          "pronunciation": "paang4 gaa2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 86,
+      "words": {
+        "日语": {
+          "text": "足場を组む",
+          "pronunciation": "ashiba o kumu",
+          "note": "あしばをくむ"
+        },
+        "英语": {
+          "text": "scaffold",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "搭设脚手架",
+          "pronunciation": "dā shè jiǎo shǒu jià",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "搭设脚手架",
+          "pronunciation": "dah4 bên5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "搭设脚手架",
+          "pronunciation": "daap3 paang4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 87,
+      "words": {
+        "日语": {
+          "text": "帽子",
+          "pronunciation": "boushi",
+          "note": "ぼうし"
+        },
+        "英语": {
+          "text": "hat",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "帽子",
+          "pronunciation": "mào zi",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "帽子",
+          "pronunciation": "bho7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "帽子",
+          "pronunciation": "mou2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 88,
+      "words": {
+        "日语": {
+          "text": "Ｔシャツ",
+          "pronunciation": "tii shatsu",
+          "note": ""
+        },
+        "英语": {
+          "text": "t-shirt",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "T 恤,衬衫",
+          "pronunciation": "t xù shān, chèn shān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "T 恤,衬衫",
+          "pronunciation": "do2 ung2 san1, deng5 ung2 san1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "T 恤,衬衫",
+          "pronunciation": "tseot1 saam1, man4 faa3 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 89,
+      "words": {
+        "日语": {
+          "text": "キャップ",
+          "pronunciation": "kyappu",
+          "note": "cap"
+        },
+        "英语": {
+          "text": "cap",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "运动帽,棒球帽",
+          "pronunciation": "yùn dòng mào, bàng qiú mào",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "运动帽,棒球帽",
+          "pronunciation": "ah4 zih8 bho7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "运动帽,棒球帽",
+          "pronunciation": "aap3 zeoi2 mou2, bo1 mou2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 90,
+      "words": {
+        "日语": {
+          "text": "ネクタイ",
+          "pronunciation": "nekutai",
+          "note": "necktie"
+        },
+        "英语": {
+          "text": "tie, necktie",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "领带",
+          "pronunciation": "lǐng dài",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "领带",
+          "pronunciation": "nian2 dua3, ah4 zih8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "领带",
+          "pronunciation": "taai1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 91,
+      "words": {
+        "日语": {
+          "text": "ジーパン",
+          "pronunciation": "jiipan",
+          "note": ""
+        },
+        "英语": {
+          "text": "jeans",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "牛仔裤",
+          "pronunciation": "niú zǎi kù",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "牛仔裤",
+          "pronunciation": "ghu5 gian2 kou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "牛仔裤",
+          "pronunciation": "ngau4 zai2 fu3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 92,
+      "words": {
+        "日语": {
+          "text": "靴下",
+          "pronunciation": "kutsushita",
+          "note": "くつした"
+        },
+        "英语": {
+          "text": "socks",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "袜子",
+          "pronunciation": "wà zi",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "袜子",
+          "pronunciation": "ghuêh8, bhuêh8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "袜子",
+          "pronunciation": "mat6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 93,
+      "words": {
+        "日语": {
+          "text": "運動靴",
+          "pronunciation": "undou gutsu",
+          "note": "うんどうぐつ"
+        },
+        "英语": {
+          "text": "sneakers",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "运动鞋",
+          "pronunciation": "yùn dòng xié",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "运动鞋",
+          "pronunciation": "ung7 dong6 oi5, giu5 oi5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "运动鞋",
+          "pronunciation": "bo1 haai4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 94,
+      "words": {
+        "日语": {
+          "text": "ベルト",
+          "pronunciation": "beruto",
+          "note": ""
+        },
+        "英语": {
+          "text": "belt",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "腰带,皮带",
+          "pronunciation": "yāo dài, pí dài",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "腰带,皮带",
+          "pronunciation": "kou3 dua3, puê5 dua3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "腰带,皮带",
+          "pronunciation": "fu3 tau4 daai2, suk1 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 95,
+      "words": {
+        "日语": {
+          "text": "ポケット",
+          "pronunciation": "poketto",
+          "note": ""
+        },
+        "英语": {
+          "text": "pocket",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "口袋,裤袋",
+          "pronunciation": "kǒu dài, kù dài",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "口袋,裤袋",
+          "pronunciation": "san1 do7, kou3 do7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "口袋,裤袋",
+          "pronunciation": "saam1 doi2, fu3 doi2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 96,
+      "words": {
+        "日语": {
+          "text": "腕时计",
+          "pronunciation": "udedokei",
+          "note": "うでどけい"
+        },
+        "英语": {
+          "text": "watch",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "手表",
+          "pronunciation": "shǒu biǎo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "手表",
+          "pronunciation": "ciu2 biê1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "手表",
+          "pronunciation": "wun2 biu1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 97,
+      "words": {
+        "日语": {
+          "text": "リュック",
+          "pronunciation": "ryukku",
+          "note": "Rucksacks"
+        },
+        "英语": {
+          "text": "knapsack, backpack",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "登山背囊,背包",
+          "pronunciation": "dēng shān bēi náng, bēi bāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "登山背囊,背包",
+          "pronunciation": "bi3 do7",
+          "note": ""
+        },
+        "粤语": {
+          "text": "登山背囊,背包",
+          "pronunciation": "bui3 nong4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 98,
+      "words": {
+        "日语": {
+          "text": "スーツ",
+          "pronunciation": "suutsu",
+          "note": ""
+        },
+        "英语": {
+          "text": "suit",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "西装正装",
+          "pronunciation": "xī zhuāng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "西装正装",
+          "pronunciation": "sai1 zuang1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "西装正装",
+          "pronunciation": "sai1 zong1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 99,
+      "words": {
+        "日语": {
+          "text": "ワイシャツ",
+          "pronunciation": "wai shatsu",
+          "note": ""
+        },
+        "英语": {
+          "text": "white shirts",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "白衬衣",
+          "pronunciation": "bái chèn yī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "白衬衣",
+          "pronunciation": "bêh8 cêng3 san1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "白衬衣",
+          "pronunciation": "baak6 seot1 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 100,
+      "words": {
+        "日语": {
+          "text": "ズボン",
+          "pronunciation": "zubon",
+          "note": ""
+        },
+        "英语": {
+          "text": "pants",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "裤子",
+          "pronunciation": "kù zi",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "裤子",
+          "pronunciation": "kou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "裤子",
+          "pronunciation": "fu3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 101,
+      "words": {
+        "日语": {
+          "text": "ワンピース",
+          "pronunciation": "wanpiisu",
+          "note": ""
+        },
+        "英语": {
+          "text": "one-piece dress",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "连衣裙",
+          "pronunciation": "lián yī qún",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "连衣裙",
+          "pronunciation": "liêng5 i1 gung5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "连衣裙",
+          "pronunciation": "zik6 san1 gwan4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 102,
+      "words": {
+        "日语": {
+          "text": "コート",
+          "pronunciation": "kooto",
+          "note": ""
+        },
+        "英语": {
+          "text": "coat",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "外套,大衣",
+          "pronunciation": "wài tào, dà yī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "外套,大衣",
+          "pronunciation": "ghua7 san1, dua7 lao1, deng5 lao1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "外套,大衣",
+          "pronunciation": "syut3 lau1, daai6 lau1, zung1 lau1, dyun2 lau1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 103,
+      "words": {
+        "日语": {
+          "text": "ダウンジャケット",
+          "pronunciation": "daun jaketto",
+          "note": ""
+        },
+        "英语": {
+          "text": "down jacket",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "羽绒服",
+          "pronunciation": "yǔ róng fú",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "羽绒服",
+          "pronunciation": "u2 rong5 hog8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "羽绒服",
+          "pronunciation": "taai3 hung1 lau1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 104,
+      "words": {
+        "日语": {
+          "text": "ジャケット",
+          "pronunciation": "jaketto",
+          "note": ""
+        },
+        "英语": {
+          "text": "leather jacket",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "皮夹克",
+          "pronunciation": "pí jiá kè",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "皮夹克",
+          "pronunciation": "puê5 lao1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "皮夹克",
+          "pronunciation": "pei2 lao1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 105,
+      "words": {
+        "日语": {
+          "text": "トレンチコート",
+          "pronunciation": "torenchi kooto",
+          "note": ""
+        },
+        "英语": {
+          "text": "trench coat",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "风衣",
+          "pronunciation": "fēng yī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "风衣",
+          "pronunciation": "huang1 lau1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "风衣",
+          "pronunciation": "fung1 lau1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 106,
+      "words": {
+        "日语": {
+          "text": "ベスト",
+          "pronunciation": "besuto",
+          "note": ""
+        },
+        "英语": {
+          "text": "vest",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "马甲",
+          "pronunciation": "mǎ jiǎ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "马甲",
+          "pronunciation": "gah4 gian2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "马甲",
+          "pronunciation": "gwai1 bui3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 107,
+      "words": {
+        "日语": {
+          "text": "セーター",
+          "pronunciation": "seetaa",
+          "note": ""
+        },
+        "英语": {
+          "text": "sweater",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "毛衣",
+          "pronunciation": "máo yī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "毛衣",
+          "pronunciation": "min5 hiun5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "毛衣",
+          "pronunciation": "laang1 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 108,
+      "words": {
+        "日语": {
+          "text": "カーディガン",
+          "pronunciation": "kaadigan",
+          "note": ""
+        },
+        "英语": {
+          "text": "cardigan",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "对襟毛衣",
+          "pronunciation": "duì jīn máo yī",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "对襟毛衣",
+          "pronunciation": "kui1 hêng1 min5 hiun5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "对襟毛衣",
+          "pronunciation": "deoi3 kam1 laang5 saam1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 109,
+      "words": {
+        "日语": {
+          "text": "マフラー",
+          "pronunciation": "mafuraa",
+          "note": ""
+        },
+        "英语": {
+          "text": "muffler",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "围巾",
+          "pronunciation": "wéi jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "围巾",
+          "pronunciation": "am6 puêng5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "围巾",
+          "pronunciation": "geng2 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 110,
+      "words": {
+        "日语": {
+          "text": "スカーフ",
+          "pronunciation": "sukaa fu",
+          "note": ""
+        },
+        "英语": {
+          "text": "scarf",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "方巾,披巾",
+          "pronunciation": "fāng jīn, pī jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "方巾,披巾",
+          "pronunciation": "huêng1 mua1, zui2 bou3, êg8 bou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "方巾,披巾",
+          "pronunciation": "haa4 pei3, pei1 gin1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 111,
+      "words": {
+        "日语": {
+          "text": "化妆台",
+          "pronunciation": "keshoudai",
+          "note": "けしょうだい"
+        },
+        "英语": {
+          "text": "dresser",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "梳妆台",
+          "pronunciation": "shū zhuāng tái",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "梳妆台",
+          "pronunciation": "huê3 zeng1 doh4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "梳妆台",
+          "pronunciation": "so1 zong1 toi4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 112,
+      "words": {
+        "日语": {
+          "text": "机",
+          "pronunciation": "tsukue",
+          "note": "つくえ"
+        },
+        "英语": {
+          "text": "desk",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "书桌,写字床",
+          "pronunciation": "shū zhuō, xiě zì chuáng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "书桌,写字床",
+          "pronunciation": "ze1 doh4, sia2 ri7 ceng5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "书桌,写字床",
+          "pronunciation": "syu1 toi4, se2 zi6 toi4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 113,
+      "words": {
+        "日语": {
+          "text": "香水",
+          "pronunciation": "kousui",
+          "note": "こうすい水"
+        },
+        "英语": {
+          "text": "perfume",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "香水",
+          "pronunciation": "xiāng shuǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "香水",
+          "pronunciation": "pang1 zui2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "香水",
+          "pronunciation": "hoeng1 seoi2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 114,
+      "words": {
+        "日语": {
+          "text": "くし",
+          "pronunciation": "kushi",
+          "note": ""
+        },
+        "英语": {
+          "text": "comb",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "梳子,木梳",
+          "pronunciation": "shū zi, mù shū",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "梳子,木梳",
+          "pronunciation": "siu1, ca5 siu1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "梳子,木梳",
+          "pronunciation": "so1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 115,
+      "words": {
+        "日语": {
+          "text": "ブラシ",
+          "pronunciation": "burashi",
+          "note": ""
+        },
+        "英语": {
+          "text": "brush",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "造型发刷",
+          "pronunciation": "zào xíng fā shuā",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "造型发刷",
+          "pronunciation": "ga1 mo5 siu1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "造型发刷",
+          "pronunciation": "fei1 faat3 so1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 116,
+      "words": {
+        "日语": {
+          "text": "化粧水",
+          "pronunciation": "keshousui",
+          "note": "けしょうすい水"
+        },
+        "英语": {
+          "text": "toner",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "化妆水",
+          "pronunciation": "huà zhuāng shuǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "化妆水",
+          "pronunciation": "huê3 zeng1 zui2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "化妆水",
+          "pronunciation": "faa3 zong1 seoi2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 117,
+      "words": {
+        "日语": {
+          "text": "ローション",
+          "pronunciation": "rooshon",
+          "note": ""
+        },
+        "英语": {
+          "text": "lotion",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "乳液,奶液,护肤液",
+          "pronunciation": "rǔ yè, nǎi yè, hù fū yè",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "乳液,奶液,护肤液",
+          "pronunciation": "ru2 zuag8 êg8, ni1 êg8, hu6 hu1 êg8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "乳液,奶液,护肤液",
+          "pronunciation": "jyu5 jik6, syut3 gaap2 gou1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 118,
+      "words": {
+        "日语": {
+          "text": "フェスクリーム",
+          "pronunciation": "fesukuriimu",
+          "note": ""
+        },
+        "英语": {
+          "text": "face cream",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "面霜",
+          "pronunciation": "miàn shuāng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "面霜",
+          "pronunciation": "ming7 seng1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "面霜",
+          "pronunciation": "min6 soeng1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 119,
+      "words": {
+        "日语": {
+          "text": "洗顔料",
+          "pronunciation": "senganryou",
+          "note": "せんがんりょう料"
+        },
+        "英语": {
+          "text": "facial cleanser",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "洗面奶",
+          "pronunciation": "xǐ miàn nǎi",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "洗面奶",
+          "pronunciation": "soi2 ming7 nai2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "洗面奶",
+          "pronunciation": "sai2 min6 naai5",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 120,
+      "words": {
+        "日语": {
+          "text": "ヘアバンド",
+          "pronunciation": "hea bando",
+          "note": ""
+        },
+        "英语": {
+          "text": "hair band",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "发带,头绳,发圈",
+          "pronunciation": "fā dài, tóu shéng, fā quān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "发带,头绳,发圈",
+          "pronunciation": "ang5 zang1 suan3, ang5 tao5 sing5, tao5 huê1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "发带,头绳,发圈",
+          "pronunciation": "tau4 ku1, faat3 ku1, zoeng6 gan1, gaau1 hyun1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 121,
+      "words": {
+        "日语": {
+          "text": "マスカラ",
+          "pronunciation": "masukara",
+          "note": ""
+        },
+        "英语": {
+          "text": "mascara",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "睫毛膏",
+          "pronunciation": "jié máo gāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "睫毛膏",
+          "pronunciation": "mag8 ci3 mo5 go1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "睫毛膏",
+          "pronunciation": "zit6 mou4 gou3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 122,
+      "words": {
+        "日语": {
+          "text": "アイブロウ",
+          "pronunciation": "ai burou",
+          "note": ""
+        },
+        "英语": {
+          "text": "eyebrow pencil",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "眉笔",
+          "pronunciation": "méi bǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "眉笔",
+          "pronunciation": "bhai5 big4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "眉笔",
+          "pronunciation": "mei4 bat1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 123,
+      "words": {
+        "日语": {
+          "text": "眉毛を描く",
+          "pronunciation": "mayuge o egaku",
+          "note": "まゆげをえが描く"
+        },
+        "英语": {
+          "text": "pencil one's eyebrows",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "画眉",
+          "pronunciation": "huà méi",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "画眉",
+          "pronunciation": "uê7 bhai5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "画眉",
+          "pronunciation": "waak6 tiu4 mei4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 124,
+      "words": {
+        "日语": {
+          "text": "アイシャドウ",
+          "pronunciation": "ai shadou",
+          "note": ""
+        },
+        "英语": {
+          "text": "eye shadow",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "眼影,眼睑膏",
+          "pronunciation": "yǎn yǐng, yǎn jiǎn gāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "眼影,眼睑膏",
+          "pronunciation": "ngang2 ian2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "眼影,眼睑膏",
+          "pronunciation": "ngaan5 jing2, ngaan5 gim2 gou3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 125,
+      "words": {
+        "日语": {
+          "text": "ファンデーション",
+          "pronunciation": "fandeeshon",
+          "note": ""
+        },
+        "英语": {
+          "text": "foundation",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "粉底,气垫,水粉粉底液",
+          "pronunciation": "fěn dǐ, qì diàn, shuǐ fěn fěn dǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "粉底,气垫,水粉粉底液",
+          "pronunciation": "hung2 doi2 êg8, ki3 diêng6, pah4 hung2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "粉底,气垫,水粉粉底液",
+          "pronunciation": "fan2 dai2, hei3 zin2, zi1 fan2, seoi2 fan2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 126,
+      "words": {
+        "日语": {
+          "text": "パウダー",
+          "pronunciation": "paudaa",
+          "note": ""
+        },
+        "英语": {
+          "text": "powder",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "粉,爽身粉",
+          "pronunciation": "fěn, shuǎng shēn fěn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "粉,爽身粉",
+          "pronunciation": "hung2, zua5 hung2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "粉,爽身粉",
+          "pronunciation": "fan2, song2 san1 fan2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 127,
+      "words": {
+        "日语": {
+          "text": "化粧品",
+          "pronunciation": "keshouhin",
+          "note": "けしょうひん品"
+        },
+        "英语": {
+          "text": "cosmetics",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "化妆品",
+          "pronunciation": "huà zhuāng pǐn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "化妆品",
+          "pronunciation": "huê3 zeng1 bing2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "化妆品",
+          "pronunciation": "faa3 zong1 ban2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 128,
+      "words": {
+        "日语": {
+          "text": "頬红",
+          "pronunciation": "hoobenni",
+          "note": "ほおべに"
+        },
+        "英语": {
+          "text": "cheek color",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "腮红",
+          "pronunciation": "sāi hóng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "腮红",
+          "pronunciation": "ang5 hung2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "腮红",
+          "pronunciation": "jin1 zi1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 129,
+      "words": {
+        "日语": {
+          "text": "口紅",
+          "pronunciation": "kuchibenni",
+          "note": "くちべに"
+        },
+        "英语": {
+          "text": "lipstick",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "口红,唇膏",
+          "pronunciation": "kǒu hóng, chún gāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "口红,唇膏",
+          "pronunciation": "dung5 go1, ang5 dung5 go1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "口红,唇膏",
+          "pronunciation": "seon4 gou1, hau2 seon4 gou1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 130,
+      "words": {
+        "日语": {
+          "text": "描く",
+          "pronunciation": "egaku",
+          "note": "えがく"
+        },
+        "英语": {
+          "text": "paint",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "画,描",
+          "pronunciation": "huà, miáo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "画,描",
+          "pronunciation": "uê7, ngi2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "画,描",
+          "pronunciation": "waak6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 131,
+      "words": {
+        "日语": {
+          "text": "涂る",
+          "pronunciation": "nuru",
+          "note": "ぬる"
+        },
+        "英语": {
+          "text": "smear",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "涂,抹,搽",
+          "pronunciation": "tú, mǒ, cā",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "涂,抹,搽",
+          "pronunciation": "tu5, zeng1, bhuah4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "涂,抹,搽",
+          "pronunciation": "caa4, maat3, cig4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 132,
+      "words": {
+        "日语": {
+          "text": "梳かす",
+          "pronunciation": "tokasu",
+          "note": "とかす"
+        },
+        "英语": {
+          "text": "comb one's hairs",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "梳",
+          "pronunciation": "shū",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "梳",
+          "pronunciation": "siu1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "梳",
+          "pronunciation": "so1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 133,
+      "words": {
+        "日语": {
+          "text": "洗う",
+          "pronunciation": "arau",
+          "note": "あらう"
+        },
+        "英语": {
+          "text": "wash",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "洗",
+          "pronunciation": "xǐ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "洗",
+          "pronunciation": "soi2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "洗",
+          "pronunciation": "sai2, saang2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 134,
+      "words": {
+        "日语": {
+          "text": "剥く",
+          "pronunciation": "su",
+          "note": "すく,切薄片"
+        },
+        "英语": {
+          "text": "cut",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "切",
+          "pronunciation": "qiē",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "切",
+          "pronunciation": "zoih8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "切",
+          "pronunciation": "cit3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 135,
+      "words": {
+        "日语": {
+          "text": "切る",
+          "pronunciation": "kiru",
+          "note": "きる"
+        },
+        "英语": {
+          "text": "/",
+          "pronunciation": "剪",
+          "note": ""
+        },
+        "普通话": {
+          "text": "jiǎn",
+          "pronunciation": "ga1",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "jiǎn",
+          "pronunciation": "zin2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "jiǎn",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 136,
+      "words": {
+        "日语": {
+          "text": "斩る",
+          "pronunciation": "kiru",
+          "note": "きる"
+        },
+        "英语": {
+          "text": "/",
+          "pronunciation": "斩,砍,宰",
+          "note": ""
+        },
+        "普通话": {
+          "text": "zhǎn, kǎn, zǎi",
+          "pronunciation": "zam2, kam2, tai5",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "zhǎn, kǎn, zǎi",
+          "pronunciation": "zaam2, ham2, tong1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "zhǎn, kǎn, zǎi",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 137,
+      "words": {
+        "日语": {
+          "text": "刻む",
+          "pronunciation": "kizamu",
+          "note": "きざむ"
+        },
+        "英语": {
+          "text": "cut",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "剁",
+          "pronunciation": "duò",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "剁",
+          "pronunciation": "dog4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "剁",
+          "pronunciation": "doek3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 138,
+      "words": {
+        "日语": {
+          "text": "殺す",
+          "pronunciation": "korosu",
+          "note": "ころす"
+        },
+        "英语": {
+          "text": "/",
+          "pronunciation": "杀",
+          "note": ""
+        },
+        "普通话": {
+          "text": "shā",
+          "pronunciation": "suah4",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "shā",
+          "pronunciation": "saat3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "shā",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 139,
+      "words": {
+        "日语": {
+          "text": "割る",
+          "pronunciation": "waru",
+          "note": "わる"
+        },
+        "英语": {
+          "text": "/",
+          "pronunciation": "割",
+          "note": ""
+        },
+        "普通话": {
+          "text": "gē",
+          "pronunciation": "guah4, lêh8",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "gē",
+          "pronunciation": "got3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "gē",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 140,
+      "words": {
+        "日语": {
+          "text": "折る",
+          "pronunciation": "oru",
+          "note": "おる"
+        },
+        "英语": {
+          "text": "break off",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "掰,折,拗",
+          "pronunciation": "bāi, shé, ǎo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "掰,折,拗",
+          "pronunciation": "bêh4, a2",
+          "note": ""
+        },
+        "粤语": {
+          "text": "掰,折,拗",
+          "pronunciation": "maak3, aau2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 141,
+      "words": {
+        "日语": {
+          "text": "剥ぐ",
+          "pronunciation": "hagu",
+          "note": "はぐ"
+        },
+        "英语": {
+          "text": "peel",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "剥",
+          "pronunciation": "bāo",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "剥",
+          "pronunciation": "bag4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "剥",
+          "pronunciation": "mok1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 142,
+      "words": {
+        "日语": {
+          "text": "剥く",
+          "pronunciation": "muku",
+          "note": "むく"
+        },
+        "英语": {
+          "text": "/",
+          "pronunciation": "削",
+          "note": ""
+        },
+        "普通话": {
+          "text": "xuē",
+          "pronunciation": "poi1",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "xuē",
+          "pronunciation": "pai1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "xuē",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 143,
+      "words": {
+        "日语": {
+          "text": "干かす",
+          "pronunciation": "kawakasu",
+          "note": "かわかす"
+        },
+        "英语": {
+          "text": "airing, spin-dry, air drying, blow-dry, wipe dry",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "弄干,晒干,晾干,脱干,风干,吹干,拖干,擦干",
+          "pronunciation": "nòng gān, shài gān, liàng gān, tuō gān, fēng gān, chuī gān, tuō gān, cā gān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "弄干,晒干,晾干,脱干,风干,吹干,拖干,擦干",
+          "pronunciation": "muêh8 da1, pag8 da1, la7 da1, li5 da1, tao2 da1, bung5 da1, cuê1 da1, re5 da1, cig4 da1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "弄干,晒干,晾干,脱干,风干,吹干,拖干,擦干",
+          "pronunciation": "gon1 seoi2, sau1 gon1, king4 gon1, fak6 gon1, hing3 gon1, ceoi3 gon1, maat3 gon1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 144,
+      "words": {
+        "日语": {
+          "text": "振り切る",
+          "pronunciation": "furikiru",
+          "note": "ふりきる"
+        },
+        "英语": {
+          "text": "spin dry",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "手甩干",
+          "pronunciation": "yòng shǒu shuǎi gān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "手甩干",
+          "pronunciation": "hin3 da1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "手甩干",
+          "pronunciation": "fing6 gon1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 145,
+      "words": {
+        "日语": {
+          "text": "絞る",
+          "pronunciation": "shiboru",
+          "note": "しぼる"
+        },
+        "英语": {
+          "text": "wring out",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "拧干",
+          "pronunciation": "nǐng gān",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "拧干",
+          "pronunciation": "zung6 da1",
+          "note": ""
+        },
+        "粤语": {
+          "text": "拧干",
+          "pronunciation": "nin2 gon1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 146,
+      "words": {
+        "日语": {
+          "text": "絞り",
+          "pronunciation": "oshibori",
+          "note": "おしぼり"
+        },
+        "英语": {
+          "text": "dry towel",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "拧干毛巾,干毛巾",
+          "pronunciation": "nǐng gān de shī máo jīn, gān máo jīn",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "拧干毛巾,干毛巾",
+          "pronunciation": "zung6 da1 gai7 ming7 bou3, da1 ming7 bou3",
+          "note": ""
+        },
+        "粤语": {
+          "text": "拧干毛巾,干毛巾",
+          "pronunciation": "nin2 gon1 mou4 gan1, gon1 mou4 gan1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 147,
+      "words": {
+        "日语": {
+          "text": "お日様を浴びる",
+          "pronunciation": "ohisama o abiru",
+          "note": "おひさまをあびる"
+        },
+        "英语": {
+          "text": "bask, sunbathe",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "晒太阳",
+          "pronunciation": "shài tài yáng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "晒太阳",
+          "pronunciation": "ziêh4 rig8, pag8 rig8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "晒太阳",
+          "pronunciation": "saai3 jit6 tau2",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 148,
+      "words": {
+        "日语": {
+          "text": "蒸し暑い",
+          "pronunciation": "mushiatsui",
+          "note": "むしあつい"
+        },
+        "英语": {
+          "text": "muggy, sultry",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "闷热",
+          "pronunciation": "mēn rè",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "闷热",
+          "pronunciation": "hib4 ruah8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "闷热",
+          "pronunciation": "hing3 jit6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 149,
+      "words": {
+        "日语": {
+          "text": "暑い",
+          "pronunciation": "atsui",
+          "note": "あつい"
+        },
+        "英语": {
+          "text": "heat",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "热烘烘",
+          "pronunciation": "rè hōng hōng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "热烘烘",
+          "pronunciation": "hah4 hah4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "热烘烘",
+          "pronunciation": "hing3 hap6",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 150,
+      "words": {
+        "日语": {
+          "text": "天気雨",
+          "pronunciation": "tenki ame",
+          "note": "てんきあめ"
+        },
+        "英语": {
+          "text": "sunny rain",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "太阳雨,白撞雨",
+          "pronunciation": "tài yáng yǔ",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "太阳雨,白撞雨",
+          "pronunciation": "rig8 tao5 hou6",
+          "note": ""
+        },
+        "粤语": {
+          "text": "太阳雨,白撞雨",
+          "pronunciation": "baak6 zong6 jyu5",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 151,
+      "words": {
+        "日语": {
+          "text": "日で照り雨",
+          "pronunciation": "hideri ame",
+          "note": "ひでりあめ"
+        },
+        "英语": {
+          "text": "/",
+          "pronunciation": "狐狸雨,晴雨,骤雨",
+          "note": ""
+        },
+        "普通话": {
+          "text": "hú li yǔ, qíng yǔ, zhòu yǔ",
+          "pronunciation": "ding7 hou6",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "hú li yǔ, qíng yǔ, zhòu yǔ",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "粤语": {
+          "text": "hú li yǔ, qíng yǔ, zhòu yǔ",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 152,
+      "words": {
+        "日语": {
+          "text": "染める",
+          "pronunciation": "someru",
+          "note": "そめる"
+        },
+        "英语": {
+          "text": "dye",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "染色,拟色,油色",
+          "pronunciation": "rǎn sè, nǐ sè, yóu sè",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "染色,拟色,油色",
+          "pronunciation": "riam2 sêg4, ni2 sêg4",
+          "note": ""
+        },
+        "粤语": {
+          "text": "染色,拟色,油色",
+          "pronunciation": "jim5 sik1, jau4 sik1",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 153,
+      "words": {
+        "日语": {
+          "text": "整える",
+          "pronunciation": "toto noeru",
+          "note": "ととのえる"
+        },
+        "英语": {
+          "text": "tidy up",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "整理,收拾,择直,执齐",
+          "pronunciation": "zhěng lǐ, shōu shi, zhé zhí, zhí qí",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "整理,收拾,择直,执齐",
+          "pronunciation": "zian2, siu1 sib8, doh8 dig8",
+          "note": ""
+        },
+        "粤语": {
+          "text": "整理,收拾,择直,执齐",
+          "pronunciation": "zap1 ding6, zap1 sap6, zap1 cai4",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 154,
+      "words": {
+        "日语": {
+          "text": "パーマ",
+          "pronunciation": "paama",
+          "note": ""
+        },
+        "英语": {
+          "text": "perm",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "卷发,烫发",
+          "pronunciation": "juǎn fà, tàng fà",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "卷发,烫发",
+          "pronunciation": "kêg4 mo5, diang6 mo5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "卷发,烫发",
+          "pronunciation": "lyun1 mou1, din6 faat3",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 155,
+      "words": {
+        "日语": {
+          "text": "ドライヤー",
+          "pronunciation": "doraiyaa",
+          "note": "dryer"
+        },
+        "英语": {
+          "text": "hair dryer",
+          "pronunciation": "/",
+          "note": ""
+        },
+        "普通话": {
+          "text": "吹风机,电吹风",
+          "pronunciation": "chuī fēng jī, diàn chuī fēng",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "吹风机,电吹风",
+          "pronunciation": "cuê1 huang1 dang5",
+          "note": ""
+        },
+        "粤语": {
+          "text": "吹风机,电吹风",
+          "pronunciation": "fung1 tung2, din6 ceoi3 fung1",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "languages": [
+    "日语",
+    "英语",
+    "普通话",
+    "潮州话",
+    "粤语"
+  ],
+  "foreignLangs": [
+    "日语",
+    "英语"
+  ],
+  "hanLangs": [
+    "普通话",
+    "潮州话",
+    "粤语"
+  ],
+  "mandarinIndex": 6,
+  "sentences": [
+    {
+      "id": 0,
+      "texts": {
+        "英语": {
+          "text": "How are you？（何若余）",
+          "pronunciation": "[haʊ ɑːr jə]",
+          "note": "How do you do？ \n川渝地区问时长说“何久？”（音：好久），多久的含义。"
+        },
+        "俄语": {
+          "text": "Как дела?（岂可，者乃？）",
+          "pronunciation": "[kak dʲɪˈla]‌",
+          "note": "音近 卡克·杰拉，对应回答\"‌Хорошо, спасибо!‌\"（很好，谢谢！）\n发音：[xərɐˈʂo spɐˈsʲibə]‌-哈拉少 斯巴西巴"
+        },
+        "朝鲜语": {
+          "text": "안녕하십니까（安宁何甚乃其）",
+          "pronunciation": "an nyeong ha sim nik ka",
+          "note": "안녕（安宁/安好）+ 하십니까（是……吗？的尊敬疑问终结词尾）‌‌"
+        },
+        "日语": {
+          "text": "お元気ですか。",
+          "pronunciation": "o gen ki de su ka",
+          "note": "おげんきですか"
+        },
+        "泰语": {
+          "text": "ส-บาย-ดี-ไหม",
+          "pronunciation": "[sa bāi dī mai]",
+          "note": "\"sa-bai\"意为舒适/安好，\"di\"为好，\"mai\"为疑问助词，直译“安好否？”"
+        },
+        "越南语": {
+          "text": "",
+          "pronunciation": "",
+          "note": ""
+        },
+        "普通话": {
+          "text": "你好吗？",
+          "pronunciation": "nǐ hǎo ma‌",
+          "note": "口语多说“吃了吗”"
+        },
+        "潮州话": {
+          "text": "最近微甚样",
+          "pronunciation": "zuê3 geng6 mih4 sên1 iên7",
+          "note": "口语多说“食若未”"
+        },
+        "粤语": {
+          "text": "近排怎样？",
+          "pronunciation": "gan6 paai4 dim2 joeng6",
+          "note": "口语多说“食着未”"
+        },
+        "客家话": {
+          "text": "",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 1,
+      "texts": {
+        "英语": {
+          "text": "(I'm) Very well，thanks.",
+          "pronunciation": "[/aɪm/ ˈvɛri wɛl，θæŋks]",
+          "note": ""
+        },
+        "俄语": {
+          "text": "Хорошо!",
+          "pronunciation": "[xərɐˈʂo]",
+          "note": "哈拉少"
+        },
+        "朝鲜语": {
+          "text": "안녕하십니까（安宁何甚乃其）",
+          "pronunciation": "an nyeong ha sim nik ka!",
+          "note": ""
+        },
+        "日语": {
+          "text": "元気です。",
+          "pronunciation": "gen ki de su",
+          "note": "げんきです。"
+        },
+        "泰语": {
+          "text": "ส-บาย-ดี，ขอบ-คุณ-ค่ะ/ครับ",
+          "pronunciation": "[sà baːj diː，kʰâp kʰun kʰâ（女）/kʰráp(男)]",
+          "note": ""
+        },
+        "越南语": {
+          "text": "Rất tốt，cảm ơn （若多，感恩）",
+          "pronunciation": "/zət̚˦˥ tɔt̚˦˥，kam˧ˀ˥ ən˧/",
+          "note": "很好，感恩。（也可口语化简作\"Tốt, cảm ơn.\"）"
+        },
+        "普通话": {
+          "text": "我很好！",
+          "pronunciation": "wǒ hěn hǎo‌",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "我何好！",
+          "pronunciation": "ua2 hoh4 ho2",
+          "note": "水何澹澹——曹操 《步出夏门行》（何：甚，多么） \n【潮】弗莫 bhoi6 mo2 （不错，不赖）"
+        },
+        "粤语": {
+          "text": "几好！",
+          "pronunciation": "gei2 hou2",
+          "note": "几死者数矣。——唐·柳宗元 《捕蛇者说》（几乎，差不多）\n【粤】几好，指挺好，蛮好。"
+        },
+        "客家话": {
+          "text": "",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    },
+    {
+      "id": 2,
+      "texts": {
+        "英语": {
+          "text": "How are you feeling today?",
+          "pronunciation": "[haʊ ɑːr jə ˈfiːlɪŋ təˈdeɪ]",
+          "note": "\"are you\"常合读为 /ɑːrju/ 或 /ərju/"
+        },
+        "俄语": {
+          "text": "Как здоровье?",
+          "pronunciation": "[kak zdrɐˈvʲe]‌",
+          "note": "卡克 兹多拉夫耶‌（“兹”轻读，“夫”短促，“耶”尾音上扬）"
+        },
+        "朝鲜语": {
+          "text": "모든 괜찮습니까?‌",
+          "pronunciation": "mo deun gwaen chan seum nik ka?",
+          "note": "‌모든 (modeun)‌：意为“所有”、“一切”、“全部”。괜찮다（没关系/没事/好）"
+        },
+        "日语": {
+          "text": "あなたの体調はいかがですか?",
+          "pronunciation": "anata no tai chyou wa i ka ga de su ka",
+          "note": "体調（たいちょう）指身体状况"
+        },
+        "泰语": {
+          "text": "วัน-นี้-เป็น-อย่าง-ไร-บ้าง",
+          "pronunciation": "[wan-ni bpen yang-rai bang]",
+          "note": "\"‌อ‌\"在此处‌无独立语义‌，仅作为‌不发音的前引字。元日便无恙乃帮"
+        },
+        "越南语": {
+          "text": "",
+          "pronunciation": "",
+          "note": ""
+        },
+        "普通话": {
+          "text": "你身体好吗?",
+          "pronunciation": "nǐ shēn tǐ hǎo ma",
+          "note": ""
+        },
+        "潮州话": {
+          "text": "尔身体怎生",
+          "pronunciation": "le2 sing1 ti2 zai6 sên1",
+          "note": "你为公事来到这些，不知你怎生做兀的关节？——元·关汉卿《望江亭》"
+        },
+        "粤语": {
+          "text": "你身体怎样",
+          "pronunciation": "",
+          "note": ""
+        },
+        "客家话": {
+          "text": "",
+          "pronunciation": "",
+          "note": ""
+        }
+      }
+    }
+  ],
+  "sentenceLanguages": [
+    "英语",
+    "俄语",
+    "朝鲜语",
+    "日语",
+    "泰语",
+    "越南语",
+    "普通话",
+    "潮州话",
+    "粤语",
+    "客家话"
+  ],
+  "sentenceForeignLangs": [
+    "英语",
+    "俄语",
+    "朝鲜语",
+    "日语",
+    "泰语",
+    "越南语"
+  ],
+  "sentenceHanLangs": [
+    "普通话",
+    "潮州话",
+    "粤语",
+    "客家话"
+  ],
+  "sentenceMandarinIndex": 18,
+  "exportedAt": "2026-08-04T11:15:01.587Z",
+  "version": "2.0"
+}

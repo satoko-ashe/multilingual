@@ -1,0 +1,2176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>多语言学习卡 · 词汇 & 句子</title>
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js">
+    </script>
+    <style>
+        /* ===== 全局 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #f6f8fc;
+            color: #1a1e2b;
+            padding: 20px 24px 60px;
+            min-height: 100vh;
+        }
+        .app {
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* ===== 头部 ===== */
+        .header {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px 24px;
+            margin-bottom: 24px;
+            background: #ffffffcc;
+            backdrop-filter: blur(12px);
+            padding: 16px 28px;
+            border-radius: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 4px rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+        .header-left h1 {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.02em;
+        }
+        .header-left .badge {
+            background: #eef2ff;
+            color: #4338ca;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 40px;
+            border: 1px solid #c7d2fe;
+            white-space: nowrap;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .header-actions .stat {
+            font-size: 14px;
+            color: #475569;
+            background: #f1f5f9;
+            padding: 4px 14px;
+            border-radius: 40px;
+            white-space: nowrap;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.2s;
+            white-space: nowrap;
+            text-decoration: none;
+            user-select: none;
+        }
+        .btn:hover {
+            background: #e2e8f0;
+            border-color: #cbd5e1;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+        }
+        .btn-primary {
+            background: #2563eb;
+            border-color: #2563eb;
+            color: #fff;
+        }
+        .btn-primary:hover {
+            background: #1d4ed8;
+            border-color: #1d4ed8;
+        }
+        .btn-success {
+            background: #16a34a;
+            border-color: #16a34a;
+            color: #fff;
+        }
+        .btn-success:hover {
+            background: #15803d;
+            border-color: #15803d;
+        }
+        .btn-sm {
+            padding: 4px 14px;
+            font-size: 13px;
+        }
+
+        /* ===== 上传区 ===== */
+        .upload-zone {
+            border: 2px dashed #cbd5e1;
+            border-radius: 28px;
+            padding: 48px 20px 40px;
+            text-align: center;
+            background: #fafcff;
+            transition: all 0.25s;
+            margin-bottom: 28px;
+            cursor: default;
+        }
+        .upload-zone.dragover {
+            border-color: #2563eb;
+            background: #eff6ff;
+        }
+        .upload-zone .icon {
+            font-size: 48px;
+            margin-bottom: 12px;
+            display: block;
+        }
+        .upload-zone h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .upload-zone .desc {
+            color: #64748b;
+            font-size: 15px;
+            margin-top: 6px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 6px 16px;
+        }
+        .upload-zone .desc .divider {
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+        .upload-zone .hint {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 14px;
+        }
+        .upload-zone .hint strong {
+            color: #64748b;
+            font-weight: 600;
+        }
+        .upload-zone input[type="file"] {
+            display: none;
+        }
+
+        /* ===== 工具栏 ===== */
+        .toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px 18px;
+            margin-bottom: 24px;
+            background: #ffffffcc;
+            backdrop-filter: blur(8px);
+            padding: 12px 22px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.02);
+            position: relative;
+        }
+        .search-wrap {
+            flex: 1 1 200px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        .search-wrap .search-icon {
+            position: absolute;
+            left: 14px;
+            color: #94a3b8;
+            font-size: 18px;
+            pointer-events: none;
+        }
+        .search-wrap input {
+            width: 100%;
+            padding: 10px 16px 10px 44px;
+            border: 1px solid #e2e8f0;
+            border-radius: 40px;
+            font-size: 15px;
+            background: #f8fafc;
+            transition: all 0.2s;
+            outline: none;
+            color: #0f172a;
+        }
+        .search-wrap input:focus {
+            border-color: #2563eb;
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+        .search-wrap input::placeholder {
+            color: #94a3b8;
+        }
+
+        /* 语种选择按钮 */
+        .lang-selector-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 18px;
+            border-radius: 40px;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+        .lang-selector-btn:hover {
+            background: #e2e8f0;
+        }
+        .lang-selector-btn .arrow {
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+        .lang-selector-btn .arrow.open {
+            transform: rotate(180deg);
+        }
+        .lang-selector-btn .badge-count {
+            background: #2563eb;
+            color: #fff;
+            border-radius: 30px;
+            padding: 0 10px;
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 20px;
+            min-width: 20px;
+            text-align: center;
+        }
+
+        /* 语种弹出面板 - 增大尺寸 */
+        .lang-panel {
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            right: 0;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12), 0 4px 16px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+            padding: 16px 24px 16px;
+            z-index: 100;
+            display: none;
+            max-height: 60vh;
+            min-width: 420px;
+            width: auto;
+            overflow-y: auto;
+        }
+        .lang-panel.open {
+            display: block;
+        }
+        .lang-panel .panel-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .lang-panel .panel-actions {
+            display: flex;
+            gap: 8px;
+        }
+        .lang-panel .panel-actions .btn {
+            padding: 4px 14px;
+            font-size: 12px;
+            border-radius: 30px;
+        }
+        .lang-panel .lang-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 6px 12px;
+        }
+        .lang-panel .lang-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 8px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.15s;
+            font-size: 14px;
+            color: #1e293b;
+        }
+        .lang-panel .lang-item:hover {
+            background: #f1f5f9;
+        }
+        .lang-panel .lang-item input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            accent-color: #2563eb;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .lang-panel .lang-item .lang-label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+        }
+        .lang-panel .lang-item .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            display: inline-block;
+        }
+        .lang-panel .lang-item .count {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-left: auto;
+        }
+        .lang-panel .panel-footer {
+            margin-top: 14px;
+            padding-top: 12px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+        .lang-panel .panel-footer .btn {
+            padding: 6px 22px;
+            font-size: 14px;
+        }
+
+        /* 模式切换 */
+        .mode-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: #f1f5f9;
+            border-radius: 40px;
+            padding: 4px;
+            flex-shrink: 0;
+        }
+        .mode-switch .btn {
+            border: none;
+            background: transparent;
+            padding: 6px 18px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #475569;
+            border-radius: 30px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .mode-switch .btn.active {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            color: #0f172a;
+        }
+        .mode-switch .btn:hover:not(.active) {
+            background: #e2e8f0;
+        }
+
+        /* 显示模式切换 */
+        .display-switch {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: #f1f5f9;
+            border-radius: 40px;
+            padding: 4px;
+            flex-shrink: 0;
+        }
+        .display-switch .btn {
+            border: none;
+            background: transparent;
+            padding: 4px 14px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #475569;
+            border-radius: 30px;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .display-switch .btn.active {
+            background: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+            color: #0f172a;
+        }
+        .display-switch .btn:hover:not(.active) {
+            background: #e2e8f0;
+        }
+
+        /* ===== 卡片 ===== */
+        .card-grid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 4px;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 24px 28px 20px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04), 0 1px 4px rgba(0, 0, 0, 0.02);
+            border: 1px solid #edf2f7;
+            transition: all 0.2s;
+            width: 100%;
+            max-width: 100%;
+        }
+        .card:hover {
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.02);
+            border-color: #e2e8f0;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .card-header .index {
+            font-size: 14px;
+            font-weight: 500;
+            color: #94a3b8;
+            background: #f8fafc;
+            padding: 4px 16px;
+            border-radius: 40px;
+        }
+
+        .card-body-dual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .card-body-dual .lang-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .card-body-dual .group-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #475569;
+            padding-bottom: 4px;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 2px;
+        }
+
+        .card-body-single {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .lang-block {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding: 12px 18px;
+            border-radius: 16px;
+            background: #fafcff;
+            border: 1px solid #f1f5f9;
+            transition: background 0.15s;
+        }
+        .lang-block:hover {
+            background: #f8fafc;
+        }
+        .lang-block .lang-label {
+            font-weight: 600;
+            font-size: 14px;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 2px;
+        }
+        .lang-block .lang-label .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .lang-block .word-pron-row {
+            font-size: 16px;
+            color: #0f172a;
+            padding-left: 22px;
+            line-height: 1.7;
+            word-break: break-word;
+            white-space: pre-wrap;
+        }
+        .lang-block .note-row {
+            padding-left: 22px;
+            font-size: 13px;
+            color: #8b5cf6;
+            background: #f5f3ff;
+            border-radius: 30px;
+            padding: 3px 16px;
+            margin-top: 2px;
+            display: inline-block;
+            width: fit-content;
+            border: 1px solid #ede9fe;
+            white-space: pre-wrap;
+        }
+        .lang-block .sentence-text {
+            font-size: 16px;
+            color: #0f172a;
+            padding-left: 22px;
+            line-height: 1.7;
+            word-break: break-word;
+        }
+
+        .card-footer {
+            margin-top: 18px;
+            padding-top: 14px;
+            border-top: 1px solid #f1f5f9;
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .card-footer .btn-sentence {
+            font-size: 14px;
+            background: #f1f5f9;
+            border: none;
+            padding: 6px 22px;
+            border-radius: 30px;
+            color: #2563eb;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .card-footer .btn-sentence:hover:not(:disabled) {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+        .card-footer .btn-sentence:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: #f1f5f9;
+            color: #94a3b8;
+        }
+
+        /* ===== 分页 ===== */
+        .pagination-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 10px 18px;
+            margin: 24px 0 10px;
+            padding: 12px 20px;
+            background: #ffffffcc;
+            backdrop-filter: blur(8px);
+            border-radius: 60px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+        .pagination-wrapper .p-btn {
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #1e293b;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .pagination-wrapper .p-btn:hover:not(:disabled) {
+            background: #e2e8f0;
+        }
+        .pagination-wrapper .p-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+        .pagination-wrapper .page-info {
+            font-size: 14px;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pagination-wrapper .page-input {
+            width: 52px;
+            padding: 6px 8px;
+            border: 1px solid #e2e8f0;
+            border-radius: 30px;
+            font-size: 14px;
+            text-align: center;
+            background: #f8fafc;
+            outline: none;
+        }
+        .pagination-wrapper .page-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+        .pagination-wrapper .page-size-select {
+            padding: 6px 12px;
+            border-radius: 30px;
+            border: 1px solid #e2e8f0;
+            background: #f8fafc;
+            font-size: 14px;
+            outline: none;
+            cursor: pointer;
+        }
+        .pagination-wrapper .page-size-select:focus {
+            border-color: #2563eb;
+        }
+
+        /* ===== 空状态 ===== */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #94a3b8;
+        }
+        .empty-state .big-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+            display: block;
+        }
+        .empty-state h3 {
+            font-size: 20px;
+            color: #475569;
+            font-weight: 500;
+        }
+        .empty-state p {
+            margin-top: 6px;
+            font-size: 15px;
+        }
+
+        /* ===== 模态框 ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            animation: fadeIn 0.2s ease;
+        }
+        .modal-overlay.open {
+            display: flex;
+        }
+        .modal {
+            background: #ffffff;
+            border-radius: 28px;
+            max-width: 680px;
+            width: 100%;
+            max-height: 80vh;
+            padding: 28px 32px 32px;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.16);
+            overflow-y: auto;
+            animation: slideUp 0.25s ease;
+        }
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 18px;
+        }
+        .modal-header h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        .modal-close {
+            background: #f1f5f9;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            color: #475569;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-close:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+        .modal-body .sentence-item {
+            padding: 12px 16px;
+            background: #f8fafc;
+            border-radius: 14px;
+            margin-bottom: 10px;
+            border-left: 4px solid #2563eb;
+        }
+        .modal-body .sentence-item .lang-tag {
+            font-weight: 600;
+            font-size: 13px;
+            color: #475569;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .modal-body .sentence-item .text {
+            font-size: 15px;
+            white-space: pre-wrap;
+        }
+        .modal-body .no-sentence {
+            color: #94a3b8;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* ===== 动画 ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ===== Toast ===== */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(80px);
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+            opacity: 0;
+            transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+            pointer-events: none;
+            z-index: 2000;
+            max-width: 90vw;
+            text-align: center;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+        .toast.success {
+            background: #16a34a;
+        }
+        .toast.error {
+            background: #dc2626;
+        }
+        .toast.info {
+            background: #2563eb;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 900px) {
+            body {
+                padding: 16px 16px 50px;
+            }
+            .app {
+                max-width: 100%;
+            }
+            .card {
+                padding: 20px 18px 18px;
+            }
+            .card-body-dual {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .lang-block {
+                padding: 10px 14px;
+            }
+            .lang-block .word-pron-row,
+            .lang-block .sentence-text {
+                padding-left: 12px;
+            }
+            .lang-block .note-row {
+                padding-left: 12px;
+            }
+            .lang-panel {
+                min-width: unset;
+                left: 8px;
+                right: 8px;
+                padding: 16px;
+            }
+            .lang-panel .lang-grid {
+                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            }
+        }
+        @media (max-width: 700px) {
+            .header {
+                padding: 14px 18px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .header-left h1 {
+                font-size: 22px;
+            }
+            .header-actions {
+                justify-content: flex-start;
+            }
+            .toolbar {
+                padding: 12px 14px;
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .search-wrap {
+                flex: 1 1 auto;
+            }
+            .lang-selector-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .mode-switch,
+            .display-switch {
+                align-self: center;
+            }
+            .lang-panel {
+                left: 4px;
+                right: 4px;
+                padding: 12px;
+            }
+            .lang-panel .lang-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .card {
+                padding: 16px 12px;
+                border-radius: 20px;
+            }
+            .lang-block .word-pron-row,
+            .lang-block .sentence-text {
+                padding-left: 8px;
+                font-size: 15px;
+            }
+            .lang-block .note-row {
+                padding-left: 8px;
+                font-size: 13px;
+            }
+            .pagination-wrapper {
+                padding: 10px 12px;
+                gap: 8px 12px;
+                border-radius: 30px;
+            }
+            .modal {
+                padding: 20px 18px;
+                margin: 12px;
+            }
+            .upload-zone {
+                padding: 32px 16px 28px;
+            }
+            .upload-zone .icon {
+                font-size: 36px;
+            }
+            .upload-zone .desc {
+                flex-direction: column;
+                gap: 6px;
+            }
+            .upload-zone .desc .divider {
+                display: none;
+            }
+        }
+        @media (max-width: 480px) {
+            body {
+                padding: 10px 8px 36px;
+            }
+            .card {
+                padding: 14px 10px;
+                border-radius: 16px;
+            }
+            .card-body-dual {
+                grid-template-columns: 1fr;
+            }
+            .lang-block {
+                padding: 8px 10px;
+            }
+            .upload-zone {
+                padding: 24px 12px 20px;
+            }
+            .upload-zone .icon {
+                font-size: 30px;
+            }
+            .pagination-wrapper .p-btn {
+                padding: 4px 12px;
+                font-size: 13px;
+            }
+            .header-left h1 {
+                font-size: 19px;
+            }
+            .btn {
+                font-size: 13px;
+                padding: 6px 14px;
+            }
+            .lang-panel .lang-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .modal::-webkit-scrollbar {
+            width: 4px;
+        }
+        .modal::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 10px;
+        }
+        .modal::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        /* 隐藏file input */
+        #fileInput {
+            display: none;
+        }
+
+        .text-muted {
+            color: #94a3b8;
+        }
+        .text-sm {
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="app" id="app">
+        <!-- Toast -->
+        <div class="toast" id="toast"></div>
+
+        <!-- 头部 -->
+        <header class="header">
+            <div class="header-left">
+                <h1>📚 多语言学习卡</h1>
+                <span class="badge" id="langCountBadge">0 种语言</span>
+            </div>
+            <div class="header-actions">
+                <span class="stat" id="entryCountStat">0 个词条</span>
+                <button class="btn btn-primary" id="uploadBtn">📤 上传 Excel</button>
+                <button class="btn btn-success" id="exportBtn">📥 导出数据</button>
+                <input type="file" id="fileInput" accept=".xlsx,.xls" />
+            </div>
+        </header>
+
+        <!-- 上传区域 -->
+        <div class="upload-zone" id="uploadZone">
+            <span class="icon">📁</span>
+            <h3>拖拽 Excel 文件到此处</h3>
+            <div class="desc">
+                <span>支持 <strong>.xlsx</strong> / <strong>.xls</strong></span>
+                <span class="divider">|</span>
+                <span>点击上方「上传 Excel」按钮</span>
+            </div>
+            <div class="hint">页面启动时会自动尝试加载同目录下的 <strong>vocabulary-data.json</strong></div>
+        </div>
+
+        <!-- 工具栏 -->
+        <div class="toolbar" id="toolbar" style="display:none;">
+            <!-- 搜索 -->
+            <div class="search-wrap">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" placeholder="搜索词汇或句子..." autocomplete="off" />
+            </div>
+
+            <!-- 语种选择 -->
+            <div style="position:relative; flex-shrink:0;">
+                <div class="lang-selector-btn" id="langSelectorBtn">
+                    <span>🌐 语种</span>
+                    <span class="badge-count" id="langBadgeCount">全部</span>
+                    <span class="arrow" id="langArrow">▾</span>
+                </div>
+                <div class="lang-panel" id="langPanel">
+                    <div class="panel-header">
+                        <div></div>
+                        <div class="panel-actions">
+                            <button class="btn btn-sm" id="selectAllLang">全选</button>
+                            <button class="btn btn-sm" id="deselectAllLang">取消全选</button>
+                        </div>
+                    </div>
+                    <div class="lang-grid" id="langGrid"></div>
+                    <div class="panel-footer">
+                        <button class="btn btn-primary" id="langPanelConfirm">确定</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 模式切换 -->
+            <div class="mode-switch" id="modeSwitch">
+                <button class="btn active" data-mode="vocabulary">📖 词汇</button>
+                <button class="btn" data-mode="sentence">💬 句子</button>
+            </div>
+
+            <!-- 显示模式 -->
+            <div class="display-switch" id="displaySwitch">
+                <button class="btn" data-display="single">单栏</button>
+                <button class="btn active" data-display="dual">双栏</button>
+            </div>
+        </div>
+
+        <!-- 卡片网格 -->
+        <div id="cardGrid" class="card-grid"></div>
+
+        <!-- 分页控件 -->
+        <div class="pagination-wrapper" id="paginationWrapper" style="display:none;">
+            <button class="p-btn" id="firstPage">⏮ 首页</button>
+            <button class="p-btn" id="prevPage">◀ 上一页</button>
+            <span class="page-info">
+                第 <input type="number" class="page-input" id="pageInput" min="1" value="1" /> 页 / 共 <span id="totalPages">0</span> 页
+            </span>
+            <button class="p-btn" id="nextPage">下一页 ▶</button>
+            <button class="p-btn" id="lastPage">末页 ⏭</button>
+            <span class="page-info">
+                每页
+                <select class="page-size-select" id="pageSizeSelect">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select>
+                张
+            </span>
+        </div>
+
+        <!-- 空状态 -->
+        <div id="emptyState" class="empty-state" style="display:none;">
+            <span class="big-icon">🔎</span>
+            <h3 id="emptyTitle">未找到匹配的词汇</h3>
+            <p id="emptyDesc">试试调整搜索关键词或筛选条件</p>
+        </div>
+
+        <!-- 例句模态框 -->
+        <div class="modal-overlay" id="sentenceModal">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 id="modalTitle">📖 例句</h2>
+                    <button class="modal-close" id="modalClose">✕</button>
+                </div>
+                <div class="modal-body" id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            'use strict';
+
+            // ---------- DOM ----------
+            const $ = (sel) => document.querySelector(sel);
+            const $$ = (sel) => document.querySelectorAll(sel);
+
+            const fileInput = $('#fileInput');
+            const uploadZone = $('#uploadZone');
+            const uploadBtn = $('#uploadBtn');
+            const exportBtn = $('#exportBtn');
+            const searchInput = $('#searchInput');
+            const cardGrid = $('#cardGrid');
+            const emptyState = $('#emptyState');
+            const emptyTitle = $('#emptyTitle');
+            const emptyDesc = $('#emptyDesc');
+            const toolbar = $('#toolbar');
+            const langCountBadge = $('#langCountBadge');
+            const entryCountStat = $('#entryCountStat');
+            const paginationWrapper = $('#paginationWrapper');
+            const firstPageBtn = $('#firstPage');
+            const prevPageBtn = $('#prevPage');
+            const nextPageBtn = $('#nextPage');
+            const lastPageBtn = $('#lastPage');
+            const pageInput = $('#pageInput');
+            const totalPagesSpan = $('#totalPages');
+            const pageSizeSelect = $('#pageSizeSelect');
+            const toastEl = $('#toast');
+
+            const modalOverlay = $('#sentenceModal');
+            const modalClose = $('#modalClose');
+            const modalTitle = $('#modalTitle');
+            const modalBody = $('#modalBody');
+
+            // 语种面板
+            const langSelectorBtn = $('#langSelectorBtn');
+            const langPanel = $('#langPanel');
+            const langGrid = $('#langGrid');
+            const langBadgeCount = $('#langBadgeCount');
+            const langArrow = $('#langArrow');
+            const selectAllLang = $('#selectAllLang');
+            const deselectAllLang = $('#deselectAllLang');
+            const langPanelConfirm = $('#langPanelConfirm');
+
+            // 模式切换
+            const modeSwitch = $('#modeSwitch');
+            const displaySwitch = $('#displaySwitch');
+
+            // ---------- 全局状态 ----------
+            let vocabulary = [];
+            let languages = [];
+            let foreignLangs = [];
+            let hanLangs = [];
+            let mandarinIndex = -1;
+
+            let sentences = [];
+            let sentenceLanguages = [];
+            let sentenceForeignLangs = [];
+            let sentenceHanLangs = [];
+            let sentenceMandarinIndex = -1;
+
+            let allDataLoaded = false;
+            let selectedLangs = [];
+            let currentMode = 'vocabulary';
+            let displayMode = 'dual';
+            let currentPage = 1;
+            let pageSize = 1;
+            let toastTimer = null;
+            let isLangPanelOpen = false;
+
+            const langColors = [
+                '#2563eb', '#7c3aed', '#0ea5e9', '#14b8a6', '#8b5cf6',
+                '#f59e0b', '#ef4444', '#ec4899', '#06b6d4', '#84cc16',
+                '#f97316', '#6366f1', '#22d3ee', '#a855f7', '#10b981'
+            ];
+
+            function getLangColor(idx) {
+                return langColors[idx % langColors.length];
+            }
+
+            // ---------- Toast ----------
+            function showToast(message, type) {
+                if (toastTimer) { clearTimeout(toastTimer);
+                    toastTimer = null; }
+                toastEl.textContent = message;
+                toastEl.className = 'toast';
+                if (type) toastEl.classList.add(type);
+                toastEl.classList.add('show');
+                toastTimer = setTimeout(() => {
+                    toastEl.classList.remove('show');
+                    toastTimer = null;
+                }, 2800);
+            }
+
+            // ---------- 工具 ----------
+            function splitMultiExpressions(cell) {
+                if (!cell) return [];
+                return String(cell).split(',').map(s => s.trim()).filter(Boolean);
+            }
+
+            // ---------- 获取当前语言列表 ----------
+            function getCurrentLangList() {
+                return currentMode === 'vocabulary' ? languages : sentenceLanguages;
+            }
+
+            function getCurrentForeignLangs() {
+                return currentMode === 'vocabulary' ? foreignLangs : sentenceForeignLangs;
+            }
+
+            function getCurrentHanLangs() {
+                return currentMode === 'vocabulary' ? hanLangs : sentenceHanLangs;
+            }
+
+            function getCurrentData() {
+                return currentMode === 'vocabulary' ? vocabulary : sentences;
+            }
+
+            // ========== 新增：从 URL 读取搜索关键词 ==========
+            function applySearchFromUrl() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const searchQuery = urlParams.get('search');
+                if (searchQuery) {
+                    searchInput.value = searchQuery.trim();
+                } else {
+                    searchInput.value = '';
+                }
+            }
+
+            // ---------- 加载 Excel ----------
+            function loadExcelFile(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const data = new Uint8Array(e.target.result);
+                        const workbook = XLSX.read(data, { type: 'array' });
+
+                        // ---- 词汇表 (Sheet 0) ----
+                        const vocabSheet = workbook.Sheets[workbook.SheetNames[0]];
+                        if (!vocabSheet) { showToast('未找到第一个 sheet (词汇)', 'error'); return; }
+                        const vocabRows = XLSX.utils.sheet_to_json(vocabSheet, { header: 1, defval: '' });
+                        if (vocabRows.length < 2) { showToast('词汇表数据不足', 'error'); return; }
+
+                        const headers = vocabRows[0].map(h => String(h).trim());
+
+                        const langColumns = [];
+                        const pronColumns = [];
+                        const noteColumns = [];
+                        let mandarinIdx = -1;
+                        headers.forEach((h, idx) => {
+                            if (h === '发音') {
+                                pronColumns.push(idx);
+                            } else if (h.includes('备注')) {
+                                noteColumns.push({ idx, name: h });
+                            } else if (h) {
+                                langColumns.push({ idx, lang: h });
+                                if (h === '普通话') mandarinIdx = idx;
+                            }
+                        });
+
+                        if (mandarinIdx === -1) {
+                            showToast('未找到「普通话」列，无法分类', 'error');
+                            return;
+                        }
+                        mandarinIndex = mandarinIdx;
+
+                        foreignLangs = [];
+                        hanLangs = [];
+                        langColumns.forEach(({ idx, lang }) => {
+                            if (idx < mandarinIdx) foreignLangs.push(lang);
+                            else hanLangs.push(lang);
+                        });
+                        languages = langColumns.map(item => item.lang);
+
+                        const langPronMap = {};
+                        const langNoteMap = {};
+                        langColumns.forEach(({ idx, lang }) => {
+                            let pronIdx = -1;
+                            for (const pIdx of pronColumns) {
+                                if (pIdx > idx) { pronIdx = pIdx; break; }
+                            }
+                            langPronMap[lang] = pronIdx;
+                        });
+                        noteColumns.forEach(({ idx: noteIdx, name }) => {
+                            let matchedLang = null;
+                            let maxLangIdx = -1;
+                            for (const { idx: langIdx, lang } of langColumns) {
+                                if (langIdx < noteIdx && langIdx > maxLangIdx) {
+                                    maxLangIdx = langIdx;
+                                    matchedLang = lang;
+                                }
+                            }
+                            if (matchedLang) {
+                                langNoteMap[matchedLang] = noteIdx;
+                            }
+                        });
+
+                        const entries = [];
+                        for (let r = 1; r < vocabRows.length; r++) {
+                            const row = vocabRows[r];
+                            if (!row || row.every(cell => String(cell).trim() === '')) continue;
+
+                            const words = {};
+                            let hasData = false;
+                            langColumns.forEach(({ idx, lang }) => {
+                                const text = row[idx] !== undefined ? String(row[idx]).trim() : '';
+                                const pronIdx = langPronMap[lang];
+                                const pron = pronIdx !== -1 && row[pronIdx] !== undefined ? String(row[
+                                    pronIdx]).trim() : '';
+                                const noteIdx = langNoteMap[lang];
+                                const note = noteIdx !== undefined && row[noteIdx] !== undefined ? String(
+                                    row[noteIdx]).trim() : '';
+
+                                if (text || pron || note) hasData = true;
+                                words[lang] = { text, pronunciation: pron, note };
+                            });
+
+                            if (!hasData) continue;
+                            entries.push({ id: entries.length, words });
+                        }
+
+                        if (entries.length === 0) { showToast('词汇表没有有效数据', 'error'); return; }
+                        vocabulary = entries;
+
+                        // ---- 句子表 (Sheet 1) ----
+                        sentences = [];
+                        sentenceLanguages = [];
+                        sentenceForeignLangs = [];
+                        sentenceHanLangs = [];
+                        sentenceMandarinIndex = -1;
+
+                        if (workbook.SheetNames.length > 1) {
+                            const sentSheet = workbook.SheetNames[1];
+                            const sentRows = XLSX.utils.sheet_to_json(workbook.Sheets[sentSheet], { header: 1,
+                                    defval: '' });
+                            if (sentRows.length > 1) {
+                                const sentHeaders = sentRows[0].map(h => String(h).trim());
+
+                                const sentLangColumns = [];
+                                const sentPronColumns = [];
+                                const sentNoteColumns = [];
+                                let sentMandarinIdx = -1;
+
+                                sentHeaders.forEach((h, idx) => {
+                                    if (h === '发音') {
+                                        sentPronColumns.push(idx);
+                                    } else if (h.includes('备注')) {
+                                        sentNoteColumns.push({ idx, name: h });
+                                    } else if (h) {
+                                        sentLangColumns.push({ idx, lang: h });
+                                        if (h === '普通话') sentMandarinIdx = idx;
+                                    }
+                                });
+
+                                sentenceMandarinIndex = sentMandarinIdx;
+                                sentenceLanguages = sentLangColumns.map(item => item.lang);
+
+                                if (sentMandarinIdx !== -1) {
+                                    sentLangColumns.forEach(({ idx, lang }) => {
+                                        if (idx < sentMandarinIdx) sentenceForeignLangs.push(lang);
+                                        else sentenceHanLangs.push(lang);
+                                    });
+                                } else {
+                                    sentenceHanLangs = [...sentenceLanguages];
+                                }
+
+                                const sentLangPronMap = {};
+                                const sentLangNoteMap = {};
+                                sentLangColumns.forEach(({ idx, lang }) => {
+                                    let pronIdx = -1;
+                                    for (const pIdx of sentPronColumns) {
+                                        if (pIdx > idx) { pronIdx = pIdx; break; }
+                                    }
+                                    sentLangPronMap[lang] = pronIdx;
+                                });
+                                sentNoteColumns.forEach(({ idx: noteIdx, name }) => {
+                                    let matchedLang = null;
+                                    let maxLangIdx = -1;
+                                    for (const { idx: langIdx, lang } of sentLangColumns) {
+                                        if (langIdx < noteIdx && langIdx > maxLangIdx) {
+                                            maxLangIdx = langIdx;
+                                            matchedLang = lang;
+                                        }
+                                    }
+                                    if (matchedLang) {
+                                        sentLangNoteMap[matchedLang] = noteIdx;
+                                    }
+                                });
+
+                                for (let r = 1; r < sentRows.length; r++) {
+                                    const row = sentRows[r];
+                                    if (!row || row.every(c => String(c).trim() === '')) continue;
+                                    const texts = {};
+                                    let hasData = false;
+                                    sentLangColumns.forEach(({ idx, lang }) => {
+                                        const text = row[idx] !== undefined ? String(row[idx]).trim() :
+                                        '';
+                                        const pronIdx = sentLangPronMap[lang];
+                                        const pron = pronIdx !== -1 && row[pronIdx] !== undefined ? String(
+                                            row[pronIdx]).trim() : '';
+                                        const noteIdx = sentLangNoteMap[lang];
+                                        const note = noteIdx !== undefined && row[noteIdx] !== undefined ?
+                                            String(row[noteIdx]).trim() : '';
+                                        if (text || pron || note) hasData = true;
+                                        texts[lang] = { text, pronunciation: pron, note };
+                                    });
+                                    if (!hasData) continue;
+                                    sentences.push({ id: sentences.length, texts });
+                                }
+                            }
+                        }
+
+                        allDataLoaded = true;
+                        currentPage = 1;
+                        selectedLangs = [];
+                        // ===== 应用 URL 搜索词 =====
+                        applySearchFromUrl();
+                        renderAll();
+                        showToolbar(true);
+                        uploadZone.style.display = 'none';
+                        updateStats();
+                        showToast(`✅ 成功加载 ${vocabulary.length} 个词条，${sentences.length} 个句子`, 'success');
+
+                    } catch (err) {
+                        console.error(err);
+                        showToast('解析 Excel 失败: ' + err.message, 'error');
+                    }
+                };
+                reader.readAsArrayBuffer(file);
+            }
+
+            // ---------- 自动加载 ----------
+            function autoLoadDataFile() {
+                const fileName = 'vocabulary-data.json';
+                fetch(fileName)
+                    .then(res => {
+                        if (!res.ok) throw new Error('File not found');
+                        return res.json();
+                    })
+                    .then(json => {
+                        if (json.vocabulary && json.languages && json.foreignLangs && json.hanLangs && json
+                            .mandarinIndex !== undefined) {
+                            vocabulary = json.vocabulary || [];
+                            languages = json.languages || [];
+                            foreignLangs = json.foreignLangs || [];
+                            hanLangs = json.hanLangs || [];
+                            mandarinIndex = json.mandarinIndex;
+                            sentences = json.sentences || [];
+                            sentenceLanguages = json.sentenceLanguages || [];
+                            sentenceForeignLangs = json.sentenceForeignLangs || [];
+                            sentenceHanLangs = json.sentenceHanLangs || [];
+                            sentenceMandarinIndex = json.sentenceMandarinIndex || -1;
+
+                            if (vocabulary.length > 0) {
+                                allDataLoaded = true;
+                                currentPage = 1;
+                                selectedLangs = [];
+                                // ===== 应用 URL 搜索词 =====
+                                applySearchFromUrl();
+                                renderAll();
+                                showToolbar(true);
+                                uploadZone.style.display = 'none';
+                                updateStats();
+                                showToast(`📦 自动加载 data 文件 (${vocabulary.length} 个词条，${sentences.length} 个句子)`,
+                                    'success');
+                                return;
+                            }
+                        }
+                        throw new Error('数据格式无效');
+                    })
+                    .catch(() => {
+                        autoLoadExcel();
+                    });
+            }
+
+            function autoLoadExcel() {
+                const fileName = '多种语言词汇表.xlsx';
+                fetch(fileName)
+                    .then(res => {
+                        if (!res.ok) throw new Error('File not found');
+                        return res.arrayBuffer();
+                    })
+                    .then(buffer => {
+                        const file = new File([buffer], fileName, { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+                        loadExcelFile(file);
+                    })
+                    .catch(() => {
+                        uploadZone.style.display = 'block';
+                        showToolbar(false);
+                        if (!allDataLoaded) {
+                            cardGrid.innerHTML =
+                                `<div class="empty-state"><span class="big-icon">📂</span><h3>未检测到词汇数据</h3><p>请上传 Excel 文件或将 vocabulary-data.json 放在同目录下</p></div>`;
+                        }
+                    });
+            }
+
+            // ---------- 导出数据 ----------
+            function exportData() {
+                if (!allDataLoaded || vocabulary.length === 0) {
+                    showToast('⚠️ 没有数据可导出，请先加载词汇', 'error');
+                    return;
+                }
+                const data = {
+                    vocabulary: vocabulary,
+                    languages: languages,
+                    foreignLangs: foreignLangs,
+                    hanLangs: hanLangs,
+                    mandarinIndex: mandarinIndex,
+                    sentences: sentences,
+                    sentenceLanguages: sentenceLanguages,
+                    sentenceForeignLangs: sentenceForeignLangs,
+                    sentenceHanLangs: sentenceHanLangs,
+                    sentenceMandarinIndex: sentenceMandarinIndex,
+                    exportedAt: new Date().toISOString(),
+                    version: '2.0'
+                };
+                const json = JSON.stringify(data, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'vocabulary-data.json';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showToast(`📥 已导出 ${vocabulary.length} 个词条，${sentences.length} 个句子`, 'success');
+            }
+
+            // ---------- 获取筛选数据 ----------
+            function getFilteredData() {
+                const searchTerm = searchInput.value.trim().toLowerCase();
+                const filterLangs = selectedLangs.length > 0 ? selectedLangs : getCurrentLangList();
+
+                if (currentMode === 'vocabulary') {
+                    return vocabulary.filter(entry => {
+                        if (filterLangs.length > 0) {
+                            let has = false;
+                            for (const lang of filterLangs) {
+                                const w = entry.words[lang];
+                                if (w && w.text) { has = true; break; }
+                            }
+                            if (!has) return false;
+                        }
+                        if (searchTerm) {
+                            let match = false;
+                            for (const lang of filterLangs) {
+                                const w = entry.words[lang];
+                                if (!w) continue;
+                                const text = (w.text || '').toLowerCase();
+                                const pron = (w.pronunciation || '').toLowerCase();
+                                if (text.includes(searchTerm) || pron.includes(searchTerm)) {
+                                    match = true;
+                                    break;
+                                }
+                            }
+                            if (!match) return false;
+                        }
+                        return true;
+                    });
+                } else {
+                    return sentences.filter(s => {
+                        if (filterLangs.length > 0) {
+                            let has = false;
+                            for (const lang of filterLangs) {
+                                const d = s.texts[lang];
+                                if (d && d.text && d.text.trim()) { has = true; break; }
+                            }
+                            if (!has) return false;
+                        }
+                        if (searchTerm) {
+                            let match = false;
+                            for (const lang of filterLangs) {
+                                const d = s.texts[lang];
+                                if (!d) continue;
+                                const text = (d.text || '').toLowerCase();
+                                const pron = (d.pronunciation || '').toLowerCase();
+                                if (text.includes(searchTerm) || pron.includes(searchTerm)) {
+                                    match = true;
+                                    break;
+                                }
+                            }
+                            if (!match) return false;
+                        }
+                        return true;
+                    });
+                }
+            }
+
+            // ---------- 查找例句 ----------
+            function findSentencesForEntry(entry, displayLangs) {
+                if (!sentences.length) return [];
+                const searchTexts = [];
+                for (const lang of displayLangs) {
+                    const w = entry.words[lang];
+                    if (w && w.text) {
+                        const exps = splitMultiExpressions(w.text);
+                        exps.forEach(t => { if (t) searchTexts.push(t.toLowerCase()); });
+                    }
+                }
+                if (searchTexts.length === 0) return [];
+
+                const matches = [];
+                for (const sent of sentences) {
+                    for (const lang of displayLangs) {
+                        const d = sent.texts[lang];
+                        const text = d ? d.text : '';
+                        if (!text) continue;
+                        const lower = text.toLowerCase();
+                        for (const search of searchTexts) {
+                            if (lower.includes(search)) {
+                                matches.push({ lang, text });
+                                break;
+                            }
+                        }
+                    }
+                }
+                const unique = [];
+                const seen = new Set();
+                for (const m of matches) {
+                    const key = m.lang + '|||' + m.text;
+                    if (!seen.has(key)) {
+                        seen.add(key);
+                        unique.push(m);
+                    }
+                }
+                return unique;
+            }
+
+            // ---------- 构建语种块 ----------
+            function buildLangBlock(lang, data, mode, langList) {
+                const idx = langList.indexOf(lang);
+                const color = getLangColor(idx >= 0 ? idx : 0);
+                const dot = `<span class="dot" style="background:${color};"></span>`;
+
+                if (mode === 'vocabulary') {
+                    const w = data;
+                    const text = w.text || '';
+                    const pron = w.pronunciation || '';
+                    const note = w.note || '';
+                    if (!text) return '';
+
+                    const wordsArr = splitMultiExpressions(text);
+                    const pronsArr = splitMultiExpressions(pron);
+                    const pairs = [];
+                    const maxLen = Math.max(wordsArr.length, pronsArr.length);
+                    for (let i = 0; i < maxLen; i++) {
+                        const word = wordsArr[i] || '';
+                        const p = pronsArr[i] || '';
+                        pairs.push({ word, pron: p });
+                    }
+                    const displayText = pairs.map(p => {
+                        return p.word + (p.pron ? ' ' + p.pron : '');
+                    }).join(', ');
+
+                    let noteHtml = '';
+                    if (note) {
+                        noteHtml = `<div class="note-row">${note}</div>`;
+                    }
+
+                    return `
+                        <div class="lang-block">
+                            <div class="lang-label">${dot} ${lang}</div>
+                            <div class="word-pron-row">${displayText}</div>
+                            ${noteHtml}
+                        </div>
+                    `;
+                } else {
+                    const d = data;
+                    const text = d.text || '';
+                    const pron = d.pronunciation || '';
+                    const note = d.note || '';
+                    if (!text) return '';
+
+                    let displayText = text;
+                    if (pron) {
+                        displayText += ' ' + pron;
+                    }
+                    let noteHtml = '';
+                    if (note) {
+                        noteHtml = `<div class="note-row">${note}</div>`;
+                    }
+
+                    return `
+                        <div class="lang-block">
+                            <div class="lang-label">${dot} ${lang}</div>
+                            <div class="word-pron-row">${displayText}</div>
+                            ${noteHtml}
+                        </div>
+                    `;
+                }
+            }
+
+            // ---------- 渲染 ----------
+            function renderAll() {
+                if (!allDataLoaded || vocabulary.length === 0) {
+                    cardGrid.innerHTML =
+                        `<div class="empty-state"><span class="big-icon">📂</span><h3>暂无词汇数据</h3><p>请上传 Excel 文件或放置 vocabulary-data.json</p></div>`;
+                    emptyState.style.display = 'none';
+                    paginationWrapper.style.display = 'none';
+                    return;
+                }
+
+                const filtered = getFilteredData();
+                const total = filtered.length;
+                const totalPages = Math.max(1, Math.ceil(total / pageSize));
+                if (currentPage > totalPages) currentPage = totalPages;
+                if (currentPage < 1) currentPage = 1;
+
+                totalPagesSpan.textContent = totalPages;
+                pageInput.value = currentPage;
+                pageInput.max = totalPages;
+                firstPageBtn.disabled = currentPage === 1;
+                prevPageBtn.disabled = currentPage === 1;
+                nextPageBtn.disabled = currentPage === totalPages;
+                lastPageBtn.disabled = currentPage === totalPages;
+                paginationWrapper.style.display = total > 0 ? 'flex' : 'none';
+
+                if (total === 0) {
+                    cardGrid.innerHTML = '';
+                    emptyState.style.display = 'block';
+                    if (currentMode === 'vocabulary') {
+                        emptyTitle.textContent = '未找到匹配的词汇';
+                        emptyDesc.textContent = '试试调整搜索关键词或筛选条件';
+                    } else {
+                        emptyTitle.textContent = '未找到匹配的句子';
+                        emptyDesc.textContent = '试试调整搜索关键词或筛选条件';
+                    }
+                    return;
+                }
+                emptyState.style.display = 'none';
+
+                const start = (currentPage - 1) * pageSize;
+                const end = Math.min(start + pageSize, total);
+                const pageItems = filtered.slice(start, end);
+
+                const currentLangList = getCurrentLangList();
+                const currentForeign = getCurrentForeignLangs();
+                const currentHan = getCurrentHanLangs();
+
+                let displayLangs = selectedLangs.length > 0 ? selectedLangs : currentLangList;
+                const displayForeign = displayLangs.filter(l => currentForeign.includes(l));
+                const displayHan = displayLangs.filter(l => currentHan.includes(l));
+
+                let html = '';
+                pageItems.forEach((item, idx) => {
+                    const id = item.id;
+
+                    if (currentMode === 'vocabulary') {
+                        let singleBlocks = '';
+                        displayLangs.forEach(lang => {
+                            const w = item.words[lang];
+                            if (!w || !w.text) return;
+                            singleBlocks += buildLangBlock(lang, w, 'vocabulary', currentLangList);
+                        });
+
+                        let foreignBlocks = '';
+                        let hanBlocks = '';
+                        displayForeign.forEach(lang => {
+                            const w = item.words[lang];
+                            if (!w || !w.text) return;
+                            foreignBlocks += buildLangBlock(lang, w, 'vocabulary', currentLangList);
+                        });
+                        displayHan.forEach(lang => {
+                            const w = item.words[lang];
+                            if (!w || !w.text) return;
+                            hanBlocks += buildLangBlock(lang, w, 'vocabulary', currentLangList);
+                        });
+
+                        let bodyHtml = '';
+                        if (displayMode === 'single') {
+                            bodyHtml = `<div class="card-body-single">${singleBlocks}</div>`;
+                        } else {
+                            let leftCol = foreignBlocks;
+                            let rightCol = hanBlocks;
+                            if (!leftCol) leftCol =
+                                '<div class="lang-block" style="color:#94a3b8;text-align:center;padding:20px;">无外国语</div>';
+                            if (!rightCol) rightCol =
+                                '<div class="lang-block" style="color:#94a3b8;text-align:center;padding:20px;">无汉方言</div>';
+                            bodyHtml = `
+                                <div class="card-body-dual">
+                                    <div class="lang-group">
+                                        <div class="group-title">🌍 外国语</div>
+                                        ${leftCol}
+                                    </div>
+                                    <div class="lang-group">
+                                        <div class="group-title">🏯 汉方言</div>
+                                        ${rightCol}
+                                    </div>
+                                </div>
+                            `;
+                        }
+
+                        const sentenceMatches = findSentencesForEntry(item, displayLangs);
+
+                        html += `
+                            <div class="card" data-id="${id}">
+                                <div class="card-header">
+                                    <span class="index">#${id + 1}</span>
+                                </div>
+                                ${bodyHtml}
+                                <div class="card-footer">
+                                    <button class="btn-sentence" data-id="${id}" ${sentenceMatches.length === 0 ? 'disabled' : ''}>
+                                        ${sentenceMatches.length > 0 ? `📖 查看例句 (${sentenceMatches.length})` : '📖 无例句'}
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    } else {
+                        let singleBlocks = '';
+                        displayLangs.forEach(lang => {
+                            const d = item.texts[lang];
+                            if (!d || !d.text) return;
+                            singleBlocks += buildLangBlock(lang, d, 'sentence', currentLangList);
+                        });
+
+                        let foreignBlocks = '';
+                        let hanBlocks = '';
+                        displayForeign.forEach(lang => {
+                            const d = item.texts[lang];
+                            if (!d || !d.text) return;
+                            foreignBlocks += buildLangBlock(lang, d, 'sentence', currentLangList);
+                        });
+                        displayHan.forEach(lang => {
+                            const d = item.texts[lang];
+                            if (!d || !d.text) return;
+                            hanBlocks += buildLangBlock(lang, d, 'sentence', currentLangList);
+                        });
+
+                        let bodyHtml = '';
+                        if (displayMode === 'single') {
+                            bodyHtml = `<div class="card-body-single">${singleBlocks}</div>`;
+                        } else {
+                            let leftCol = foreignBlocks;
+                            let rightCol = hanBlocks;
+                            if (!leftCol) leftCol =
+                                '<div class="lang-block" style="color:#94a3b8;text-align:center;padding:20px;">无外国语</div>';
+                            if (!rightCol) rightCol =
+                                '<div class="lang-block" style="color:#94a3b8;text-align:center;padding:20px;">无汉方言</div>';
+                            bodyHtml = `
+                                <div class="card-body-dual">
+                                    <div class="lang-group">
+                                        <div class="group-title">🌍 外国语</div>
+                                        ${leftCol}
+                                    </div>
+                                    <div class="lang-group">
+                                        <div class="group-title">🏯 汉方言</div>
+                                        ${rightCol}
+                                    </div>
+                                </div>
+                            `;
+                        }
+
+                        html += `
+                            <div class="card" data-id="${id}">
+                                <div class="card-header">
+                                    <span class="index">#${id + 1}</span>
+                                </div>
+                                ${bodyHtml}
+                                <div class="card-footer">
+                                    <span class="text-muted text-sm">💬 句子</span>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+
+                cardGrid.innerHTML = html;
+
+                if (currentMode === 'vocabulary') {
+                    cardGrid.querySelectorAll('.btn-sentence').forEach(btn => {
+                        if (btn.disabled) return;
+                        btn.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                            const id = parseInt(this.dataset.id);
+                            const entry = vocabulary.find(e => e.id === id);
+                            if (entry) openSentenceModal(entry);
+                        });
+                    });
+                }
+
+                updateStats();
+                updateLangPanel();
+            }
+
+            // ---------- 模态框 ----------
+            function openSentenceModal(entry) {
+                const displayLangs = selectedLangs.length > 0 ? selectedLangs : getCurrentLangList();
+                const matches = findSentencesForEntry(entry, displayLangs);
+                if (matches.length === 0) {
+                    modalBody.innerHTML = `<div class="no-sentence">暂无匹配的例句</div>`;
+                } else {
+                    let html = '';
+                    matches.forEach(m => {
+                        html += `
+                            <div class="sentence-item">
+                                <span class="lang-tag">${m.lang}</span>
+                                <span class="text">${m.text}</span>
+                            </div>
+                        `;
+                    });
+                    modalBody.innerHTML = html;
+                }
+                const firstLang = displayLangs[0] || getCurrentLangList()[0];
+                const firstWord = entry.words[firstLang];
+                const titleText = firstWord ? (firstWord.text || '词条') : '词条';
+                modalTitle.textContent = `📖 例句 · ${titleText}`;
+                modalOverlay.classList.add('open');
+            }
+
+            // ---------- 更新统计 ----------
+            function updateStats() {
+                if (allDataLoaded) {
+                    const langList = getCurrentLangList();
+                    langCountBadge.textContent = `${langList.length} 种语言`;
+                    if (currentMode === 'vocabulary') {
+                        entryCountStat.textContent = `${vocabulary.length} 个词条`;
+                    } else {
+                        entryCountStat.textContent = `${sentences.length} 个句子`;
+                    }
+                } else {
+                    langCountBadge.textContent = '0 种语言';
+                    entryCountStat.textContent = '0 个词条';
+                }
+            }
+
+            // ---------- 语种面板 ----------
+            function getLangCounts() {
+                const langList = getCurrentLangList();
+                const counts = {};
+                const data = getCurrentData();
+                langList.forEach(lang => {
+                    let count = 0;
+                    if (currentMode === 'vocabulary') {
+                        count = data.filter(e => {
+                            const w = e.words[lang];
+                            return w && w.text;
+                        }).length;
+                    } else {
+                        count = data.filter(s => {
+                            const d = s.texts[lang];
+                            return d && d.text && d.text.trim();
+                        }).length;
+                    }
+                    counts[lang] = count;
+                });
+                return counts;
+            }
+
+            function updateLangPanel() {
+                const langList = getCurrentLangList();
+                const counts = getLangCounts();
+                const allCount = getCurrentData().length;
+                const isAllSelected = selectedLangs.length === 0;
+
+                let html = '';
+                html += `
+                    <label class="lang-item" data-lang="__all__">
+                        <input type="checkbox" ${isAllSelected ? 'checked' : ''} />
+                        <span class="lang-label">全部</span>
+                        <span class="count">${allCount}</span>
+                    </label>
+                `;
+
+                langList.forEach((lang, idx) => {
+                    const count = counts[lang] || 0;
+                    const checked = selectedLangs.includes(lang);
+                    const color = getLangColor(idx);
+                    html += `
+                        <label class="lang-item" data-lang="${lang}">
+                            <input type="checkbox" ${checked ? 'checked' : ''} />
+                            <span class="lang-label">
+                                <span class="dot" style="background:${color};"></span>
+                                ${lang}
+                            </span>
+                            <span class="count">${count}</span>
+                        </label>
+                    `;
+                });
+
+                langGrid.innerHTML = html;
+
+                langGrid.querySelectorAll('.lang-item input[type="checkbox"]').forEach(cb => {
+                    cb.addEventListener('change', function() {
+                        const lang = this.closest('.lang-item').dataset.lang;
+                        if (lang === '__all__') {
+                            const checked = this.checked;
+                            langGrid.querySelectorAll('.lang-item input[type="checkbox"]').forEach(c => {
+                                c.checked = checked;
+                            });
+                        } else {
+                            const allCb = langGrid.querySelector('.lang-item[data-lang="__all__"] input');
+                            if (!this.checked && allCb) {
+                                allCb.checked = false;
+                            }
+                            const allLangItems = langGrid.querySelectorAll('.lang-item:not([data-lang="__all__"]) input');
+                            let allChecked = true;
+                            allLangItems.forEach(c => { if (!c.checked) allChecked = false; });
+                            if (allChecked && allCb) {
+                                allCb.checked = true;
+                            }
+                        }
+                    });
+                });
+
+                updateLangBadge();
+            }
+
+            function updateLangBadge() {
+                if (selectedLangs.length === 0) {
+                    langBadgeCount.textContent = '全部';
+                } else {
+                    langBadgeCount.textContent = selectedLangs.length;
+                }
+            }
+
+            function applyLangSelection() {
+                const checkedItems = langGrid.querySelectorAll('.lang-item input[type="checkbox"]:checked');
+                const allCb = langGrid.querySelector('.lang-item[data-lang="__all__"] input');
+                const isAllChecked = allCb && allCb.checked;
+
+                if (isAllChecked) {
+                    selectedLangs = [];
+                } else {
+                    const newSelected = [];
+                    checkedItems.forEach(cb => {
+                        const lang = cb.closest('.lang-item').dataset.lang;
+                        if (lang !== '__all__') newSelected.push(lang);
+                    });
+                    selectedLangs = newSelected;
+                }
+                currentPage = 1;
+                updateLangBadge();
+                closeLangPanel();
+                renderAll();
+            }
+
+            function toggleLangPanel() {
+                isLangPanelOpen = !isLangPanelOpen;
+                if (isLangPanelOpen) {
+                    updateLangPanel();
+                    langPanel.classList.add('open');
+                    langArrow.classList.add('open');
+                } else {
+                    closeLangPanel();
+                }
+            }
+
+            function closeLangPanel() {
+                isLangPanelOpen = false;
+                langPanel.classList.remove('open');
+                langArrow.classList.remove('open');
+            }
+
+            // ---------- 显示工具栏 ----------
+            function showToolbar(show) {
+                toolbar.style.display = show ? 'flex' : 'none';
+            }
+
+            // ---------- 分页 ----------
+            function goToPage(page) {
+                const filtered = getFilteredData();
+                const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
+                if (page < 1) page = 1;
+                if (page > totalPages) page = totalPages;
+                if (currentPage !== page) {
+                    currentPage = page;
+                    renderAll();
+                }
+            }
+
+            // ---------- 事件绑定 ----------
+            firstPageBtn.addEventListener('click', () => goToPage(1));
+            prevPageBtn.addEventListener('click', () => goToPage(currentPage - 1));
+            nextPageBtn.addEventListener('click', () => goToPage(currentPage + 1));
+            lastPageBtn.addEventListener('click', () => goToPage(parseInt(totalPagesSpan.textContent) || 1));
+
+            pageInput.addEventListener('change', function() {
+                let val = parseInt(this.value);
+                if (isNaN(val) || val < 1) val = 1;
+                const total = parseInt(totalPagesSpan.textContent) || 1;
+                if (val > total) val = total;
+                this.value = val;
+                goToPage(val);
+            });
+
+            pageSizeSelect.addEventListener('change', function() {
+                pageSize = parseInt(this.value);
+                currentPage = 1;
+                renderAll();
+            });
+
+            let searchTimeout = null;
+            searchInput.addEventListener('input', function() {
+                clearTimeout(searchTimeout);
+                searchTimeout = setTimeout(() => {
+                    currentPage = 1;
+                    renderAll();
+                }, 200);
+            });
+
+            modeSwitch.addEventListener('click', function(e) {
+                const btn = e.target.closest('.btn');
+                if (!btn || btn.classList.contains('active')) return;
+                const mode = btn.dataset.mode;
+                if (mode === 'vocabulary' || mode === 'sentence') {
+                    currentMode = mode;
+                    this.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentPage = 1;
+                    if (mode === 'vocabulary') {
+                        searchInput.placeholder = '搜索词汇或发音...';
+                    } else {
+                        searchInput.placeholder = '搜索句子...';
+                    }
+                    renderAll();
+                }
+            });
+
+            displaySwitch.addEventListener('click', function(e) {
+                const btn = e.target.closest('.btn');
+                if (!btn || btn.classList.contains('active')) return;
+                const mode = btn.dataset.display;
+                if (mode === 'single' || mode === 'dual') {
+                    displayMode = mode;
+                    this.querySelectorAll('.btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    renderAll();
+                }
+            });
+
+            langSelectorBtn.addEventListener('click', toggleLangPanel);
+
+            document.addEventListener('click', function(e) {
+                const panel = langPanel;
+                const btn = langSelectorBtn;
+                if (isLangPanelOpen && !panel.contains(e.target) && !btn.contains(e.target)) {
+                    closeLangPanel();
+                }
+            });
+
+            selectAllLang.addEventListener('click', function() {
+                langGrid.querySelectorAll('.lang-item input[type="checkbox"]').forEach(cb => {
+                    cb.checked = true;
+                });
+            });
+            deselectAllLang.addEventListener('click', function() {
+                langGrid.querySelectorAll('.lang-item input[type="checkbox"]').forEach(cb => {
+                    cb.checked = false;
+                });
+            });
+
+            langPanelConfirm.addEventListener('click', applyLangSelection);
+
+            uploadBtn.addEventListener('click', () => fileInput.click());
+
+            uploadZone.addEventListener('dragover', (e) => { e.preventDefault();
+                uploadZone.classList.add('dragover'); });
+            uploadZone.addEventListener('dragleave', (e) => { e.preventDefault();
+                uploadZone.classList.remove('dragover'); });
+            uploadZone.addEventListener('drop', (e) => {
+                e.preventDefault();
+                uploadZone.classList.remove('dragover');
+                const files = e.dataTransfer.files;
+                if (files.length > 0) {
+                    const file = files[0];
+                    const ext = file.name.split('.').pop().toLowerCase();
+                    if (ext === 'xlsx' || ext === 'xls') loadExcelFile(file);
+                    else showToast('请上传 .xlsx 或 .xls 文件', 'error');
+                }
+            });
+
+            fileInput.addEventListener('change', function() {
+                if (this.files.length > 0) loadExcelFile(this.files[0]);
+                this.value = '';
+            });
+
+            exportBtn.addEventListener('click', exportData);
+
+            modalClose.addEventListener('click', () => modalOverlay.classList.remove('open'));
+            modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) modalOverlay.classList.remove(
+                    'open'); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape') modalOverlay.classList.remove('open'); });
+
+            // ---------- 初始化 ----------
+            pageSizeSelect.value = '1';
+            pageSize = 1;
+            autoLoadDataFile();
+
+        })();
+    </script>
+</body>
+</html>

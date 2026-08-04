@@ -1,0 +1,2585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5" />
+    <title>语法分析 · 活字印刷 · 数据驱动</title>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js">
+    </script>
+    <style>
+        /* ===== 全局 ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+        body {
+            font-family: 'Noto Serif SC', '华文楷体', 'KaiTi', serif;
+            background: #f5efe4;
+            background-image: radial-gradient(ellipse at 20% 50%, rgba(210, 180, 140, 0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 50%, rgba(210, 180, 140, 0.12) 0%, transparent 60%);
+            min-height: 100vh;
+            padding: 16px;
+            color: #2c1810;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .app-wrapper {
+            max-width: 1440px;
+            width: 100%;
+            background: rgba(250, 245, 235, 0.72);
+            backdrop-filter: blur(2px);
+            border-radius: 40px 40px 32px 32px;
+            padding: 24px 28px 28px;
+            box-shadow: 0 24px 64px rgba(100, 70, 40, 0.20), inset 0 1px 0 rgba(255, 245, 230, 0.6);
+            border: 1px solid rgba(200, 180, 160, 0.25);
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(180, 150, 120, 0.18);
+        }
+
+        .title-group {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .main-title {
+            font-family: 'Ma Shan Zheng', '华文行楷', cursive;
+            font-size: 2.4rem;
+            font-weight: 400;
+            color: #8b3a2a;
+            letter-spacing: 4px;
+            text-shadow: 2px 2px 0 rgba(180, 120, 80, 0.10);
+            line-height: 1.2;
+        }
+        .main-title small {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.85rem;
+            color: #a08070;
+            letter-spacing: 1px;
+            margin-left: 6px;
+            font-weight: 400;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            font-family: 'Noto Serif SC', serif;
+            padding: 7px 18px;
+            border: none;
+            border-radius: 36px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #d4c5b0;
+            color: #3d2a1a;
+            box-shadow: 0 2px 8px rgba(100, 70, 40, 0.08);
+            white-space: nowrap;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(100, 70, 40, 0.14);
+        }
+        .btn:active {
+            transform: translateY(0px);
+        }
+
+        .btn-primary {
+            background: #a67c5a;
+            color: #fef6ed;
+            box-shadow: 0 4px 12px rgba(140, 100, 70, 0.20);
+        }
+        .btn-primary:hover {
+            background: #8f6a4a;
+        }
+
+        .btn-accent {
+            background: #b8863a;
+            color: #fef6ed;
+            box-shadow: 0 4px 12px rgba(180, 130, 50, 0.20);
+        }
+        .btn-accent:hover {
+            background: #a07430;
+        }
+
+        .btn-success {
+            background: #5d8a6e;
+            color: #fef6ed;
+            box-shadow: 0 4px 12px rgba(60, 120, 80, 0.20);
+        }
+        .btn-success:hover {
+            background: #4b765c;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid #b8a090;
+            color: #5a4030;
+        }
+        .btn-outline:hover {
+            background: rgba(180, 150, 130, 0.08);
+            border-color: #8a7060;
+        }
+        .btn-sm {
+            padding: 4px 14px;
+            font-size: 0.8rem;
+            border-radius: 24px;
+        }
+        .btn-xs {
+            padding: 2px 10px;
+            font-size: 0.7rem;
+            border-radius: 20px;
+        }
+
+        .lang-selector {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 250, 240, 0.5);
+            padding: 4px 14px 4px 18px;
+            border-radius: 40px;
+            border: 1px solid rgba(200, 180, 160, 0.12);
+        }
+        .lang-selector label {
+            font-weight: 600;
+            color: #5a4a3a;
+            font-size: 0.85rem;
+        }
+        .lang-selector select {
+            padding: 5px 12px 5px 8px;
+            border-radius: 30px;
+            border: 1px solid #d8cdc0;
+            background: rgba(255, 250, 240, 0.7);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.9rem;
+            color: #2c1810;
+            outline: none;
+            cursor: pointer;
+        }
+        .lang-selector select:focus {
+            border-color: #b8863a;
+            box-shadow: 0 0 0 3px rgba(184, 134, 58, 0.08);
+        }
+
+        /* ===== 上面板 ===== */
+        .upper-panel {
+            display: flex;
+            gap: 16px;
+            height: 62vh;
+            min-height: 320px;
+            margin-bottom: 12px;
+        }
+
+        .panel-left {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            background: rgba(240, 230, 215, 0.20);
+            border-radius: 24px;
+            border: 1px solid rgba(200, 180, 160, 0.10);
+            padding: 14px 16px 12px;
+            overflow: hidden;
+            transition: flex 0.3s ease;
+        }
+        .panel-left.expanded {
+            flex: 2;
+        }
+        .panel-right {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            background: rgba(240, 230, 215, 0.20);
+            border-radius: 24px;
+            border: 1px solid rgba(200, 180, 160, 0.10);
+            padding: 14px 16px 12px;
+            overflow: hidden;
+            display: flex;
+            transition: flex 0.3s ease;
+        }
+        .panel-right.hidden {
+            display: none;
+        }
+        .panel-right.expanded {
+            flex: 2;
+        }
+
+        .panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            margin-bottom: 8px;
+            flex-shrink: 0;
+        }
+        .panel-header .panel-title {
+            font-weight: 700;
+            font-size: 1.0rem;
+            color: #5a3a2a;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .panel-header .panel-actions {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+        }
+
+        .panel-body {
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: auto;
+            padding: 4px 2px 2px 2px;
+            min-height: 0;
+        }
+        .panel-body::-webkit-scrollbar {
+            width: 4px;
+            height: 4px;
+        }
+        .panel-body::-webkit-scrollbar-track {
+            background: rgba(200, 180, 160, 0.06);
+            border-radius: 4px;
+        }
+        .panel-body::-webkit-scrollbar-thumb {
+            background: rgba(180, 150, 130, 0.20);
+            border-radius: 4px;
+        }
+
+        /* ===== 活字网格 ===== */
+        .type-grid {
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            gap: 2px 3px;
+            user-select: text;
+        }
+
+        .pinyin-cell {
+            background: linear-gradient(145deg, #e8d9c4, #d4c0a8);
+            border-radius: 6px 6px 0 0;
+            padding: 3px 0 1px;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #7a5a3a;
+            letter-spacing: 0.2px;
+            line-height: 1.3;
+            border-bottom: 1px solid rgba(120, 90, 60, 0.08);
+            box-shadow: inset 0 2px 0 rgba(255, 240, 220, 0.4);
+            min-height: 22px;
+            transition: background 0.15s;
+            cursor: default;
+            word-break: keep-all;
+            font-family: 'Noto Serif SC', '华文楷体', serif;
+        }
+        .pinyin-cell.empty-pinyin {
+            color: transparent;
+            background: linear-gradient(145deg, #e8e0d4, #d6cabc);
+            box-shadow: inset 0 2px 0 rgba(255, 240, 220, 0.15);
+        }
+        .pinyin-cell.is-punct {
+            background: linear-gradient(145deg, #e6dccf, #d6cabc);
+            color: transparent;
+            box-shadow: inset 0 2px 0 rgba(255, 240, 220, 0.10);
+        }
+
+        .char-cell {
+            background: linear-gradient(145deg, #e8d9c4, #d4c0a8);
+            border-radius: 0 0 6px 6px;
+            padding: 0 0 4px;
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2c1810;
+            line-height: 1.2;
+            border-top: 1px solid rgba(255, 240, 220, 0.35);
+            box-shadow: inset 0 -2px 0 rgba(120, 90, 60, 0.10);
+            min-height: 38px;
+            transition: background 0.15s, box-shadow 0.2s;
+            cursor: pointer;
+            font-family: 'Noto Serif SC', '华文楷体', serif;
+            position: relative;
+            word-break: keep-all;
+        }
+        .char-cell.has-multiple::after {
+            content: '▾';
+            position: absolute;
+            bottom: 0px;
+            right: 3px;
+            font-size: 0.4rem;
+            color: #b08050;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+        .char-cell.is-punct {
+            background: linear-gradient(145deg, #e6dccf, #d6cabc);
+            color: #5a4a3a;
+            font-size: 1.3rem;
+            box-shadow: inset 0 -1px 0 rgba(120, 90, 60, 0.04);
+            cursor: default;
+        }
+        .char-cell.is-punct::after {
+            display: none;
+        }
+
+        .pinyin-cell.selected,
+        .char-cell.selected {
+            background: linear-gradient(145deg, #f7e4c8, #e6cba8) !important;
+            box-shadow: 0 0 0 3px #b8863a, inset 0 2px 0 rgba(255, 240, 220, 0.6) !important;
+            transform: scale(1.02);
+            z-index: 1;
+            position: relative;
+        }
+        .pinyin-cell.selected {
+            border-radius: 6px 6px 0 0;
+        }
+        .char-cell.selected {
+            border-radius: 0 0 6px 6px;
+        }
+
+        .pinyin-cell.printing,
+        .char-cell.printing {
+            animation: printPop 0.25s ease forwards;
+            opacity: 0;
+            transform: scale(0.85);
+        }
+        @keyframes printPop {
+            0% {
+                opacity: 0;
+                transform: scale(0.80) rotateZ(-1.2deg);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.02) rotateZ(0.2deg);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) rotateZ(0deg);
+            }
+        }
+
+        /* ===== 拼音弹出 ===== */
+        .pinyin-popup {
+            position: fixed;
+            z-index: 999;
+            background: rgba(255, 250, 240, 0.96);
+            backdrop-filter: blur(12px);
+            border-radius: 14px;
+            padding: 6px 2px;
+            box-shadow: 0 16px 48px rgba(60, 40, 20, 0.28), 0 0 0 1px rgba(180, 150, 120, 0.15);
+            min-width: 70px;
+            display: none;
+            flex-direction: column;
+            gap: 2px;
+            animation: popIn 0.16s ease;
+        }
+        .pinyin-popup.show {
+            display: flex;
+        }
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.92) translateY(6px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .pinyin-popup .popup-item {
+            padding: 6px 16px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #3d2a1a;
+            cursor: pointer;
+            transition: all 0.12s;
+            text-align: center;
+            font-family: 'Noto Serif SC', serif;
+            background: transparent;
+            border: none;
+        }
+        .pinyin-popup .popup-item:hover {
+            background: rgba(184, 134, 58, 0.14);
+            color: #7a4a20;
+        }
+        .pinyin-popup .popup-item.active {
+            background: rgba(184, 134, 58, 0.18);
+            color: #8b5a2a;
+        }
+        .pinyin-popup .popup-item:not(:last-child) {
+            border-bottom: 1px solid rgba(200, 180, 160, 0.12);
+        }
+
+        /* ===== 检索区 ===== */
+        .search-box {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            flex-shrink: 0;
+        }
+        .search-box input {
+            flex: 1;
+            min-width: 120px;
+            padding: 8px 14px;
+            border-radius: 30px;
+            border: 1.5px solid #d8cdc0;
+            background: rgba(255, 250, 240, 0.4);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.9rem;
+            color: #2c1810;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .search-box input:focus {
+            border-color: #b8863a;
+            box-shadow: 0 0 0 4px rgba(184, 134, 58, 0.08);
+        }
+        .search-box select {
+            padding: 8px 14px;
+            border-radius: 30px;
+            border: 1.5px solid #d8cdc0;
+            background: rgba(255, 250, 240, 0.4);
+            font-family: 'Noto Serif SC', serif;
+            font-size: 0.85rem;
+            color: #2c1810;
+            outline: none;
+            cursor: pointer;
+        }
+        .search-box select:focus {
+            border-color: #b8863a;
+        }
+
+        .search-results {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2px 2px 6px 2px;
+        }
+        .search-results .result-item {
+            padding: 6px 12px;
+            border-radius: 10px;
+            background: rgba(255, 250, 240, 0.25);
+            margin-bottom: 5px;
+            border-left: 3px solid rgba(184, 134, 58, 0.20);
+            transition: background 0.15s;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        .search-results .result-item:hover {
+            background: rgba(255, 250, 240, 0.5);
+        }
+        .search-results .result-item .highlight {
+            background: #f7e4c8;
+            padding: 0 4px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        .search-results .result-item .meta {
+            font-size: 0.7rem;
+            color: #8a7a6a;
+            margin-top: 2px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .search-results .result-item .meta .tag {
+            background: rgba(180, 150, 130, 0.10);
+            padding: 0 10px;
+            border-radius: 12px;
+            color: #6a5a4a;
+        }
+        .search-results .result-item .pinyin-line {
+            font-size: 0.8rem;
+            color: #7a5a3a;
+            margin-top: 2px;
+        }
+        .search-results .empty-result {
+            color: #b0a090;
+            text-align: center;
+            padding: 30px 0;
+            font-size: 0.9rem;
+        }
+        .search-results .result-item .link-btn {
+            display: inline-block;
+            margin-top: 3px;
+            padding: 1px 10px;
+            border-radius: 12px;
+            background: rgba(184, 134, 58, 0.12);
+            color: #8b5a2a;
+            font-size: 0.7rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+        .search-results .result-item .link-btn:hover {
+            background: rgba(184, 134, 58, 0.20);
+        }
+
+        /* 分页控件 */
+        .pagination-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-shrink: 0;
+            padding-top: 6px;
+            flex-wrap: wrap;
+        }
+        .pagination-bar .btn {
+            padding: 2px 12px;
+            font-size: 0.75rem;
+        }
+        .pagination-bar .page-info {
+            font-size: 0.8rem;
+            color: #6a5a4a;
+        }
+
+        /* ===== 下面板 ===== */
+        .lower-panel {
+            height: auto;
+            min-height: 160px;
+            background: rgba(240, 230, 215, 0.15);
+            border-radius: 24px;
+            border: 1px solid rgba(200, 180, 160, 0.10);
+            padding: 14px 18px 12px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 2px;
+            overflow: visible;
+        }
+
+        .lower-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 6px 12px;
+            margin-bottom: 8px;
+            flex-shrink: 0;
+        }
+        .lower-header .title {
+            font-weight: 700;
+            font-size: 1.0rem;
+            color: #5a3a2a;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .lower-header .title .badge {
+            font-weight: 400;
+            font-size: 0.65rem;
+            background: rgba(184, 134, 58, 0.10);
+            padding: 2px 12px;
+            border-radius: 20px;
+            color: #7a5a4a;
+        }
+
+        .translate-area {
+            flex: 1;
+            display: flex;
+            gap: 14px;
+            min-height: 60px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .translate-col {
+            flex: 1;
+            min-width: 0;
+            background: rgba(255, 250, 240, 0.20);
+            border-radius: 16px;
+            padding: 10px 14px;
+            overflow-y: auto;
+            border: 1px solid rgba(200, 180, 160, 0.06);
+        }
+        .translate-col .col-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #8a7a6a;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .translate-col .col-content {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: #2c1810;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        /* 参考译文 — 向下展开，不遮挡 */
+        .ref-global {
+            display: none;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(180, 150, 120, 0.15);
+            flex-shrink: 0;
+        }
+        .ref-global.open {
+            display: block;
+        }
+        .ref-global .ref-toggle-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            color: #8b5a2a;
+            font-size: 0.8rem;
+            font-weight: 500;
+            padding: 4px 12px;
+            border-radius: 20px;
+            background: rgba(184, 134, 58, 0.06);
+            transition: background 0.2s;
+            user-select: none;
+            margin-bottom: 4px;
+        }
+        .ref-global .ref-toggle-btn:hover {
+            background: rgba(184, 134, 58, 0.12);
+        }
+        .ref-global .ref-toggle-btn .arrow {
+            transition: transform 0.25s ease;
+            display: inline-block;
+        }
+        .ref-global .ref-toggle-btn .arrow.open {
+            transform: rotate(180deg);
+        }
+        .ref-global .ref-body {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #4a3a2a;
+            background: rgba(255, 250, 240, 0.5);
+            border-radius: 10px;
+            padding: 10px 14px;
+            border-left: 3px solid #b8863a;
+            margin-top: 4px;
+            display: none;
+        }
+        .ref-global .ref-body.show {
+            display: block;
+        }
+
+        /* ===== 数据管理 ===== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            background: rgba(30, 20, 10, 0.45);
+            backdrop-filter: blur(4px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.2s ease;
+        }
+        .modal-overlay.show {
+            display: flex;
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .modal-box {
+            background: #faf5ec;
+            border-radius: 28px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 40px 80px rgba(30, 20, 10, 0.30);
+            border: 1px solid rgba(200, 180, 160, 0.15);
+            animation: slideUp 0.25s ease;
+        }
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(24px) scale(0.97);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 24px 12px;
+            border-bottom: 1px solid rgba(200, 180, 160, 0.12);
+            flex-shrink: 0;
+        }
+        .modal-header h2 {
+            font-family: 'Ma Shan Zheng', cursive;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #5a3a2a;
+            letter-spacing: 1px;
+        }
+        .modal-header .close-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(180, 150, 130, 0.08);
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: #6a5040;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-header .close-btn:hover {
+            background: rgba(180, 150, 130, 0.18);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 16px 24px 24px;
+            overflow-y: auto;
+            flex: 1;
+        }
+        .modal-body::-webkit-scrollbar {
+            width: 4px;
+        }
+        .modal-body::-webkit-scrollbar-track {
+            background: rgba(200, 180, 160, 0.04);
+            border-radius: 4px;
+        }
+        .modal-body::-webkit-scrollbar-thumb {
+            background: rgba(180, 150, 130, 0.15);
+            border-radius: 4px;
+        }
+
+        .data-toolbar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px 12px;
+            margin-bottom: 12px;
+            padding: 8px 14px;
+            background: rgba(240, 230, 215, 0.15);
+            border-radius: 14px;
+            border: 1px solid rgba(200, 180, 160, 0.08);
+        }
+        .data-toolbar .btn {
+            padding: 4px 14px;
+            font-size: 0.8rem;
+        }
+        .data-toolbar .file-label {
+            position: relative;
+            cursor: pointer;
+        }
+        .data-toolbar .file-label input[type="file"] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+        }
+
+        .data-status {
+            padding: 12px 16px;
+            background: rgba(240, 230, 215, 0.15);
+            border-radius: 14px;
+            border: 1px solid rgba(200, 180, 160, 0.08);
+            font-size: 0.85rem;
+            color: #5a4a3a;
+            line-height: 1.8;
+        }
+        .data-status .stat-item {
+            display: inline-block;
+            margin-right: 20px;
+        }
+        .data-status .stat-item .num {
+            font-weight: 700;
+            color: #8b5a2a;
+        }
+
+        /* ===== Toast ===== */
+        .toast-container {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            pointer-events: none;
+        }
+        .toast {
+            background: rgba(40, 30, 20, 0.82);
+            backdrop-filter: blur(8px);
+            color: #f5ede4;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.14);
+            animation: toastIn 0.3s ease;
+            pointer-events: auto;
+            font-family: 'Noto Serif SC', serif;
+            border: 1px solid rgba(255, 240, 220, 0.06);
+        }
+        .toast.success {
+            background: rgba(60, 120, 70, 0.82);
+        }
+        .toast.error {
+            background: rgba(160, 60, 50, 0.82);
+        }
+        .toast.warning {
+            background: rgba(180, 130, 50, 0.82);
+        }
+        @keyframes toastIn {
+            0% {
+                opacity: 0;
+                transform: translateY(16px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 1100px) {
+            .app-wrapper {
+                padding: 18px 16px 20px;
+                border-radius: 32px;
+            }
+            .main-title {
+                font-size: 2.0rem;
+            }
+            .upper-panel {
+                flex-direction: column;
+                height: auto;
+                min-height: 260px;
+            }
+            .panel-left,
+            .panel-right {
+                min-height: 160px;
+                max-height: 45vh;
+            }
+            .panel-left.expanded,
+            .panel-right.expanded {
+                flex: 1;
+            }
+            .lower-panel {
+                min-height: 120px;
+            }
+            .translate-area {
+                flex-direction: column;
+            }
+            .translate-col {
+                min-height: 50px;
+            }
+            .type-grid {
+                gap: 2px 3px;
+            }
+            .char-cell {
+                font-size: 1.3rem;
+                min-height: 32px;
+            }
+            .pinyin-cell {
+                font-size: 0.65rem;
+                min-height: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .app-wrapper {
+                padding: 12px 10px 14px;
+                border-radius: 24px;
+            }
+            .main-title {
+                font-size: 1.5rem;
+            }
+            .main-title small {
+                font-size: 0.65rem;
+            }
+            .header-actions .btn {
+                padding: 4px 10px;
+                font-size: 0.7rem;
+            }
+            .panel-left,
+            .panel-right {
+                padding: 8px 8px 6px;
+                min-height: 120px;
+                max-height: 38vh;
+            }
+            .type-grid {
+                gap: 1px 2px;
+            }
+            .char-cell {
+                font-size: 1.0rem;
+                min-height: 26px;
+                border-radius: 0 0 4px 4px;
+            }
+            .pinyin-cell {
+                font-size: 0.5rem;
+                min-height: 16px;
+                border-radius: 4px 4px 0 0;
+                padding: 2px 0 0;
+            }
+            .search-box input,
+            .search-box select {
+                font-size: 0.75rem;
+                padding: 5px 10px;
+            }
+            .lower-panel {
+                min-height: 90px;
+                padding: 8px 10px;
+            }
+            .translate-col {
+                padding: 6px 10px;
+            }
+            .translate-col .col-content {
+                font-size: 0.8rem;
+            }
+            .modal-box {
+                max-width: 100%;
+                border-radius: 20px;
+            }
+            .modal-header h2 {
+                font-size: 1.3rem;
+            }
+            .modal-body {
+                padding: 12px 14px 16px;
+            }
+            .data-toolbar .btn {
+                font-size: 0.7rem;
+                padding: 3px 10px;
+            }
+            .ref-global .ref-body {
+                font-size: 0.75rem;
+                padding: 6px 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-wrapper {
+                padding: 8px 4px 10px;
+                border-radius: 16px;
+            }
+            .main-title {
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+            }
+            .header {
+                gap: 6px;
+                padding-bottom: 8px;
+            }
+            .lang-selector {
+                padding: 2px 8px 2px 10px;
+            }
+            .lang-selector select {
+                font-size: 0.7rem;
+                padding: 2px 6px;
+            }
+            .panel-left,
+            .panel-right {
+                padding: 4px 4px 2px;
+                min-height: 80px;
+                max-height: 30vh;
+                border-radius: 14px;
+            }
+            .type-grid {
+                gap: 1px 1px;
+            }
+            .char-cell {
+                font-size: 0.8rem;
+                min-height: 20px;
+                border-radius: 0 0 3px 3px;
+            }
+            .char-cell.has-multiple::after {
+                font-size: 0.3rem;
+                right: 1px;
+            }
+            .pinyin-cell {
+                font-size: 0.4rem;
+                min-height: 12px;
+                border-radius: 3px 3px 0 0;
+                padding: 1px 0 0;
+            }
+            .panel-header .panel-actions .btn {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+            .search-box input {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+                min-width: 60px;
+            }
+            .search-box select {
+                font-size: 0.7rem;
+                padding: 4px 8px;
+            }
+            .lower-panel {
+                min-height: 70px;
+                padding: 4px 6px;
+            }
+            .translate-col {
+                padding: 4px 6px;
+            }
+            .translate-col .col-content {
+                font-size: 0.7rem;
+                line-height: 1.4;
+            }
+            .btn {
+                font-size: 0.65rem;
+                padding: 3px 8px;
+            }
+            .btn-sm {
+                font-size: 0.55rem;
+                padding: 2px 6px;
+            }
+            .btn-xs {
+                font-size: 0.5rem;
+                padding: 1px 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-wrapper" id="app">
+        <!-- ===== 头部 ===== -->
+        <header class="header">
+            <div class="title-group">
+                <h1 class="main-title">
+                    语法分析
+                    <small>· 活字印刷</small>
+                </h1>
+            </div>
+            <div class="header-actions">
+                <div class="lang-selector">
+                    <label for="langSelect">🌐 语种</label>
+                    <select id="langSelect">
+                        <option value="cz">潮州话</option>
+                        <option value="zh">普通话</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                    </select>
+                </div>
+                <button class="btn btn-accent" id="btnBackend">📂 数据管理</button>
+                <button class="btn btn-outline" id="btnToggleRight">🔍 隐藏检索</button>
+            </div>
+        </header>
+
+        <!-- ===== 上面板 ===== -->
+        <div class="upper-panel" id="upperPanel">
+            <!-- 左：编辑区 -->
+            <div class="panel-left expanded" id="panelLeft">
+                <div class="panel-header">
+                    <span class="panel-title">📝 编辑区 <span style="font-weight:400;font-size:0.65rem;color:#a09080;">(点击多音字切换读音)</span></span>
+                    <div class="panel-actions">
+                        <label class="btn btn-sm btn-outline" style="padding:2px 10px;font-size:0.65rem;cursor:pointer;">
+                            <input type="checkbox" id="selectionMode" style="margin-right:4px;accent-color:#b8863a;" /> 选择
+                        </label>
+                        <button class="btn btn-sm btn-success" id="copySelected">📋 复制</button>
+                        <button class="btn btn-sm btn-outline" id="selectAll">全选</button>
+                        <button class="btn btn-sm btn-outline" id="clearSelection">取消</button>
+                        <span style="font-size:0.7rem;color:#8a7a6a;" id="selectedCount">已选 0</span>
+                    </div>
+                </div>
+                <div class="panel-body" id="editPanelBody">
+                    <div class="type-grid" id="typeGrid"></div>
+                    <div class="empty-hint" id="emptyHint" style="display:flex;flex-direction:column;align-items:center;justify-content:center;color:#c0b0a0;padding:30px 0;gap:4px;">
+                        <span style="font-size:2.2rem;opacity:0.3;">📦</span>
+                        <span>请先导入数据（Excel），然后输入文字排印</span>
+                        <span style="font-size:0.75rem;opacity:0.5;">支持多音字切换 · 悬停联动检索</span>
+                    </div>
+                </div>
+                <div style="display:flex;gap:8px;flex-shrink:0;padding-top:8px;flex-wrap:wrap;">
+                    <input type="text" id="textInput" placeholder="输入文本，回车印刷…" style="flex:1;min-width:100px;padding:7px 14px;border-radius:30px;border:1.5px solid #d8cdc0;background:rgba(255,250,240,0.4);font-family:inherit;font-size:0.9rem;outline:none;transition:all 0.2s;" />
+                    <button class="btn btn-primary" id="btnPrint">🖨️ 印刷</button>
+                    <button class="btn btn-outline" id="btnClear">✕</button>
+                    <span style="font-size:0.75rem;color:#a09080;display:flex;align-items:center;" id="charCount">0 单元</span>
+                </div>
+            </div>
+
+            <!-- 右：检索区（默认显示） -->
+            <div class="panel-right expanded" id="panelRight">
+                <div class="panel-header">
+                    <span class="panel-title">🔍 检索区 <span style="font-weight:400;font-size:0.65rem;color:#a09080;">(点击结果跳转)</span></span>
+                    <div class="panel-actions">
+                        <span style="font-size:0.7rem;color:#8a7a6a;" id="resultCount">0 结果</span>
+                    </div>
+                </div>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="搜索字、词、拼音、部首、主体、句子…" />
+                    <select id="searchType">
+                        <option value="all">全部</option>
+                        <option value="char">常用字</option>
+                        <option value="word">高频词汇</option>
+                        <option value="radical">部首</option>
+                        <option value="body">主体</option>
+                        <option value="sentence">句子</option>
+                    </select>
+                    <button class="btn btn-primary btn-sm" id="btnSearch">搜索</button>
+                </div>
+                <div class="search-results" id="searchResults">
+                    <div class="empty-result">输入关键词开始检索</div>
+                </div>
+                <!-- 分页 -->
+                <div class="pagination-bar" id="searchPagination" style="display:none;">
+                    <button class="btn btn-outline btn-xs" id="searchPrev">上一页</button>
+                    <span class="page-info" id="searchPageInfo">1 / 1</span>
+                    <button class="btn btn-outline btn-xs" id="searchNext">下一页</button>
+                    <span style="font-size:0.7rem;color:#8a7a6a;margin-left:4px;" id="searchTotalInfo">共 0 条</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== 下面板 ===== -->
+        <div class="lower-panel" id="lowerPanel">
+            <div class="lower-header">
+                <div class="title">
+                    🌊 翻译对译
+                    <span class="badge">直译 → 意译</span>
+                </div>
+                <div style="display:flex;gap:6px;flex-wrap:wrap;">
+                    <button class="btn btn-sm btn-outline" id="btnTranslate">🔄 翻译当前文本</button>
+                    <button class="btn btn-sm btn-outline" id="btnTranslateClear">清空</button>
+                </div>
+            </div>
+            <div class="translate-area" id="translateArea">
+                <div class="translate-col">
+                    <div class="col-label">📖 直译 <span style="font-weight:400;font-size:0.65rem;color:#a09080;">(高频词汇优先，其余照录)</span></div>
+                    <div class="col-content" id="directTrans">等待翻译…</div>
+                </div>
+                <div class="translate-col">
+                    <div class="col-label">🎨 意译 <span style="font-weight:400;font-size:0.65rem;color:#a09080;">(整理为通顺普通话)</span></div>
+                    <div class="col-content" id="freeTransMain">等待翻译…</div>
+                </div>
+            </div>
+            <!-- 参考译文 — 向下展开，不遮挡 -->
+            <div class="ref-global" id="refGlobal">
+                <div class="ref-toggle-btn" onclick="toggleRefContent(this)">
+                    <span>📖 查看参考译文</span>
+                    <span class="arrow">▾</span>
+                </div>
+                <div class="ref-body" id="refBodyGlobal"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 数据管理模态框 ===== -->
+    <div class="modal-overlay" id="backendModal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2>📂 数据管理</h2>
+                <button class="close-btn" id="closeBackend">✕</button>
+            </div>
+            <div class="modal-body">
+                <div class="data-toolbar">
+                    <label class="btn btn-primary file-label">
+                        📥 导入 Excel / JSON
+                        <input type="file" id="fileInput" accept=".xlsx,.json" />
+                    </label>
+                    <button class="btn btn-success" id="exportExcelBtn">📤 导出 Excel</button>
+                    <button class="btn btn-accent" id="exportJsonBtn">📤 导出 JSON</button>
+                    <button class="btn btn-outline" id="reloadHintBtn">🔄 重新加载</button>
+                    <span style="font-size:0.8rem;color:#8a7a6a;margin-left:auto;" id="dataStatusText">未加载数据</span>
+                </div>
+                <div class="data-status" id="dataStatus">
+                    <div class="stat-item">📝 字音条目: <span class="num" id="statChars">0</span></div>
+                    <div class="stat-item">🔤 近形字组: <span class="num" id="statNear">0</span></div>
+                    <div class="stat-item">📄 句子: <span class="num" id="statSentences">0</span></div>
+                    <div class="stat-item">📚 词汇: <span class="num" id="statWords">0</span></div>
+                    <div style="margin-top:4px;font-size:0.8rem;color:#8a7a6a;" id="dataDetail">请导入包含"转录文本""高频词汇表""常用字"等sheet的Excel文件。</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== Toast ===== -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script>
+        // ============================================================
+        //  DATA STORE
+        // ============================================================
+        const dataStore = {
+            charPinyinMap: {}, // 字 -> 拼音数组（严格来自常用字表）
+            charInfoMap: {}, // 字 -> {words, examples, note, traditional, radical, body}
+            nearGroups: {}, // 主体 -> 字数组
+            nearCharToGroup: {}, // 字 -> 主体
+            sentences: [],
+            wordList: [],
+            videoInfo: null,
+            videoLinks: {} // key: 项目名称 -> url
+        };
+
+        let currentLang = 'cz';
+        let currentText = '';
+        let selectionMode = false;
+        let selectedPairs = new Set();
+        let instancePinyinMap = {};
+        let activePopup = null;
+
+        let searchResults = [];
+        let searchPage = 1;
+        const searchPageSize = 20;
+
+        // ============================================================
+        //  DATA LOADING (常用字优先，严格不补充已存在发音)
+        // ============================================================
+        function loadDataFromExcel(workbook) {
+            dataStore.charPinyinMap = {};
+            dataStore.charInfoMap = {};
+            dataStore.nearGroups = {};
+            dataStore.nearCharToGroup = {};
+            dataStore.sentences = [];
+            dataStore.wordList = [];
+            dataStore.videoInfo = null;
+            dataStore.videoLinks = {};
+
+            const sheetNames = workbook.SheetNames;
+
+            // ---- 视频来源 (先加载，用于后面对应句子项目) ----
+            const videoSheet = workbook.Sheets[sheetNames.find(s => s.includes('视频来源') || s.includes('来源'))];
+            if (videoSheet) {
+                const rows = XLSX.utils.sheet_to_json(videoSheet);
+                rows.forEach(row => {
+                    const name = row['名称'] || '';
+                    const link = row['链接'] || '';
+                    if (name && link) {
+                        const match = name.match(/(视频\d+)/);
+                        if (match) {
+                            const key = match[1];
+                            dataStore.videoLinks[key] = link;
+                        }
+                        dataStore.videoLinks[name] = link;
+                        if (!dataStore.videoInfo) dataStore.videoInfo = { name, link };
+                    }
+                });
+            }
+
+            // ---- 1. 常用字 (最高优先级，严格设置发音，且只从这里取) ----
+            const charSheet = workbook.Sheets[sheetNames.find(s => s.includes('常用字'))];
+            if (charSheet) {
+                const rows = XLSX.utils.sheet_to_json(charSheet);
+                rows.forEach(row => {
+                    const ch = row['常用字'] || '';
+                    const pinyin = row['潮州话音标'] || '';
+                    const words = row['词汇'] || '';
+                    const examples = row['例子'] || '';
+                    const note = row['备注'] || '';
+                    const traditional = row['繁体字'] || '';
+                    const radical = row['部首'] || '';
+                    const body = row['主体'] || '';
+                    if (ch && pinyin) {
+                        const pinyins = pinyin.split(/[,，、\s]+/).filter(s => s);
+                        const uniquePinyins = [...new Set(pinyins)];
+                        dataStore.charPinyinMap[ch] = uniquePinyins;
+                        dataStore.charInfoMap[ch] = {
+                            words: words ? words.split(/[,，、\s]+/).filter(s => s) : [],
+                            examples: examples ? examples.split(/[,，、\s]+/).filter(s => s) : [],
+                            note: note || '',
+                            traditional: traditional || '',
+                            radical: radical || '',
+                            body: body || ''
+                        };
+                        if (body) {
+                            const bodies = body.split(',').map(b => b.trim()).filter(b => b);
+                            bodies.forEach(b => {
+                                if (!dataStore.nearGroups[b]) dataStore.nearGroups[b] = [];
+                                if (!dataStore.nearGroups[b].includes(ch)) {
+                                    dataStore.nearGroups[b].push(ch);
+                                }
+                                dataStore.nearCharToGroup[ch] = b;
+                            });
+                        }
+                    }
+                });
+            } else {
+                console.warn('未找到"常用字"工作表，将依赖转录文本补充发音');
+            }
+
+            // ---- 2. 转录文本 (补充发音和句子，但绝不覆盖常用字表中已有的字) ----
+            const transSheet = workbook.Sheets[sheetNames.find(s => s.includes('转录'))];
+            if (transSheet) {
+                const rows = XLSX.utils.sheet_to_json(transSheet);
+                rows.forEach(row => {
+                    const text = row['原文'] || '';
+                    const pinyin = row['发音'] || '';
+                    const translation = row['译文'] || '';
+                    const time = row['时间轴'] || '';
+                    const speaker = row['说话人'] || '';
+                    const project = row['项目'] || '';
+                    if (text) {
+                        dataStore.sentences.push({
+                            text,
+                            pinyin,
+                            translation,
+                            time,
+                            speaker,
+                            project: project,
+                            videoLink: dataStore.videoLinks[project] || null
+                        });
+                        if (pinyin) {
+                            const syllables = pinyin.trim().split(/\s+/);
+                            const chars = [...text];
+                            let sIdx = 0;
+                            for (let i = 0; i < chars.length; i++) {
+                                const ch = chars[i];
+                                if (isPunct(ch)) continue;
+                                if (sIdx < syllables.length) {
+                                    const syl = syllables[sIdx];
+                                    if (!dataStore.charPinyinMap[ch] || dataStore.charPinyinMap[ch].length === 0) {
+                                        dataStore.charPinyinMap[ch] = [];
+                                    }
+                                    if (dataStore.charPinyinMap[ch].length > 0) {
+                                        // 已有发音，不补充
+                                    } else {
+                                        if (!dataStore.charPinyinMap[ch].includes(syl)) {
+                                            dataStore.charPinyinMap[ch].push(syl);
+                                        }
+                                    }
+                                    sIdx++;
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            // ---- 3. 高频词汇表 (补充词汇和发音，但绝不覆盖常用字表中已有的字) ----
+            const vocabSheet = workbook.Sheets[sheetNames.find(s => s.includes('高频') || s.includes('词汇'))];
+            if (vocabSheet) {
+                const rows = XLSX.utils.sheet_to_json(vocabSheet);
+                rows.forEach(row => {
+                    const word = row['词汇'] || '';
+                    const pinyin = row['发音'] || '';
+                    const pos = row['词性大类'] || '';
+                    const meaning = row['含义'] || '';
+                    if (word && pinyin) {
+                        const exists = dataStore.wordList.some(w => w.word === word);
+                        if (!exists) {
+                            dataStore.wordList.push({ word, pinyin, pos, meaning });
+                        }
+                        for (const ch of [...word]) {
+                            if (isPunct(ch)) continue;
+                            if (!dataStore.charPinyinMap[ch] || dataStore.charPinyinMap[ch].length === 0) {
+                                const syl = pinyin.trim().split(/\s+/)[0] || '';
+                                if (syl) {
+                                    dataStore.charPinyinMap[ch] = [syl];
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            for (const ch in dataStore.charPinyinMap) {
+                if (dataStore.charPinyinMap[ch].length === 0) {
+                    dataStore.charPinyinMap[ch] = ['?'];
+                }
+            }
+
+            updateStats();
+            showToast('✅ 数据加载成功！(常用字发音优先，不补充已有字)', 'success');
+            renderPanel(currentText || '');
+        }
+
+        function isPunct(char) {
+            return /[，。、；：！？《》「」『』（）【】—…·'"“”‘’\.,;:!?()\[\]{}<>\/\\|`~@#$%^&*\-_=+]/.test(char);
+        }
+
+        function updateStats() {
+            const charCount = Object.keys(dataStore.charPinyinMap).length;
+            const nearCount = Object.keys(dataStore.nearGroups).length;
+            const sentenceCount = dataStore.sentences.length;
+            const wordCount = dataStore.wordList.length;
+            document.getElementById('statChars').textContent = charCount;
+            document.getElementById('statNear').textContent = nearCount;
+            document.getElementById('statSentences').textContent = sentenceCount;
+            document.getElementById('statWords').textContent = wordCount;
+            document.getElementById('dataStatusText').textContent =
+                `已加载：${charCount}字，${nearCount}组近形，${sentenceCount}句，${wordCount}词 (常用字发音优先)`;
+            document.getElementById('dataDetail').textContent =
+                `字音严格以“常用字”表为准，其他来源仅补充未收录的字；形近字基于“主体”列构建。`;
+        }
+
+        // ============================================================
+        //  HELPERS
+        // ============================================================
+        function getAllPinyinsForChar(char) {
+            return dataStore.charPinyinMap[char] || [];
+        }
+
+        function getDefaultPinyin(char) {
+            const pinyins = getAllPinyinsForChar(char);
+            return pinyins.length > 0 ? pinyins[0] : '';
+        }
+
+        function getCharInfo(char) {
+            return dataStore.charInfoMap[char] || { words: [], examples: [], note: '', traditional: '', radical: '',
+                body: '' };
+        }
+
+        function getNearGroupByChar(char) {
+            const groupKey = dataStore.nearCharToGroup[char];
+            if (groupKey && dataStore.nearGroups[groupKey]) {
+                return dataStore.nearGroups[groupKey];
+            }
+            return null;
+        }
+
+        function getTraditional(char) {
+            const info = dataStore.charInfoMap[char];
+            return info ? info.traditional || '' : '';
+        }
+
+        function getRadical(char) {
+            const info = dataStore.charInfoMap[char];
+            return info ? info.radical || '' : '';
+        }
+
+        function getBody(char) {
+            const info = dataStore.charInfoMap[char];
+            return info ? info.body || '' : '';
+        }
+
+        // ============================================================
+        //  RENDER PANEL
+        // ============================================================
+        function renderPanel(text) {
+            const grid = document.getElementById('typeGrid');
+            const hint = document.getElementById('emptyHint');
+            const countEl = document.getElementById('charCount');
+
+            currentText = text || '';
+            instancePinyinMap = {};
+
+            if (!text || text.length === 0) {
+                grid.style.display = 'none';
+                hint.style.display = 'flex';
+                grid.innerHTML = '';
+                selectedPairs.clear();
+                updateSelectedCount();
+                countEl.textContent = '0 单元';
+                document.getElementById('directTrans').textContent = '等待翻译…';
+                document.getElementById('freeTransMain').textContent = '等待翻译…';
+                document.getElementById('refGlobal').classList.remove('open');
+                document.getElementById('refBodyGlobal').innerHTML = '';
+                document.getElementById('refBodyGlobal').classList.remove('show');
+                return;
+            }
+
+            let units = [];
+            if (currentLang === 'en') {
+                units = text.split(/\s+/).filter(w => w.length > 0);
+            } else if (currentLang === 'ja') {
+                units = splitJapanese(text);
+            } else {
+                units = [...text];
+            }
+
+            countEl.textContent = units.length + ' 单元';
+            hint.style.display = 'none';
+            grid.style.display = 'grid';
+
+            let html = '';
+            units.forEach((unit, index) => {
+                const col = (index % 20) + 1;
+                const rowPinyin = Math.floor(index / 20) * 2 + 1;
+                const rowChar = Math.floor(index / 20) * 2 + 2;
+
+                let isP = false;
+                if (currentLang !== 'en') {
+                    isP = isPunct(unit);
+                }
+
+                const pinyins = getAllPinyinsForChar(unit);
+                const hasMultiple = pinyins.length > 1;
+                const defaultPinyin = getDefaultPinyin(unit);
+                const instancePinyin = instancePinyinMap[index] || defaultPinyin;
+                const displayPinyin = isP ? '' : instancePinyin;
+                const pinyinClass = `pinyin-cell ${isP ? 'is-punct' : ''} ${displayPinyin ? '' : 'empty-pinyin'}`;
+                const charClass = `char-cell ${isP ? 'is-punct' : ''} ${hasMultiple ? 'has-multiple' : ''}`;
+
+                html += `<div class="${pinyinClass}" 
+                              data-char="${unit}" 
+                              data-pair-index="${index}"
+                              data-row="pinyin"
+                              data-has-multiple="${hasMultiple ? 'true' : 'false'}"
+                              data-pinyins='${JSON.stringify(pinyins)}'
+                              data-current-pinyin="${displayPinyin}"
+                              style="grid-column: ${col}; grid-row: ${rowPinyin};">
+                              ${displayPinyin}
+                          </div>`;
+
+                html += `<div class="${charClass}" 
+                              data-char="${unit}" 
+                              data-pair-index="${index}"
+                              data-row="char"
+                              data-has-multiple="${hasMultiple ? 'true' : 'false'}"
+                              data-pinyins='${JSON.stringify(pinyins)}'
+                              data-current-pinyin="${displayPinyin}"
+                              style="grid-column: ${col}; grid-row: ${rowChar};">
+                              ${unit}
+                          </div>`;
+            });
+
+            grid.innerHTML = html;
+            selectedPairs.clear();
+            updateSelectedCount();
+
+            grid.querySelectorAll('.char-cell:not(.is-punct)').forEach(el => {
+                el.addEventListener('mouseenter', function(e) {
+                    const char = this.dataset.char;
+                    if (char && char.length === 1) {
+                        document.getElementById('searchInput').value = char;
+                        document.getElementById('searchType').value = 'all';
+                        doSearch();
+                    }
+                });
+            });
+
+            grid.removeEventListener('click', onGridClick);
+            grid.addEventListener('click', onGridClick);
+
+            requestAnimationFrame(() => {
+                const items = grid.querySelectorAll('.pinyin-cell, .char-cell');
+                items.forEach((el, i) => {
+                    setTimeout(() => {
+                        el.classList.add('printing');
+                    }, i * 10);
+                });
+            });
+
+            autoTranslate(text);
+        }
+
+        function splitJapanese(text) { return [...text]; }
+
+        // ============================================================
+        //  CLICK HANDLER (多音字)
+        // ============================================================
+        function onGridClick(e) {
+            const target = e.target.closest('.pinyin-cell, .char-cell');
+            if (!target) return;
+            const pairIndex = parseInt(target.dataset.pairIndex);
+            if (isNaN(pairIndex)) return;
+
+            if (selectionMode) {
+                togglePairSelection(pairIndex);
+                e.stopPropagation();
+                return;
+            }
+
+            if (target.classList.contains('char-cell') && !target.classList.contains('is-punct')) {
+                const hasMultiple = target.dataset.hasMultiple === 'true';
+                if (!hasMultiple) return;
+                const pinyins = JSON.parse(target.dataset.pinyins);
+                if (pinyins.length < 2) return;
+
+                closePopup();
+                const rect = target.getBoundingClientRect();
+                const popup = document.createElement('div');
+                popup.className = 'pinyin-popup show';
+                popup.style.left = (rect.left + rect.width / 2 - 50) + 'px';
+                popup.style.top = (rect.top - 10) + 'px';
+                popup.style.transform = 'translateY(-100%)';
+
+                const currentPinyin = target.dataset.currentPinyin || pinyins[0];
+                pinyins.forEach(p => {
+                    const item = document.createElement('button');
+                    item.className = 'popup-item' + (p === currentPinyin ? ' active' : '');
+                    item.textContent = p;
+                    item.dataset.pinyin = p;
+                    item.addEventListener('click', (ev) => {
+                        ev.stopPropagation();
+                        selectPinyin(pairIndex, p);
+                        closePopup();
+                    });
+                    popup.appendChild(item);
+                });
+
+                document.body.appendChild(popup);
+                activePopup = popup;
+                const closeHandler = (ev) => {
+                    if (!popup.contains(ev.target) && !ev.target.closest('.char-cell')) {
+                        closePopup();
+                        document.removeEventListener('click', closeHandler);
+                    }
+                };
+                setTimeout(() => document.addEventListener('click', closeHandler), 10);
+                e.stopPropagation();
+            }
+        }
+
+        function closePopup() {
+            if (activePopup) { activePopup.remove();
+                activePopup = null; }
+        }
+
+        function selectPinyin(pairIndex, pinyin) {
+            instancePinyinMap[pairIndex] = pinyin;
+            const pinyinEl = document.querySelector(`.pinyin-cell[data-pair-index="${pairIndex}"]`);
+            const charEl = document.querySelector(`.char-cell[data-pair-index="${pairIndex}"]`);
+            if (pinyinEl) {
+                pinyinEl.textContent = pinyin;
+                pinyinEl.dataset.currentPinyin = pinyin;
+                pinyinEl.classList.remove('empty-pinyin');
+            }
+            if (charEl) charEl.dataset.currentPinyin = pinyin;
+            showToast('已切换读音：' + pinyin, 'success');
+        }
+
+        // ============================================================
+        //  SELECTION
+        // ============================================================
+        function togglePairSelection(pairIndex) {
+            if (selectedPairs.has(pairIndex)) selectedPairs.delete(pairIndex);
+            else selectedPairs.add(pairIndex);
+            updateSelectionUI();
+            updateSelectedCount();
+        }
+
+        function updateSelectionUI() {
+            document.querySelectorAll('.pinyin-cell, .char-cell').forEach(el => el.classList.remove('selected'));
+            selectedPairs.forEach(idx => {
+                document.querySelector(`.pinyin-cell[data-pair-index="${idx}"]`)?.classList.add('selected');
+                document.querySelector(`.char-cell[data-pair-index="${idx}"]`)?.classList.add('selected');
+            });
+        }
+
+        function updateSelectedCount() {
+            document.getElementById('selectedCount').textContent = `已选 ${selectedPairs.size}`;
+        }
+
+        function clearSelection() {
+            selectedPairs.clear();
+            updateSelectionUI();
+            updateSelectedCount();
+            showToast('已取消选择', 'info');
+        }
+
+        function selectAll() {
+            const allPairs = document.querySelectorAll('.pinyin-cell');
+            if (allPairs.length === 0) { showToast('没有活字', 'warning'); return; }
+            const modeCheckbox = document.getElementById('selectionMode');
+            if (!selectionMode) {
+                modeCheckbox.checked = true;
+                selectionMode = true;
+                showToast('🎯 已开启选择模式', 'info');
+            }
+            allPairs.forEach(el => {
+                const idx = parseInt(el.dataset.pairIndex);
+                if (!isNaN(idx)) selectedPairs.add(idx);
+            });
+            updateSelectionUI();
+            updateSelectedCount();
+            showToast(`✅ 已全选 ${selectedPairs.size} 个`, 'success');
+        }
+
+        function copySelected() {
+            if (selectedPairs.size === 0) { showToast('请先选择', 'warning'); return; }
+            const sorted = Array.from(selectedPairs).sort((a, b) => a - b);
+            let pinyinLine = '',
+                charLine = '';
+            sorted.forEach((idx, i) => {
+                const pinyinEl = document.querySelector(`.pinyin-cell[data-pair-index="${idx}"]`);
+                const charEl = document.querySelector(`.char-cell[data-pair-index="${idx}"]`);
+                if (pinyinEl && charEl) {
+                    const p = pinyinEl.textContent.trim() || ' ';
+                    const c = charEl.textContent.trim() || ' ';
+                    if (i > 0) pinyinLine += ' ';
+                    if (i > 0 && currentLang === 'en') charLine += ' ';
+                    pinyinLine += p;
+                    charLine += c;
+                }
+            });
+            const copyText = pinyinLine + '\n' + charLine;
+            navigator.clipboard.writeText(copyText).then(() => {
+                showToast(`✅ 已复制 ${sorted.length} 个`, 'success');
+            }).catch(() => {
+                const ta = document.createElement('textarea');
+                ta.value = copyText;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                ta.remove();
+                showToast(`✅ 已复制 ${sorted.length} 个`, 'success');
+            });
+        }
+
+        // ============================================================
+        //  TRANSLATE (直译 + 灵活意译)
+        // ============================================================
+        function autoTranslate(text) {
+            if (!text || text.length === 0) {
+                document.getElementById('directTrans').textContent = '等待翻译…';
+                document.getElementById('freeTransMain').textContent = '等待翻译…';
+                document.getElementById('refGlobal').classList.remove('open');
+                document.getElementById('refBodyGlobal').innerHTML = '';
+                document.getElementById('refBodyGlobal').classList.remove('show');
+                return;
+            }
+
+            let directParts = [];
+            const chars = [...text];
+            let i = 0;
+            while (i < chars.length) {
+                const ch = chars[i];
+                if (isPunct(ch)) {
+                    directParts.push(ch);
+                    i++;
+                    continue;
+                }
+                let matchedWord = null;
+                let matchedLen = 1;
+                for (const w of dataStore.wordList) {
+                    if (text.substring(i).startsWith(w.word) && w.word.length > matchedLen) {
+                        matchedWord = w;
+                        matchedLen = w.word.length;
+                    }
+                }
+                if (matchedWord) {
+                    directParts.push(matchedWord.meaning || matchedWord.word);
+                    i += matchedLen;
+                } else {
+                    let meaning = null;
+                    for (const w of dataStore.wordList) {
+                        if (w.word === ch && w.meaning) {
+                            meaning = w.meaning;
+                            break;
+                        }
+                    }
+                    if (meaning) {
+                        directParts.push(meaning);
+                    } else {
+                        directParts.push(ch);
+                    }
+                    i++;
+                }
+            }
+            const directText = directParts.join('');
+
+            let freeText = directText;
+            const freeRules = [
+                { from: /一群人/g, to: '大家' },
+                { from: /一些人/g, to: '有些人' },
+                { from: /那些人/g, to: '那些人' },
+                { from: /这一些/g, to: '这些' },
+                { from: /那一些/g, to: '那些' },
+                { from: /曹人/g, to: '大家' },
+                { from: /曹物/g, to: '这些东西' },
+                { from: /曹字/g, to: '这些字' },
+                { from: /曹/g, to: '一些' },
+                { from: /者其/g, to: '这个' },
+                { from: /者曹/g, to: '这些' },
+                { from: /者畔/g, to: '这边' },
+                { from: /者/g, to: '这' },
+                { from: /之其/g, to: '这个' },
+                { from: /之曹/g, to: '这些' },
+                { from: /之畔/g, to: '这边' },
+                { from: /乎/g, to: '吧' },
+                { from: /侬者/g, to: '我们这里' },
+                { from: /侬/g, to: '我们' },
+                { from: /毋是/g, to: '不是' },
+                { from: /毋/g, to: '不' },
+                { from: /莫/g, to: '不要' },
+                { from: /岂/g, to: '这么' },
+                { from: /可济/g, to: '很多' },
+                { from: /无微/g, to: '没什么' },
+                { from: /弗/g, to: '不会' },
+                { from: /未/g, to: '还没' },
+                { from: /爱/g, to: '想要' },
+            ];
+            for (const rule of freeRules) {
+                freeText = freeText.replace(rule.from, rule.to);
+            }
+            freeText = freeText.replace(/的的/g, '的');
+            freeText = freeText.replace(/[（）【】]/g, '');
+            freeText = freeText.replace(/，+/g, '，');
+            freeText = freeText.replace(/。+/g, '。');
+            if (freeText === directText) {
+                freeText = '（整理后）' + freeText;
+            }
+
+            let refText = '';
+            let matchedSentence = null;
+            for (const s of dataStore.sentences) {
+                if (s.text && (text.includes(s.text) || s.text.includes(text))) {
+                    matchedSentence = s;
+                    break;
+                }
+            }
+            if (matchedSentence) {
+                refText = `📌 参考译文\n原文：${matchedSentence.text}\n发音：${matchedSentence.pinyin}\n译文：${matchedSentence.translation}`;
+                if (matchedSentence.time) refText += `\n⏱ ${matchedSentence.time}`;
+                if (matchedSentence.speaker) refText += `\n🗣 ${matchedSentence.speaker}`;
+                if (matchedSentence.videoLink) {
+                    refText += `\n🔗 <a href="${matchedSentence.videoLink}" target="_blank" style="color:#2563eb;text-decoration:underline;">跳转视频</a>`;
+                }
+            } else {
+                refText = '（无匹配例句）';
+            }
+
+            document.getElementById('directTrans').textContent = directText;
+            document.getElementById('freeTransMain').textContent = freeText;
+
+            const refGlobal = document.getElementById('refGlobal');
+            const refBody = document.getElementById('refBodyGlobal');
+            if (matchedSentence) {
+                refGlobal.classList.add('open');
+                refBody.innerHTML = refText.replace(/\n/g, '<br>');
+                refBody.classList.add('show');
+                const toggleBtn = document.querySelector('.ref-global .ref-toggle-btn');
+                if (toggleBtn) {
+                    toggleBtn.querySelector('.arrow').classList.add('open');
+                    toggleBtn.querySelector('span:first-child').textContent = '📖 收起参考';
+                }
+            } else {
+                refGlobal.classList.remove('open');
+                refBody.innerHTML = '';
+                refBody.classList.remove('show');
+                const toggleBtn = document.querySelector('.ref-global .ref-toggle-btn');
+                if (toggleBtn) {
+                    toggleBtn.querySelector('.arrow').classList.remove('open');
+                    toggleBtn.querySelector('span:first-child').textContent = '📖 查看参考译文';
+                }
+            }
+        }
+
+        function toggleRefContent(el) {
+            const arrow = el.querySelector('.arrow');
+            const body = document.getElementById('refBodyGlobal');
+            const global = document.getElementById('refGlobal');
+            if (body) {
+                const isOpen = body.classList.contains('show');
+                if (isOpen) {
+                    body.classList.remove('show');
+                    arrow.classList.remove('open');
+                    el.querySelector('span:first-child').textContent = '📖 查看参考译文';
+                    if (!body.innerHTML.trim() || body.innerHTML.trim() === '（无匹配例句）') {
+                        global.classList.remove('open');
+                    }
+                } else {
+                    body.classList.add('show');
+                    arrow.classList.add('open');
+                    el.querySelector('span:first-child').textContent = '📖 收起参考';
+                    if (!global.classList.contains('open')) {
+                        global.classList.add('open');
+                    }
+                }
+            }
+        }
+
+        function doTranslate() {
+            const text = document.getElementById('textInput').value.trim();
+            if (!text) { showToast('请输入文字', 'warning'); return; }
+            autoTranslate(text);
+            showToast('翻译完成', 'success');
+        }
+
+        // ============================================================
+        //  SEARCH (全部数据源，发音严格来自常用字表，去重)
+        // ============================================================
+        function doSearch() {
+            const input = document.getElementById('searchInput');
+            const type = document.getElementById('searchType').value;
+            const query = input.value.trim().toLowerCase();
+            const resultsContainer = document.getElementById('searchResults');
+
+            if (!query) {
+                resultsContainer.innerHTML = '<div class="empty-result">输入关键词开始检索</div>';
+                document.getElementById('resultCount').textContent = '0 结果';
+                document.getElementById('searchPagination').style.display = 'none';
+                return;
+            }
+
+            const isPinyin = /[0-9]/.test(query);
+            let items = [];
+
+            // ---- 常用字 ----
+            if (type === 'all' || type === 'char' || type === 'radical' || type === 'body') {
+                for (const [ch, pinyins] of Object.entries(dataStore.charPinyinMap)) {
+                    const info = dataStore.charInfoMap[ch] || {};
+                    const wordsStr = (info.words || []).join(' ');
+                    const examplesStr = (info.examples || []).join(' ');
+                    const note = info.note || '';
+                    const traditional = info.traditional || '';
+                    const radical = info.radical || '';
+                    const body = info.body || '';
+
+                    let matched = false;
+                    let matchType = '常用字';
+                    let matchScore = 0;
+
+                    if (isPinyin) {
+                        if (pinyins.some(p => p === query)) {
+                            matched = true;
+                            matchType = '拼音匹配';
+                            matchScore = 1;
+                        }
+                    } else {
+                        const combined = `${ch} ${pinyins.join(' ')} ${wordsStr} ${examplesStr} ${note} ${traditional} ${radical} ${body}`.toLowerCase();
+                        if (combined.includes(query)) {
+                            matched = true;
+                            matchScore = combined.indexOf(query);
+                        }
+                        if (type === 'radical' && !radical.toLowerCase().includes(query)) matched = false;
+                        if (type === 'body' && !body.toLowerCase().includes(query)) matched = false;
+                    }
+
+                    if (matched) {
+                        items.push({
+                            type: matchType,
+                            char: ch,
+                            pinyin: pinyins.join('，'),
+                            words: (info.words || []).join('、'),
+                            note: note,
+                            traditional: traditional,
+                            radical: radical,
+                            body: body,
+                            score: matchScore,
+                            link: `多语言学习卡.html?search=${encodeURIComponent(ch)}`
+                        });
+                    }
+                }
+            }
+
+            // ---- 高频词汇 ----
+            if (type === 'all' || type === 'word') {
+                dataStore.wordList.forEach(w => {
+                    let matched = false;
+                    let matchType = '高频词汇';
+                    let matchScore = 0;
+                    const combined = `${w.word} ${w.pinyin || ''} ${w.meaning || ''} ${w.pos || ''}`.toLowerCase();
+
+                    if (isPinyin) {
+                        const pinyins = (w.pinyin || '').split(/\s+/);
+                        if (pinyins.some(p => p === query)) {
+                            matched = true;
+                            matchScore = 1;
+                        }
+                    } else {
+                        if (combined.includes(query)) {
+                            matched = true;
+                            matchScore = combined.indexOf(query);
+                        }
+                    }
+
+                    if (matched) {
+                        const exists = items.some(item => item.char === w.word);
+                        if (!exists) {
+                            items.push({
+                                type: matchType,
+                                char: w.word,
+                                pinyin: w.pinyin || '',
+                                meaning: w.meaning || '',
+                                pos: w.pos || '',
+                                traditional: getTraditional(w.word),
+                                radical: getRadical(w.word),
+                                body: getBody(w.word),
+                                score: matchScore,
+                                link: `多语言学习卡.html?search=${encodeURIComponent(w.word)}`
+                            });
+                        }
+                    }
+                });
+            }
+
+            // ---- 句子 ----
+            if (type === 'all' || type === 'sentence') {
+                dataStore.sentences.forEach(s => {
+                    const text = s.text || '';
+                    const pinyin = s.pinyin || '';
+                    const translation = s.translation || '';
+                    const time = s.time || '';
+                    const speaker = s.speaker || '';
+                    const videoLink = s.videoLink || null;
+
+                    let matched = false;
+                    let matchScore = 0;
+                    if (!isPinyin) {
+                        const combined = `${text} ${pinyin} ${translation} ${time} ${speaker}`.toLowerCase();
+                        if (combined.includes(query)) {
+                            matched = true;
+                            matchScore = combined.indexOf(query);
+                        }
+                    }
+
+                    if (matched) {
+                        items.push({
+                            type: '句子',
+                            text: text,
+                            pinyin: pinyin,
+                            translation: translation,
+                            time: time,
+                            speaker: speaker,
+                            videoLink: videoLink,
+                            score: matchScore,
+                            link: videoLink || null
+                        });
+                    }
+                });
+            }
+
+            items.sort((a, b) => {
+                if (a.type === '拼音匹配' && b.type !== '拼音匹配') return -1;
+                if (b.type === '拼音匹配' && a.type !== '拼音匹配') return 1;
+                return (a.score || 0) - (b.score || 0);
+            });
+
+            const seen = new Set();
+            items = items.filter(item => {
+                const key = item.char || item.text || '';
+                if (seen.has(key)) return false;
+                seen.add(key);
+                return true;
+            });
+
+            searchResults = items;
+            searchPage = 1;
+            displaySearchResults();
+
+            document.getElementById('resultCount').textContent = items.length + ' 结果';
+            const totalPages = Math.ceil(items.length / searchPageSize);
+            if (totalPages > 1) {
+                document.getElementById('searchPagination').style.display = 'flex';
+                document.getElementById('searchTotalInfo').textContent = `共 ${items.length} 条`;
+            } else {
+                document.getElementById('searchPagination').style.display = 'none';
+            }
+            updatePaginationInfo();
+        }
+
+        function displaySearchResults() {
+            const resultsContainer = document.getElementById('searchResults');
+            const start = (searchPage - 1) * searchPageSize;
+            const end = Math.min(start + searchPageSize, searchResults.length);
+            const pageItems = searchResults.slice(start, end);
+
+            if (pageItems.length === 0) {
+                resultsContainer.innerHTML = '<div class="empty-result">没有更多结果</div>';
+                return;
+            }
+
+            let html = '';
+            pageItems.forEach(item => {
+                const trad = item.traditional ? ` (${item.traditional})` : '';
+                const tag = item.type || '常用字';
+                let detailHtml = '';
+
+                if (item.type === '句子') {
+                    // 句子：外层只显示原文+繁体，不显示发音（发音放详情）
+                    const timeLabel = item.time ? '⏱ ' + item.time : '';
+                    const speakerLabel = item.speaker ? '🗣 ' + item.speaker : '';
+                    const videoBtn = item.videoLink ?
+                        `<button class="link-btn" onclick="event.stopPropagation(); window.open('${item.videoLink}','_blank')">▶ 跳转视频</button>` :
+                        '';
+                    const clickAttr = item.videoLink ? `onclick="window.open('${item.videoLink}','_blank')"` : '';
+                    detailHtml = `
+                        <div class="pinyin-line">${item.pinyin}</div>
+                        <div style="font-size:0.8rem;color:#5a4a3a;">${item.translation}</div>
+                        <div class="meta">
+                            <span class="tag">句子</span>
+                            ${timeLabel} ${speakerLabel}
+                            ${videoBtn}
+                        </div>
+                    `;
+                    html += `<div class="result-item" ${clickAttr}>
+                                <div><span class="highlight">${item.text}</span>${trad}</div>
+                                ${detailHtml}
+                            </div>`;
+                } else {
+                    // 字词：外层显示字词+发音
+                    const nearGroup = getNearGroupByChar(item.char);
+                    let nearHtml = '';
+                    if (nearGroup && nearGroup.length > 1) {
+                        const others = nearGroup.filter(c => c !== item.char);
+                        nearHtml = `形近：${others.join('、')}`;
+                    }
+                    const link = item.link || `多语言学习卡.html?search=${encodeURIComponent(item.char)}`;
+                    let extraInfo = '';
+                    if (item.meaning) extraInfo += '· ' + item.meaning + ' ';
+                    if (item.words) extraInfo += '· ' + item.words + ' ';
+                    if (item.note) extraInfo += '📌 ' + item.note;
+                    if (item.pos) extraInfo += '· ' + item.pos;
+
+                    detailHtml = `
+                        <div style="font-size:0.8rem;color:#5a4a3a;">${extraInfo}</div>
+                        ${nearHtml ? '<div style="font-size:0.75rem;color:#8a7a6a;">'+nearHtml+'</div>' : ''}
+                        <div class="meta">
+                            <span class="tag">${tag}</span>
+                            ${item.radical ? '<span class="tag">部首：'+item.radical+'</span>' : ''}
+                            ${item.body ? '<span class="tag">主体：'+item.body+'</span>' : ''}
+                            <button class="link-btn" onclick="event.stopPropagation(); window.open('${link}','_blank')">📚 学习卡</button>
+                        </div>
+                    `;
+                    html += `<div class="result-item" onclick="window.open('${link}','_blank')">
+                                <div><span class="highlight">${item.char}</span>${trad}  ${item.pinyin}</div>
+                                ${detailHtml}
+                            </div>`;
+                }
+            });
+            resultsContainer.innerHTML = html;
+        }
+
+        function updatePaginationInfo() {
+            const total = searchResults.length;
+            const totalPages = Math.ceil(total / searchPageSize);
+            document.getElementById('searchPageInfo').textContent = `${searchPage} / ${totalPages || 1}`;
+            document.getElementById('searchPrev').disabled = (searchPage <= 1);
+            document.getElementById('searchNext').disabled = (searchPage >= totalPages);
+        }
+
+        function goSearchPage(delta) {
+            const totalPages = Math.ceil(searchResults.length / searchPageSize);
+            const newPage = searchPage + delta;
+            if (newPage < 1 || newPage > totalPages) return;
+            searchPage = newPage;
+            displaySearchResults();
+            updatePaginationInfo();
+            document.getElementById('searchResults').scrollTop = 0;
+        }
+
+        // ============================================================
+        //  IMPORT
+        // ============================================================
+        function importFile(file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const ext = file.name.split('.').pop().toLowerCase();
+                    let workbook = null;
+                    if (ext === 'xlsx') {
+                        const data = new Uint8Array(e.target.result);
+                        workbook = XLSX.read(data, { type: 'array' });
+                    } else if (ext === 'json') {
+                        const json = JSON.parse(e.target.result);
+                        if (Array.isArray(json)) {
+                            json.forEach(item => {
+                                const ch = item.char || '';
+                                const pinyins = item.pinyins ? item.pinyins.split(/[,，、\s]+/).filter(s =>
+                                    s) : [];
+                                if (ch && pinyins.length > 0) {
+                                    dataStore.charPinyinMap[ch] = pinyins;
+                                    dataStore.charInfoMap[ch] = {
+                                        words: item.words ? item.words.split(/[,，、\s]+/).filter(s =>
+                                            s) : [],
+                                        examples: item.examples ? item.examples.split(/[,，、\s]+/)
+                                        .filter(s => s) : [],
+                                        note: item.note || '',
+                                        traditional: item.traditional || '',
+                                        radical: item.radical || '',
+                                        body: item.body || ''
+                                    };
+                                    if (item.body) {
+                                        const bodies = item.body.split(',').map(b => b.trim()).filter(b => b);
+                                        bodies.forEach(b => {
+                                            if (!dataStore.nearGroups[b]) dataStore.nearGroups[b] = [];
+                                            if (!dataStore.nearGroups[b].includes(ch)) {
+                                                dataStore.nearGroups[b].push(ch);
+                                            }
+                                            dataStore.nearCharToGroup[ch] = b;
+                                        });
+                                    }
+                                }
+                            });
+                            updateStats();
+                            showToast('✅ JSON 字库导入成功', 'success');
+                            renderPanel(currentText || '');
+                            return;
+                        } else {
+                            showToast('JSON 格式不支持，请使用Excel', 'error');
+                            return;
+                        }
+                    } else {
+                        showToast('不支持的文件格式', 'error');
+                        return;
+                    }
+
+                    if (workbook) {
+                        loadDataFromExcel(workbook);
+                    }
+                } catch (err) {
+                    showToast('导入失败：' + err.message, 'error');
+                    console.error(err);
+                }
+            };
+            if (file.name.endsWith('.xlsx')) {
+                reader.readAsArrayBuffer(file);
+            } else {
+                reader.readAsText(file);
+            }
+        }
+
+        // ============================================================
+        //  EXPORT
+        // ============================================================
+        function exportExcel() {
+            if (Object.keys(dataStore.charPinyinMap).length === 0 && dataStore.sentences.length === 0) {
+                showToast('没有数据可以导出', 'warning');
+                return;
+            }
+
+            try {
+                const wb = XLSX.utils.book_new();
+
+                // ---- Sheet1: 常用字 ----
+                const charData = [];
+                for (const [ch, pinyins] of Object.entries(dataStore.charPinyinMap)) {
+                    const info = dataStore.charInfoMap[ch] || {};
+                    charData.push({
+                        '常用字': ch,
+                        '潮州话音标': pinyins.join('，'),
+                        '词汇': (info.words || []).join('、'),
+                        '例子': (info.examples || []).join('、'),
+                        '备注': info.note || '',
+                        '繁体字': info.traditional || '',
+                        '部首': info.radical || '',
+                        '主体': info.body || ''
+                    });
+                }
+                const ws1 = XLSX.utils.json_to_sheet(charData);
+                XLSX.utils.book_append_sheet(wb, ws1, '常用字');
+
+                // ---- Sheet2: 高频词汇表 ----
+                const vocabData = dataStore.wordList.map(w => ({
+                    '词汇': w.word || '',
+                    '发音': w.pinyin || '',
+                    '词性大类': w.pos || '',
+                    '含义': w.meaning || ''
+                }));
+                const ws2 = XLSX.utils.json_to_sheet(vocabData);
+                XLSX.utils.book_append_sheet(wb, ws2, '高频词汇表');
+
+                // ---- Sheet3: 转录文本 ----
+                const sentData = dataStore.sentences.map(s => ({
+                    '项目': s.project || '',
+                    '时间轴': s.time || '',
+                    '说话人': s.speaker || '',
+                    '原文': s.text || '',
+                    '发音': s.pinyin || '',
+                    '译文': s.translation || ''
+                }));
+                const ws3 = XLSX.utils.json_to_sheet(sentData);
+                XLSX.utils.book_append_sheet(wb, ws3, '转录文本');
+
+                // ---- Sheet4: 视频来源 ----
+                const videoData = Object.entries(dataStore.videoLinks).map(([name, link]) => ({
+                    '项目名称': name,
+                    '链接': link
+                }));
+                const ws4 = XLSX.utils.json_to_sheet(videoData);
+                XLSX.utils.book_append_sheet(wb, ws4, '视频来源');
+
+                // 导出
+                const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+                const blob = new Blob([wbout], { type: 'application/octet-stream' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `语法分析_${new Date().toISOString().slice(0,10)}.xlsx`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showToast('✅ Excel 导出成功', 'success');
+            } catch (err) {
+                showToast('导出 Excel 失败: ' + err.message, 'error');
+                console.error(err);
+            }
+        }
+
+        function exportJSON() {
+            if (Object.keys(dataStore.charPinyinMap).length === 0 && dataStore.sentences.length === 0) {
+                showToast('没有数据可以导出', 'warning');
+                return;
+            }
+
+            try {
+                const exportData = {
+                    charPinyinMap: dataStore.charPinyinMap,
+                    charInfoMap: dataStore.charInfoMap,
+                    nearGroups: dataStore.nearGroups,
+                    nearCharToGroup: dataStore.nearCharToGroup,
+                    sentences: dataStore.sentences,
+                    wordList: dataStore.wordList,
+                    videoLinks: dataStore.videoLinks,
+                    exportTime: new Date().toISOString()
+                };
+                const json = JSON.stringify(exportData, null, 2);
+                const blob = new Blob([json], { type: 'application/json' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `语法分析_${new Date().toISOString().slice(0,10)}.json`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+                showToast('✅ JSON 导出成功', 'success');
+            } catch (err) {
+                showToast('导出 JSON 失败: ' + err.message, 'error');
+                console.error(err);
+            }
+        }
+
+        // ============================================================
+        //  TOAST
+        // ============================================================
+        function showToast(message, type = 'info', duration = 2200) {
+            const container = document.getElementById('toastContainer');
+            const toast = document.createElement('div');
+            toast.className = 'toast ' + type;
+            toast.textContent = message;
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(10px) scale(0.95)';
+                toast.style.transition = 'all 0.3s ease';
+                setTimeout(() => toast.remove(), 350);
+            }, duration);
+        }
+
+        // ============================================================
+        //  SWITCH LANG
+        // ============================================================
+        async function switchLang(lang) {
+            currentLang = lang;
+            document.getElementById('langSelect').value = lang;
+            await loadDataForLang(lang);
+            if (currentText) {
+                renderPanel(currentText);
+            } else {
+                // 清空当前显示
+                renderPanel('');
+            }
+            showToast('已切换到 ' + lang, 'info');
+        }
+
+        // ============================================================
+        //  AUTOMATIC DATA LOADING FROM JSON FILES
+        // ============================================================
+        async function loadDataForLang(lang) {
+            const url = `data/${lang}.json`;   // 例如 data/cz.json, data/zh.json
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const jsonData = await response.json();
+
+                // 清空现有数据（保留视频链接？根据需要决定是否保留，这里全清）
+                dataStore.charPinyinMap = {};
+                dataStore.charInfoMap = {};
+                dataStore.nearGroups = {};
+                dataStore.nearCharToGroup = {};
+                dataStore.sentences = [];
+                dataStore.wordList = [];
+                dataStore.videoInfo = null;
+                dataStore.videoLinks = {};
+
+                // 将 JSON 数据填入 dataStore（结构与导出格式一致）
+                // 直接赋值顶层字段
+                if (jsonData.charPinyinMap) Object.assign(dataStore.charPinyinMap, jsonData.charPinyinMap);
+                if (jsonData.charInfoMap) Object.assign(dataStore.charInfoMap, jsonData.charInfoMap);
+                if (jsonData.nearGroups) Object.assign(dataStore.nearGroups, jsonData.nearGroups);
+                if (jsonData.nearCharToGroup) Object.assign(dataStore.nearCharToGroup, jsonData.nearCharToGroup);
+                if (jsonData.sentences) dataStore.sentences = jsonData.sentences.slice();
+                if (jsonData.wordList) dataStore.wordList = jsonData.wordList.slice();
+                if (jsonData.videoInfo) dataStore.videoInfo = jsonData.videoInfo;
+                if (jsonData.videoLinks) Object.assign(dataStore.videoLinks, jsonData.videoLinks);
+
+                updateStats();
+                renderPanel(currentText || '');
+                showToast(`✅ ${lang} 数据加载成功`, 'success');
+            } catch (error) {
+                console.error('加载语种数据失败:', error);
+                showToast(`❌ 加载 ${lang} 数据失败，请检查网络或文件是否存在`, 'error');
+                // 保持原有数据不变，但可以提示
+            }
+        }
+
+        // ============================================================
+        //  TOGGLE RIGHT PANEL
+        // ============================================================
+        let rightVisible = true;
+
+        function toggleRightPanel() {
+            rightVisible = !rightVisible;
+            const panel = document.getElementById('panelRight');
+            const left = document.getElementById('panelLeft');
+            const btn = document.getElementById('btnToggleRight');
+            if (rightVisible) {
+                panel.classList.remove('hidden');
+                panel.classList.add('expanded');
+                left.classList.remove('expanded');
+                btn.textContent = '🔍 隐藏检索';
+                btn.classList.add('btn-accent');
+                btn.classList.remove('btn-outline');
+            } else {
+                panel.classList.add('hidden');
+                panel.classList.remove('expanded');
+                left.classList.add('expanded');
+                btn.textContent = '🔍 显示检索';
+                btn.classList.remove('btn-accent');
+                btn.classList.add('btn-outline');
+            }
+        }
+
+        // ============================================================
+        //  EVENT BINDINGS
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', async () => {
+            const langSelect = document.getElementById('langSelect');
+            currentLang = langSelect.value;
+
+            // 1. 先尝试加载默认语种数据
+            await loadDataForLang(currentLang);
+
+            // 2. 绑定语种切换事件
+            langSelect.addEventListener('change', async (e) => {
+                const lang = e.target.value;
+                await switchLang(lang);
+            });
+
+            const input = document.getElementById('textInput');
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') { e.preventDefault();
+                    doPrint(); }
+            });
+
+            document.getElementById('btnPrint').addEventListener('click', doPrint);
+            document.getElementById('btnClear').addEventListener('click', () => {
+                document.getElementById('textInput').value = '';
+                renderPanel('');
+                input.focus();
+                showToast('已清空', 'info');
+            });
+
+            document.getElementById('btnBackend').addEventListener('click', () => {
+                document.getElementById('backendModal').classList.add('show');
+            });
+            document.getElementById('closeBackend').addEventListener('click', () => {
+                document.getElementById('backendModal').classList.remove('show');
+            });
+            document.getElementById('backendModal').addEventListener('click', (e) => {
+                if (e.target === e.currentTarget) document.getElementById('backendModal').classList.remove('show');
+            });
+
+            document.getElementById('fileInput').addEventListener('change', (e) => {
+                const file = e.target.files[0];
+                if (file) importFile(file);
+                e.target.value = '';
+            });
+            document.getElementById('reloadHintBtn').addEventListener('click', () => {
+                document.getElementById('fileInput').click();
+            });
+
+            // 导出按钮
+            document.getElementById('exportExcelBtn').addEventListener('click', exportExcel);
+            document.getElementById('exportJsonBtn').addEventListener('click', exportJSON);
+
+            document.getElementById('selectionMode').addEventListener('change', (e) => {
+                selectionMode = e.target.checked;
+                showToast(selectionMode ? '🎯 选择模式' : '🔊 退出选择模式', 'info');
+            });
+            document.getElementById('copySelected').addEventListener('click', copySelected);
+            document.getElementById('clearSelection').addEventListener('click', clearSelection);
+            document.getElementById('selectAll').addEventListener('click', selectAll);
+
+            document.getElementById('btnTranslate').addEventListener('click', doTranslate);
+            document.getElementById('btnTranslateClear').addEventListener('click', () => {
+                document.getElementById('directTrans').textContent = '等待翻译…';
+                document.getElementById('freeTransMain').textContent = '等待翻译…';
+                document.getElementById('refGlobal').classList.remove('open');
+                document.getElementById('refBodyGlobal').innerHTML = '';
+                document.getElementById('refBodyGlobal').classList.remove('show');
+                showToast('已清空翻译', 'info');
+            });
+
+            document.getElementById('btnSearch').addEventListener('click', doSearch);
+            document.getElementById('searchInput').addEventListener('keydown', (e) => {
+                if (e.key === 'Enter') doSearch();
+            });
+            document.getElementById('searchType').addEventListener('change', doSearch);
+
+            document.getElementById('searchPrev').addEventListener('click', () => goSearchPage(-1));
+            document.getElementById('searchNext').addEventListener('click', () => goSearchPage(1));
+
+            document.getElementById('btnToggleRight').addEventListener('click', toggleRightPanel);
+
+            rightVisible = true;
+            document.getElementById('panelRight').classList.remove('hidden');
+            document.getElementById('panelRight').classList.add('expanded');
+            document.getElementById('panelLeft').classList.remove('expanded');
+            document.getElementById('btnToggleRight').textContent = '🔍 隐藏检索';
+            document.getElementById('btnToggleRight').classList.add('btn-accent');
+            document.getElementById('btnToggleRight').classList.remove('btn-outline');
+
+            // 初始化显示（若数据已加载，渲染空面板）
+            renderPanel('');
+            updateStats();
+            showToast('📂 已自动加载 ' + currentLang + ' 数据，可开始使用', 'info', 3000);
+        });
+
+        function doPrint() {
+            const input = document.getElementById('textInput');
+            const text = input.value.trim();
+            if (!text) { showToast('请输入文字', 'warning');
+                input.focus(); return; }
+            renderPanel(text);
+            clearSelection();
+            const unitCount = currentLang === 'en' ? text.split(/\s+/).filter(w => w.length > 0).length : text.length;
+            showToast('🖨️ 已排印 ' + unitCount + ' 个单元', 'success', 1500);
+        }
+
+        document.addEventListener('click', (e) => {
+            if (activePopup && !activePopup.contains(e.target) && !e.target.closest('.char-cell')) {
+                closePopup();
+            }
+        });
+        window.addEventListener('resize', closePopup);
+        window.addEventListener('scroll', closePopup);
+
+        console.log('📜 语法分析 · 活字印刷 (v8 - 带自动加载)');
+        console.log('✅ 切换语种自动加载对应 data/*.json 文件');
+        console.log('✅ 手动导入功能仍可用作备用');
+    </script>
+</body>
+</html>
