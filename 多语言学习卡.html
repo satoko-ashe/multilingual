@@ -1414,7 +1414,7 @@
 
             // ---------- 自动加载 ----------
             function autoLoadDataFile() {
-                const fileName = 'vocabulary-data.json';
+                const fileName = ['common.json', 'vocabulary-data.json'];
                 fetch(fileName)
                     .then(res => {
                         if (!res.ok) throw new Error('File not found');
