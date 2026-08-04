@@ -1249,6 +1249,9 @@
             videoLinks: {}
         };
 
+        // -------- 数据缓存 --------
+        const dataCache = {};
+
         let currentLang = 'cz';
         let currentText = '';
         let selectionMode = false;
@@ -1392,7 +1395,100 @@
         }
 
         // ============================================================
-        //  DATA LOADING (unchanged, uses isPunct)
+        //  DATA LOADING (with cache & dual format support)
+        // ============================================================
+        async function loadDataForLang(lang, forceReload = false) {
+            // 检查缓存
+            if (!forceReload && dataCache[lang]) {
+                Object.assign(dataStore, dataCache[lang]);
+                updateStats();
+                renderPanel(currentText || '');
+                showToast(`✅ ${lang} 数据（缓存）加载成功`, 'success');
+                return;
+            }
+
+            const url = `data/${lang}.json`;
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const jsonData = await response.json();
+
+                // 清空 dataStore
+                dataStore.charPinyinMap = {};
+                dataStore.charInfoMap = {};
+                dataStore.nearGroups = {};
+                dataStore.nearCharToGroup = {};
+                dataStore.sentences = [];
+                dataStore.wordList = [];
+                dataStore.videoInfo = null;
+                dataStore.videoLinks = {};
+
+                // ---- 兼容数组格式（如 字库_*.json） ----
+                if (Array.isArray(jsonData)) {
+                    jsonData.forEach(item => {
+                        const ch = item.char || '';
+                        const pinyins = item.pinyins ? item.pinyins.split(/[,，、\s]+/).filter(s => s) : [];
+                        if (ch && pinyins.length > 0) {
+                            dataStore.charPinyinMap[ch] = pinyins;
+                            dataStore.charInfoMap[ch] = {
+                                words: item.words ? item.words.split(/[,，、\s]+/).filter(s => s) : [],
+                                examples: item.examples ? item.examples.split(/[,，、\s]+/).filter(s => s) : [],
+                                note: item.note || '',
+                                traditional: item.traditional || '',
+                                radical: item.radical || '',
+                                body: item.body || ''
+                            };
+                            if (item.body) {
+                                const bodies = item.body.split(',').map(b => b.trim()).filter(b => b);
+                                bodies.forEach(b => {
+                                    if (!dataStore.nearGroups[b]) dataStore.nearGroups[b] = [];
+                                    if (!dataStore.nearGroups[b].includes(ch)) {
+                                        dataStore.nearGroups[b].push(ch);
+                                    }
+                                    dataStore.nearCharToGroup[ch] = b;
+                                });
+                            }
+                        }
+                    });
+                    // 数组格式通常没有 sentences/wordList，但如果有，可以尝试补充
+                    // 这里不做额外处理
+                } else if (typeof jsonData === 'object' && jsonData !== null) {
+                    // 对象格式（如 语法分析_*.json 导出格式）
+                    if (jsonData.charPinyinMap) Object.assign(dataStore.charPinyinMap, jsonData.charPinyinMap);
+                    if (jsonData.charInfoMap) Object.assign(dataStore.charInfoMap, jsonData.charInfoMap);
+                    if (jsonData.nearGroups) Object.assign(dataStore.nearGroups, jsonData.nearGroups);
+                    if (jsonData.nearCharToGroup) Object.assign(dataStore.nearCharToGroup, jsonData.nearCharToGroup);
+                    if (jsonData.sentences) dataStore.sentences = jsonData.sentences.slice();
+                    if (jsonData.wordList) dataStore.wordList = jsonData.wordList.slice();
+                    if (jsonData.videoInfo) dataStore.videoInfo = jsonData.videoInfo;
+                    if (jsonData.videoLinks) Object.assign(dataStore.videoLinks, jsonData.videoLinks);
+                } else {
+                    throw new Error('未知的数据格式');
+                }
+
+                // 保存到缓存
+                dataCache[lang] = {
+                    charPinyinMap: { ...dataStore.charPinyinMap },
+                    charInfoMap: { ...dataStore.charInfoMap },
+                    nearGroups: { ...dataStore.nearGroups },
+                    nearCharToGroup: { ...dataStore.nearCharToGroup },
+                    sentences: dataStore.sentences.slice(),
+                    wordList: dataStore.wordList.slice(),
+                    videoInfo: dataStore.videoInfo,
+                    videoLinks: { ...dataStore.videoLinks }
+                };
+
+                updateStats();
+                renderPanel(currentText || '');
+                showToast(`✅ ${lang} 数据加载成功`, 'success');
+            } catch (error) {
+                console.error('加载语种数据失败:', error);
+                showToast(`❌ 加载 ${lang} 数据失败，请检查文件是否存在`, 'error');
+            }
+        }
+
+        // ============================================================
+        //  DATA LOADING FROM EXCEL (unchanged)
         // ============================================================
         function loadDataFromExcel(workbook) {
             dataStore.charPinyinMap = {};
@@ -2484,52 +2580,15 @@
         }
 
         // ============================================================
-        //  SWITCH LANG (autoload JSON)
+        //  SWITCH LANG (uses cache)
         // ============================================================
         async function switchLang(lang) {
             currentLang = lang;
             document.getElementById('langSelect').value = lang;
             await loadDataForLang(lang);
-            if (currentText) {
-                renderPanel(currentText);
-            } else {
-                renderPanel('');
-            }
+            if (currentText) renderPanel(currentText);
+            else renderPanel('');
             showToast('已切换到 ' + lang, 'info');
-        }
-
-        async function loadDataForLang(lang) {
-            const url = `data/${lang}.json`;
-            try {
-                const response = await fetch(url);
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                const jsonData = await response.json();
-
-                dataStore.charPinyinMap = {};
-                dataStore.charInfoMap = {};
-                dataStore.nearGroups = {};
-                dataStore.nearCharToGroup = {};
-                dataStore.sentences = [];
-                dataStore.wordList = [];
-                dataStore.videoInfo = null;
-                dataStore.videoLinks = {};
-
-                if (jsonData.charPinyinMap) Object.assign(dataStore.charPinyinMap, jsonData.charPinyinMap);
-                if (jsonData.charInfoMap) Object.assign(dataStore.charInfoMap, jsonData.charInfoMap);
-                if (jsonData.nearGroups) Object.assign(dataStore.nearGroups, jsonData.nearGroups);
-                if (jsonData.nearCharToGroup) Object.assign(dataStore.nearCharToGroup, jsonData.nearCharToGroup);
-                if (jsonData.sentences) dataStore.sentences = jsonData.sentences.slice();
-                if (jsonData.wordList) dataStore.wordList = jsonData.wordList.slice();
-                if (jsonData.videoInfo) dataStore.videoInfo = jsonData.videoInfo;
-                if (jsonData.videoLinks) Object.assign(dataStore.videoLinks, jsonData.videoLinks);
-
-                updateStats();
-                renderPanel(currentText || '');
-                showToast(`✅ ${lang} 数据加载成功`, 'success');
-            } catch (error) {
-                console.error('加载语种数据失败:', error);
-                showToast(`❌ 加载 ${lang} 数据失败，请检查网络或文件是否存在`, 'error');
-            }
         }
 
         // ============================================================
@@ -2560,14 +2619,22 @@
         }
 
         // ============================================================
-        //  EVENT BINDINGS
+        //  EVENT BINDINGS (with preload)
         // ============================================================
         document.addEventListener('DOMContentLoaded', async () => {
             const langSelect = document.getElementById('langSelect');
             currentLang = langSelect.value;
 
+            // 1. 加载当前语种（阻塞）
             await loadDataForLang(currentLang);
 
+            // 2. 后台预加载其他语种（不阻塞）
+            const otherLangs = ['zh', 'en', 'ja'].filter(l => l !== currentLang);
+            for (const lang of otherLangs) {
+                loadDataForLang(lang).catch(e => console.warn(`预加载 ${lang} 失败`, e));
+            }
+
+            // 3. 绑定事件
             langSelect.addEventListener('change', async (e) => {
                 const lang = e.target.value;
                 await switchLang(lang);
@@ -2648,7 +2715,7 @@
 
             renderPanel('');
             updateStats();
-            showToast('📂 已自动加载 ' + currentLang + ' 数据，可开始使用', 'info', 3000);
+            showToast('📂 已自动加载 ' + currentLang + ' 数据，其他语种正在后台加载', 'info', 4000);
         });
 
         function doPrint() {
@@ -2670,9 +2737,9 @@
         window.addEventListener('resize', closePopup);
         window.addEventListener('scroll', closePopup);
 
-        console.log('📜 语法分析 · 活字印刷 (v8 - 带自动加载)');
-        console.log('✅ 切换语种自动加载对应 data/*.json 文件');
-        console.log('✅ 手动导入功能仍可用作备用');
+        console.log('📜 语法分析 · 活字印刷 (v9 - 预加载 & 双格式兼容)');
+        console.log('✅ 预加载所有语种，切换无需等待');
+        console.log('✅ 兼容数组格式和对象格式的 JSON');
     </script>
 </body>
 </html>
