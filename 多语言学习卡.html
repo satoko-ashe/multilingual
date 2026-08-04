@@ -7,7 +7,7 @@
     <script src="https://cdn.sheetjs.com/xlsx-0.20.1/package/dist/xlsx.full.min.js">
     </script>
     <style>
-        /* ===== 全局 ===== */
+        /* ===== 全局（与原保持一致） ===== */
         * {
             margin: 0;
             padding: 0;
@@ -265,7 +265,7 @@
             text-align: center;
         }
 
-        /* 语种弹出面板 - 增大尺寸 */
+        /* 语种弹出面板 */
         .lang-panel {
             position: absolute;
             top: calc(100% + 8px);
@@ -950,11 +950,9 @@
             border-radius: 10px;
         }
 
-        /* 隐藏file input */
         #fileInput {
             display: none;
         }
-
         .text-muted {
             color: #94a3b8;
         }
@@ -991,12 +989,11 @@
                 <span class="divider">|</span>
                 <span>点击上方「上传 Excel」按钮</span>
             </div>
-            <div class="hint">页面启动时会自动尝试加载同目录下的 <strong>vocabulary-data.json</strong></div>
+            <div class="hint">页面启动时会自动尝试加载同目录下的 <strong>common.json</strong></div>
         </div>
 
         <!-- 工具栏 -->
         <div class="toolbar" id="toolbar" style="display:none;">
-            <!-- 搜索 -->
             <div class="search-wrap">
                 <span class="search-icon">🔍</span>
                 <input type="text" id="searchInput" placeholder="搜索词汇或句子..." autocomplete="off" />
@@ -1116,7 +1113,6 @@
             const modalTitle = $('#modalTitle');
             const modalBody = $('#modalBody');
 
-            // 语种面板
             const langSelectorBtn = $('#langSelectorBtn');
             const langPanel = $('#langPanel');
             const langGrid = $('#langGrid');
@@ -1126,7 +1122,6 @@
             const deselectAllLang = $('#deselectAllLang');
             const langPanelConfirm = $('#langPanelConfirm');
 
-            // 模式切换
             const modeSwitch = $('#modeSwitch');
             const displaySwitch = $('#displaySwitch');
 
@@ -1182,7 +1177,6 @@
                 return String(cell).split(',').map(s => s.trim()).filter(Boolean);
             }
 
-            // ---------- 获取当前语言列表 ----------
             function getCurrentLangList() {
                 return currentMode === 'vocabulary' ? languages : sentenceLanguages;
             }
@@ -1199,17 +1193,6 @@
                 return currentMode === 'vocabulary' ? vocabulary : sentences;
             }
 
-            // ========== 新增：从 URL 读取搜索关键词 ==========
-            function applySearchFromUrl() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const searchQuery = urlParams.get('search');
-                if (searchQuery) {
-                    searchInput.value = searchQuery.trim();
-                } else {
-                    searchInput.value = '';
-                }
-            }
-
             // ---------- 加载 Excel ----------
             function loadExcelFile(file) {
                 const reader = new FileReader();
@@ -1218,7 +1201,6 @@
                         const data = new Uint8Array(e.target.result);
                         const workbook = XLSX.read(data, { type: 'array' });
 
-                        // ---- 词汇表 (Sheet 0) ----
                         const vocabSheet = workbook.Sheets[workbook.SheetNames[0]];
                         if (!vocabSheet) { showToast('未找到第一个 sheet (词汇)', 'error'); return; }
                         const vocabRows = XLSX.utils.sheet_to_json(vocabSheet, { header: 1, defval: '' });
@@ -1396,8 +1378,6 @@
                         allDataLoaded = true;
                         currentPage = 1;
                         selectedLangs = [];
-                        // ===== 应用 URL 搜索词 =====
-                        applySearchFromUrl();
                         renderAll();
                         showToolbar(true);
                         uploadZone.style.display = 'none';
@@ -1412,9 +1392,9 @@
                 reader.readAsArrayBuffer(file);
             }
 
-            // ---------- 自动加载 ----------
+            // ---------- 自动加载（修改为优先加载 common.json） ----------
             function autoLoadDataFile() {
-                const fileName = 'vocabulary-data.json';
+                const fileName = 'common.json';
                 fetch(fileName)
                     .then(res => {
                         if (!res.ok) throw new Error('File not found');
@@ -1438,8 +1418,6 @@
                                 allDataLoaded = true;
                                 currentPage = 1;
                                 selectedLangs = [];
-                                // ===== 应用 URL 搜索词 =====
-                                applySearchFromUrl();
                                 renderAll();
                                 showToolbar(true);
                                 uploadZone.style.display = 'none';
@@ -1452,7 +1430,43 @@
                         throw new Error('数据格式无效');
                     })
                     .catch(() => {
-                        autoLoadExcel();
+                        // 若 common.json 不存在，尝试旧文件名 vocabulary-data.json
+                        const fallbackFile = 'vocabulary-data.json';
+                        fetch(fallbackFile)
+                            .then(res => {
+                                if (!res.ok) throw new Error('File not found');
+                                return res.json();
+                            })
+                            .then(json => {
+                                if (json.vocabulary && json.languages) {
+                                    vocabulary = json.vocabulary || [];
+                                    languages = json.languages || [];
+                                    foreignLangs = json.foreignLangs || [];
+                                    hanLangs = json.hanLangs || [];
+                                    mandarinIndex = json.mandarinIndex || -1;
+                                    sentences = json.sentences || [];
+                                    sentenceLanguages = json.sentenceLanguages || [];
+                                    sentenceForeignLangs = json.sentenceForeignLangs || [];
+                                    sentenceHanLangs = json.sentenceHanLangs || [];
+                                    sentenceMandarinIndex = json.sentenceMandarinIndex || -1;
+                                    if (vocabulary.length > 0) {
+                                        allDataLoaded = true;
+                                        currentPage = 1;
+                                        selectedLangs = [];
+                                        renderAll();
+                                        showToolbar(true);
+                                        uploadZone.style.display = 'none';
+                                        updateStats();
+                                        showToast(`📦 自动加载 ${fallbackFile} (${vocabulary.length} 个词条，${sentences.length} 个句子)`,
+                                            'success');
+                                        return;
+                                    }
+                                }
+                                throw new Error('数据格式无效');
+                            })
+                            .catch(() => {
+                                autoLoadExcel();
+                            });
                     });
             }
 
@@ -1472,7 +1486,7 @@
                         showToolbar(false);
                         if (!allDataLoaded) {
                             cardGrid.innerHTML =
-                                `<div class="empty-state"><span class="big-icon">📂</span><h3>未检测到词汇数据</h3><p>请上传 Excel 文件或将 vocabulary-data.json 放在同目录下</p></div>`;
+                                `<div class="empty-state"><span class="big-icon">📂</span><h3>未检测到词汇数据</h3><p>请上传 Excel 文件或将 common.json / vocabulary-data.json 放在同目录下</p></div>`;
                         }
                     });
             }
@@ -1502,7 +1516,7 @@
                 const url = URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = 'vocabulary-data.json';
+                a.download = 'common.json'; // 导出为 common.json
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
@@ -1678,7 +1692,7 @@
             function renderAll() {
                 if (!allDataLoaded || vocabulary.length === 0) {
                     cardGrid.innerHTML =
-                        `<div class="empty-state"><span class="big-icon">📂</span><h3>暂无词汇数据</h3><p>请上传 Excel 文件或放置 vocabulary-data.json</p></div>`;
+                        `<div class="empty-state"><span class="big-icon">📂</span><h3>暂无词汇数据</h3><p>请上传 Excel 文件或放置 common.json / vocabulary-data.json</p></div>`;
                     emptyState.style.display = 'none';
                     paginationWrapper.style.display = 'none';
                     return;
