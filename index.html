@@ -1239,14 +1239,14 @@
         //  DATA STORE
         // ============================================================
         const dataStore = {
-            charPinyinMap: {}, // 字 -> 拼音数组（严格来自常用字表）
-            charInfoMap: {}, // 字 -> {words, examples, note, traditional, radical, body}
-            nearGroups: {}, // 主体 -> 字数组
-            nearCharToGroup: {}, // 字 -> 主体
+            charPinyinMap: {},
+            charInfoMap: {},
+            nearGroups: {},
+            nearCharToGroup: {},
             sentences: [],
             wordList: [],
             videoInfo: null,
-            videoLinks: {} // key: 项目名称 -> url
+            videoLinks: {}
         };
 
         let currentLang = 'cz';
@@ -1261,7 +1261,138 @@
         const searchPageSize = 20;
 
         // ============================================================
-        //  DATA LOADING (常用字优先，严格不补充已存在发音)
+        //  NEW: TOKENIZATION & PINYIN LOOKUP (upgraded)
+        // ============================================================
+
+        function isPunct(char) {
+            return /[，。、；：！？《》「」『』（）【】—…·'"“”‘’\.,;:!?()\[\]{}<>\/\\|`~@#$%^&*\-_=+]/.test(char);
+        }
+
+        function getPinyinsForUnit(unit) {
+            if (dataStore.charPinyinMap[unit]) {
+                return dataStore.charPinyinMap[unit];
+            }
+            for (const w of dataStore.wordList) {
+                if (w.word === unit) {
+                    return w.pinyin ? w.pinyin.split(/\s+/) : [];
+                }
+            }
+            return [];
+        }
+
+        function getDefaultPinyinForUnit(unit) {
+            const pinyins = getPinyinsForUnit(unit);
+            return pinyins.length > 0 ? pinyins[0] : '';
+        }
+
+        function buildTokenDict() {
+            const dict = new Map();
+            for (const [key, pinyins] of Object.entries(dataStore.charPinyinMap)) {
+                if (pinyins && pinyins.length) {
+                    dict.set(key, pinyins);
+                }
+            }
+            for (const w of dataStore.wordList) {
+                if (w.word && !dict.has(w.word)) {
+                    const pinyins = w.pinyin ? w.pinyin.split(/\s+/) : [];
+                    if (pinyins.length) dict.set(w.word, pinyins);
+                }
+            }
+            return dict;
+        }
+
+        function splitJapanese(text) {
+            const HIRAGANA_YOON = new Set('きぎしじちにひびぴみり');
+            const KATAKANA_YOON = new Set('キギシジチニヒビピミリ');
+            const SMALL_YOON_HIRA = new Set('ゃゅょ');
+            const SMALL_YOON_KATA = new Set('ャュョ');
+            const units = [];
+            let i = 0;
+            while (i < text.length) {
+                const ch = text[i];
+                if (HIRAGANA_YOON.has(ch) && i + 1 < text.length && SMALL_YOON_HIRA.has(text[i + 1])) {
+                    units.push(ch + text[i + 1]);
+                    i += 2;
+                } else if (KATAKANA_YOON.has(ch) && i + 1 < text.length && SMALL_YOON_KATA.has(text[i + 1])) {
+                    units.push(ch + text[i + 1]);
+                    i += 2;
+                } else {
+                    units.push(ch);
+                    i++;
+                }
+            }
+            return units;
+        }
+
+        function tokenizeText(text, tokenDict, lang) {
+            if (lang === 'en') {
+                const words = text.split(/\s+/).filter(w => w.length > 0);
+                const sortedKeys = Array.from(tokenDict.keys()).sort((a, b) => b.length - a.length);
+                return words.map(w => {
+                    for (const key of sortedKeys) {
+                        if (w.toLowerCase() === key.toLowerCase()) return key;
+                    }
+                    return w;
+                });
+            } else if (lang === 'ja') {
+                const rawUnits = splitJapanese(text);
+                const sortedKeys = Array.from(tokenDict.keys()).sort((a, b) => b.length - a.length);
+                const result = [];
+                let i = 0;
+                while (i < rawUnits.length) {
+                    let matched = false;
+                    for (const key of sortedKeys) {
+                        const sub = rawUnits.slice(i, i + key.length).join('');
+                        if (sub === key) {
+                            result.push(key);
+                            i += key.length;
+                            matched = true;
+                            break;
+                        }
+                    }
+                    if (!matched) {
+                        result.push(rawUnits[i]);
+                        i++;
+                    }
+                }
+                return result;
+            } else {
+                const sortedKeys = Array.from(tokenDict.keys()).sort((a, b) => b.length - a.length);
+                const units = [];
+                let i = 0;
+                while (i < text.length) {
+                    let matched = false;
+                    for (const key of sortedKeys) {
+                        if (text.startsWith(key, i)) {
+                            units.push(key);
+                            i += key.length;
+                            matched = true;
+                            break;
+                        }
+                    }
+                    if (!matched) {
+                        const ch = text[i];
+                        if (ch !== ' ') units.push(ch);
+                        i++;
+                    }
+                }
+                return units;
+            }
+        }
+
+        // ============================================================
+        //  LEGACY WRAPPERS (for compatibility)
+        // ============================================================
+        function getAllPinyinsForChar(char) {
+            return getPinyinsForUnit(char);
+        }
+
+        function getDefaultPinyin(char) {
+            return getDefaultPinyinForUnit(char);
+        }
+
+        // ============================================================
+        //  DATA LOADING (unchanged, uses isPunct)
         // ============================================================
         function loadDataFromExcel(workbook) {
             dataStore.charPinyinMap = {};
@@ -1275,7 +1406,6 @@
 
             const sheetNames = workbook.SheetNames;
 
-            // ---- 视频来源 (先加载，用于后面对应句子项目) ----
             const videoSheet = workbook.Sheets[sheetNames.find(s => s.includes('视频来源') || s.includes('来源'))];
             if (videoSheet) {
                 const rows = XLSX.utils.sheet_to_json(videoSheet);
@@ -1294,7 +1424,6 @@
                 });
             }
 
-            // ---- 1. 常用字 (最高优先级，严格设置发音，且只从这里取) ----
             const charSheet = workbook.Sheets[sheetNames.find(s => s.includes('常用字'))];
             if (charSheet) {
                 const rows = XLSX.utils.sheet_to_json(charSheet);
@@ -1335,7 +1464,6 @@
                 console.warn('未找到"常用字"工作表，将依赖转录文本补充发音');
             }
 
-            // ---- 2. 转录文本 (补充发音和句子，但绝不覆盖常用字表中已有的字) ----
             const transSheet = workbook.Sheets[sheetNames.find(s => s.includes('转录'))];
             if (transSheet) {
                 const rows = XLSX.utils.sheet_to_json(transSheet);
@@ -1368,9 +1496,7 @@
                                     if (!dataStore.charPinyinMap[ch] || dataStore.charPinyinMap[ch].length === 0) {
                                         dataStore.charPinyinMap[ch] = [];
                                     }
-                                    if (dataStore.charPinyinMap[ch].length > 0) {
-                                        // 已有发音，不补充
-                                    } else {
+                                    if (dataStore.charPinyinMap[ch].length > 0) {} else {
                                         if (!dataStore.charPinyinMap[ch].includes(syl)) {
                                             dataStore.charPinyinMap[ch].push(syl);
                                         }
@@ -1383,7 +1509,6 @@
                 });
             }
 
-            // ---- 3. 高频词汇表 (补充词汇和发音，但绝不覆盖常用字表中已有的字) ----
             const vocabSheet = workbook.Sheets[sheetNames.find(s => s.includes('高频') || s.includes('词汇'))];
             if (vocabSheet) {
                 const rows = XLSX.utils.sheet_to_json(vocabSheet);
@@ -1421,10 +1546,6 @@
             renderPanel(currentText || '');
         }
 
-        function isPunct(char) {
-            return /[，。、；：！？《》「」『』（）【】—…·'"“”‘’\.,;:!?()\[\]{}<>\/\\|`~@#$%^&*\-_=+]/.test(char);
-        }
-
         function updateStats() {
             const charCount = Object.keys(dataStore.charPinyinMap).length;
             const nearCount = Object.keys(dataStore.nearGroups).length;
@@ -1438,18 +1559,6 @@
                 `已加载：${charCount}字，${nearCount}组近形，${sentenceCount}句，${wordCount}词 (常用字发音优先)`;
             document.getElementById('dataDetail').textContent =
                 `字音严格以“常用字”表为准，其他来源仅补充未收录的字；形近字基于“主体”列构建。`;
-        }
-
-        // ============================================================
-        //  HELPERS
-        // ============================================================
-        function getAllPinyinsForChar(char) {
-            return dataStore.charPinyinMap[char] || [];
-        }
-
-        function getDefaultPinyin(char) {
-            const pinyins = getAllPinyinsForChar(char);
-            return pinyins.length > 0 ? pinyins[0] : '';
         }
 
         function getCharInfo(char) {
@@ -1481,7 +1590,7 @@
         }
 
         // ============================================================
-        //  RENDER PANEL
+        //  RENDER PANEL (using new tokenization)
         // ============================================================
         function renderPanel(text) {
             const grid = document.getElementById('typeGrid');
@@ -1506,13 +1615,22 @@
                 return;
             }
 
-            let units = [];
-            if (currentLang === 'en') {
-                units = text.split(/\s+/).filter(w => w.length > 0);
-            } else if (currentLang === 'ja') {
-                units = splitJapanese(text);
-            } else {
-                units = [...text];
+            const tokenDict = buildTokenDict();
+            let units = tokenizeText(text, tokenDict, currentLang);
+
+            if (units.length === 0) {
+                grid.style.display = 'none';
+                hint.style.display = 'flex';
+                grid.innerHTML = '';
+                selectedPairs.clear();
+                updateSelectedCount();
+                countEl.textContent = '0 单元';
+                document.getElementById('directTrans').textContent = '等待翻译…';
+                document.getElementById('freeTransMain').textContent = '等待翻译…';
+                document.getElementById('refGlobal').classList.remove('open');
+                document.getElementById('refBodyGlobal').innerHTML = '';
+                document.getElementById('refBodyGlobal').classList.remove('show');
+                return;
             }
 
             countEl.textContent = units.length + ' 单元';
@@ -1526,13 +1644,15 @@
                 const rowChar = Math.floor(index / 20) * 2 + 2;
 
                 let isP = false;
-                if (currentLang !== 'en') {
+                if (currentLang === 'en') {
+                    isP = /[.,!?;:]/.test(unit);
+                } else {
                     isP = isPunct(unit);
                 }
 
-                const pinyins = getAllPinyinsForChar(unit);
+                const pinyins = getPinyinsForUnit(unit);
                 const hasMultiple = pinyins.length > 1;
-                const defaultPinyin = getDefaultPinyin(unit);
+                const defaultPinyin = pinyins.length > 0 ? pinyins[0] : '';
                 const instancePinyin = instancePinyinMap[index] || defaultPinyin;
                 const displayPinyin = isP ? '' : instancePinyin;
                 const pinyinClass = `pinyin-cell ${isP ? 'is-punct' : ''} ${displayPinyin ? '' : 'empty-pinyin'}`;
@@ -1568,7 +1688,7 @@
             grid.querySelectorAll('.char-cell:not(.is-punct)').forEach(el => {
                 el.addEventListener('mouseenter', function(e) {
                     const char = this.dataset.char;
-                    if (char && char.length === 1) {
+                    if (char && char.length > 0) {
                         document.getElementById('searchInput').value = char;
                         document.getElementById('searchType').value = 'all';
                         doSearch();
@@ -1590,8 +1710,6 @@
 
             autoTranslate(text);
         }
-
-        function splitJapanese(text) { return [...text]; }
 
         // ============================================================
         //  CLICK HANDLER (多音字)
@@ -1746,7 +1864,7 @@
         }
 
         // ============================================================
-        //  TRANSLATE (直译 + 灵活意译)
+        //  TRANSLATE (unchanged)
         // ============================================================
         function autoTranslate(text) {
             if (!text || text.length === 0) {
@@ -1916,7 +2034,7 @@
         }
 
         // ============================================================
-        //  SEARCH (全部数据源，发音严格来自常用字表，去重)
+        //  SEARCH (unchanged)
         // ============================================================
         function doSearch() {
             const input = document.getElementById('searchInput');
@@ -1934,7 +2052,6 @@
             const isPinyin = /[0-9]/.test(query);
             let items = [];
 
-            // ---- 常用字 ----
             if (type === 'all' || type === 'char' || type === 'radical' || type === 'body') {
                 for (const [ch, pinyins] of Object.entries(dataStore.charPinyinMap)) {
                     const info = dataStore.charInfoMap[ch] || {};
@@ -1982,7 +2099,6 @@
                 }
             }
 
-            // ---- 高频词汇 ----
             if (type === 'all' || type === 'word') {
                 dataStore.wordList.forEach(w => {
                     let matched = false;
@@ -2023,7 +2139,6 @@
                 });
             }
 
-            // ---- 句子 ----
             if (type === 'all' || type === 'sentence') {
                 dataStore.sentences.forEach(s => {
                     const text = s.text || '';
@@ -2106,7 +2221,6 @@
                 let detailHtml = '';
 
                 if (item.type === '句子') {
-                    // 句子：外层只显示原文+繁体，不显示发音（发音放详情）
                     const timeLabel = item.time ? '⏱ ' + item.time : '';
                     const speakerLabel = item.speaker ? '🗣 ' + item.speaker : '';
                     const videoBtn = item.videoLink ?
@@ -2127,7 +2241,6 @@
                                 ${detailHtml}
                             </div>`;
                 } else {
-                    // 字词：外层显示字词+发音
                     const nearGroup = getNearGroupByChar(item.char);
                     let nearHtml = '';
                     if (nearGroup && nearGroup.length > 1) {
@@ -2179,7 +2292,7 @@
         }
 
         // ============================================================
-        //  IMPORT
+        //  IMPORT / EXPORT (unchanged)
         // ============================================================
         function importFile(file) {
             const reader = new FileReader();
@@ -2249,9 +2362,6 @@
             }
         }
 
-        // ============================================================
-        //  EXPORT
-        // ============================================================
         function exportExcel() {
             if (Object.keys(dataStore.charPinyinMap).length === 0 && dataStore.sentences.length === 0) {
                 showToast('没有数据可以导出', 'warning');
@@ -2261,7 +2371,6 @@
             try {
                 const wb = XLSX.utils.book_new();
 
-                // ---- Sheet1: 常用字 ----
                 const charData = [];
                 for (const [ch, pinyins] of Object.entries(dataStore.charPinyinMap)) {
                     const info = dataStore.charInfoMap[ch] || {};
@@ -2279,7 +2388,6 @@
                 const ws1 = XLSX.utils.json_to_sheet(charData);
                 XLSX.utils.book_append_sheet(wb, ws1, '常用字');
 
-                // ---- Sheet2: 高频词汇表 ----
                 const vocabData = dataStore.wordList.map(w => ({
                     '词汇': w.word || '',
                     '发音': w.pinyin || '',
@@ -2289,7 +2397,6 @@
                 const ws2 = XLSX.utils.json_to_sheet(vocabData);
                 XLSX.utils.book_append_sheet(wb, ws2, '高频词汇表');
 
-                // ---- Sheet3: 转录文本 ----
                 const sentData = dataStore.sentences.map(s => ({
                     '项目': s.project || '',
                     '时间轴': s.time || '',
@@ -2301,7 +2408,6 @@
                 const ws3 = XLSX.utils.json_to_sheet(sentData);
                 XLSX.utils.book_append_sheet(wb, ws3, '转录文本');
 
-                // ---- Sheet4: 视频来源 ----
                 const videoData = Object.entries(dataStore.videoLinks).map(([name, link]) => ({
                     '项目名称': name,
                     '链接': link
@@ -2309,7 +2415,6 @@
                 const ws4 = XLSX.utils.json_to_sheet(videoData);
                 XLSX.utils.book_append_sheet(wb, ws4, '视频来源');
 
-                // 导出
                 const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
                 const blob = new Blob([wbout], { type: 'application/octet-stream' });
                 const url = URL.createObjectURL(blob);
@@ -2379,7 +2484,7 @@
         }
 
         // ============================================================
-        //  SWITCH LANG
+        //  SWITCH LANG (autoload JSON)
         // ============================================================
         async function switchLang(lang) {
             currentLang = lang;
@@ -2388,23 +2493,18 @@
             if (currentText) {
                 renderPanel(currentText);
             } else {
-                // 清空当前显示
                 renderPanel('');
             }
             showToast('已切换到 ' + lang, 'info');
         }
 
-        // ============================================================
-        //  AUTOMATIC DATA LOADING FROM JSON FILES
-        // ============================================================
         async function loadDataForLang(lang) {
-            const url = `data/${lang}.json`;   // 例如 data/cz.json, data/zh.json
+            const url = `data/${lang}.json`;
             try {
                 const response = await fetch(url);
                 if (!response.ok) throw new Error(`HTTP ${response.status}`);
                 const jsonData = await response.json();
 
-                // 清空现有数据（保留视频链接？根据需要决定是否保留，这里全清）
                 dataStore.charPinyinMap = {};
                 dataStore.charInfoMap = {};
                 dataStore.nearGroups = {};
@@ -2414,8 +2514,6 @@
                 dataStore.videoInfo = null;
                 dataStore.videoLinks = {};
 
-                // 将 JSON 数据填入 dataStore（结构与导出格式一致）
-                // 直接赋值顶层字段
                 if (jsonData.charPinyinMap) Object.assign(dataStore.charPinyinMap, jsonData.charPinyinMap);
                 if (jsonData.charInfoMap) Object.assign(dataStore.charInfoMap, jsonData.charInfoMap);
                 if (jsonData.nearGroups) Object.assign(dataStore.nearGroups, jsonData.nearGroups);
@@ -2431,7 +2529,6 @@
             } catch (error) {
                 console.error('加载语种数据失败:', error);
                 showToast(`❌ 加载 ${lang} 数据失败，请检查网络或文件是否存在`, 'error');
-                // 保持原有数据不变，但可以提示
             }
         }
 
@@ -2469,10 +2566,8 @@
             const langSelect = document.getElementById('langSelect');
             currentLang = langSelect.value;
 
-            // 1. 先尝试加载默认语种数据
             await loadDataForLang(currentLang);
 
-            // 2. 绑定语种切换事件
             langSelect.addEventListener('change', async (e) => {
                 const lang = e.target.value;
                 await switchLang(lang);
@@ -2511,7 +2606,6 @@
                 document.getElementById('fileInput').click();
             });
 
-            // 导出按钮
             document.getElementById('exportExcelBtn').addEventListener('click', exportExcel);
             document.getElementById('exportJsonBtn').addEventListener('click', exportJSON);
 
@@ -2552,7 +2646,6 @@
             document.getElementById('btnToggleRight').classList.add('btn-accent');
             document.getElementById('btnToggleRight').classList.remove('btn-outline');
 
-            // 初始化显示（若数据已加载，渲染空面板）
             renderPanel('');
             updateStats();
             showToast('📂 已自动加载 ' + currentLang + ' 数据，可开始使用', 'info', 3000);
